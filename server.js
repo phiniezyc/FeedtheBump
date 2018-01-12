@@ -1,9 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const mongoose = require ("mongoose");
+// const mongoose = require ("mongoose");
 const routes = require("./routes");
 const path = require("path");
-
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -17,8 +16,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 // Serve up static assets
 app.use(express.static("client/build"));
+
 // Add routes, both API and view
-app.use(routes);
+// app.use(routes);
 
 // mongoose.Promise = global.Promise;
 
@@ -30,11 +30,19 @@ app.use(routes);
 //   }
 // );
 
+
+// app.get("/test", function(req, res){
+//   res.json("testing app");
+ 
+// })
+
 // Send every request to the React app
 // Define any API routes before this runs
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
+
+
 
 app.listen(PORT, function() {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
