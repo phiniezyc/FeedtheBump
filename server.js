@@ -16,9 +16,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 // Serve up static assets
 app.use(express.static("client/build"));
-
 // Add routes, both API and view
-// app.use(routes);
+app.use(routes);
+
+
 
 // mongoose.Promise = global.Promise;
 
@@ -31,16 +32,17 @@ app.use(express.static("client/build"));
 // );
 
 
-// app.get("/test", function(req, res){
+// app.get("/", function(req, res){
 //   res.json("testing app");
+//   console.log("test is working!");
  
-// })
+// });
 
 // Send every request to the React app
 // Define any API routes before this runs
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+// app.get("*", function(req, res) {
+//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// });
 
 
 
