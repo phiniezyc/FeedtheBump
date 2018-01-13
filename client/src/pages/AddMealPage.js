@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Input, Button } from 'react-materialize';
+import { Row, Input } from 'react-materialize';
 
 
 class AddMealPage extends Component {
