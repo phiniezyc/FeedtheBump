@@ -5,8 +5,10 @@
   "proxy": "http://localhost:3001/",
   "dependencies": {
     "react": "^16.0.0",
+    "react-day-picker": "^7.0.7",
     "react-dom": "^16.0.0",
     "react-materialize": "^1.1.2",
+    "react-moment": "^0.7.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.14"
