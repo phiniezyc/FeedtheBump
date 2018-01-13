@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Input } from 'react-materialize';
+import { Row, Input, Button } from 'react-materialize';
 
 
 class AddMealPage extends Component {
@@ -25,7 +25,7 @@ class AddMealPage extends Component {
                             <h5>Add Water</h5>
                             <Input placeholder="Water" s={12} label="Add Water" />
                                 <div class="col s4">
-                                    <p class="right-align"><button class="btn btn-small waves-effect waves-light" type="button" name="action">Add</button></p>
+                                <p class="right-align"><button class="btn btn-small waves-effect waves-light" type="button" name="submit">Add</button></p>
                                 </div>
                         </form>
                     </div>
