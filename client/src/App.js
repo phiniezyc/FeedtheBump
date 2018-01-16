@@ -34,7 +34,6 @@ class App extends Component {
                   
                   {/* <Route path='*' component={LandingPage} /> */}
                   {/* <Footer/> */}
-               
               </Switch>
           </div>
         </BrowserRouter>
