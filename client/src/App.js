@@ -22,7 +22,7 @@ class App extends Component {
           <div>
             <NavBar />
               <Switch>
-                <div>
+               
                   {/* <Header /> */}
                   <Route exact path='/user/dashboard' component={UserDashboard} />
                   <Route exact path='/user/addMeal' component={AddMealPage} />
@@ -34,7 +34,6 @@ class App extends Component {
                   
                   {/* <Route path='*' component={LandingPage} /> */}
                   {/* <Footer/> */}
-                </div>
               </Switch>
           </div>
         </BrowserRouter>
