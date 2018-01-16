@@ -13,11 +13,11 @@ const LandingPage = () => (
             <Input s={12} label="Last Name" />
             <Input type="password" label="password" s={12} />
             <Input type="email" label="Email" s={12} />
-            <div class="row">
-                <div class="col s12">
-                    <p class="center-align"><button class="btn btn-large waves-effect waves-light" type="button" name="action">Login</button></p>
+            <div className="row">
+                <div className="col s12">
+                    <p className="center-align"><button className="btn btn-large waves-effect waves-light" type="button" name="action">Login</button></p>
                     {/* <br/>  */}
-                    <p class="center-align"><button class="btn btn-large waves-effect waves-light" type="button" name="action">Sign Up Now</button></p>
+                    <p className="center-align"><button className="btn btn-large waves-effect waves-light" type="button" name="action">Sign Up Now</button></p>
                 </div>
             </div>
             </form>
