@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Collection, CollectionItem, Row} from 'react-materialize';
 
 class UserDashboard extends Component {
+    
     render() {
         return (
             <div>
