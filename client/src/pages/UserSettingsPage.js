@@ -32,13 +32,13 @@ class UserSettings extends Component {
                 <Row>
                     <div className='col s8 offset-s2'>
                     <h4>Settings</h4>
-                        <p class="question-heading">Typical Calorie Intake (before pregnancy):</p>
+                        <p className="question-heading">Typical Calorie Intake (before pregnancy):</p>
                     <Input placeholder="Calories" s={6} name="calories" />
                     </div>
                 </Row>
                 <Row>
                     <div className='col s8 offset-s2'>
-                    <p class="question-heading">Due Date:</p>
+                    <p className="question-heading">Due Date:</p>
                     <DatePicker/>
                     <Input type="submit" value="Submit" />
                     </div>
