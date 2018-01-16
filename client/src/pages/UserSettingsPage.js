@@ -40,7 +40,7 @@ class UserSettings extends Component {
                     <div className='col s8 offset-s2'>
                     <p className="question-heading">Due Date:</p>
                     <DatePicker/>
-                    <Input type="submit" value="Submit" />
+                        <button className="btn btn-small waves-effect waves-light" type="submit" value="Submit">Submit</button>
                     </div>
                  </Row>
             </div>
