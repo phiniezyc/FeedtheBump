@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-// const mongoose = require ("mongoose");
+const mongoose = require ("mongoose");
 const routes = require("./routes");
 const path = require("path");
 const app = express();
@@ -21,15 +21,15 @@ app.use(routes);
 
 
 
-// mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise;
 
-// mongoose.connect(
-//   process.env.MONGODB_URI || 
-//   "mongodb://localhost/reactreadingList",
-//   {
-//     useMongoClient: true
-//   }
-// );
+mongoose.connect(
+  process.env.MONGODB_URI || 
+  "mongodb://localhost/feedTheBump",
+  {
+    useMongoClient: true
+  }
+);
 
 
 // app.get("/", function(req, res){
