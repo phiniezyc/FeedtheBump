@@ -12,7 +12,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Configure body parser for AJAX requests
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
 // Serve up static assets
 app.use(express.static("client/build"));
@@ -25,7 +25,7 @@ mongoose.Promise = global.Promise;
 
 mongoose.connect(
   process.env.MONGODB_URI || 
-  "mongodb://localhost/feedTheBump",
+  "mongodb://localhost/feedtheBump",
   {
     useMongoClient: true
   }
