@@ -3,6 +3,12 @@ const bodyParser = require("body-parser");
 const mongoose = require ("mongoose");
 const routes = require("./routes");
 const path = require("path");
+const morgan = require("morgan");
+const flash = require("connect-flash");
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
+const passport = require("passport");
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -18,6 +24,18 @@ app.use(bodyParser.json());
 app.use(express.static("client/build"));
 // Add routes, both API and view
 app.use(routes);
+
+//Configure passport authentication
+app.use(cookieParser());
+app.use(morgan('dev'));
+app.use(session({
+    secret:'backrow',
+    saveUninitialized: true,
+    resave:true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
 
 
 
