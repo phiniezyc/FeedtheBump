@@ -23,7 +23,6 @@ class App extends Component {
           <div>
             <NavBar />
               <Switch>
-               
                   {/* <Header /> */}
                   <Route exact path='/user/dashboard' component={UserDashboard} />
                   <Route exact path='/user/addMeal' component={AddMealPage} />
