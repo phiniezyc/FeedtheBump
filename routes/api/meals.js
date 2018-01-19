@@ -1,10 +1,7 @@
-// Example: *("express").Router() is a minimized version of expresses router
-// since we are only using for backend
-
 const router = require("express").Router();
 const mealsController = require("../../controllers/mealsController");
 
-// // Matches with "/api/books"
+// Matches with "/api/meals"
 router
     .route("/")
     .get(mealsController.findAll)
