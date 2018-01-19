@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import NavBar from './components/Navbar/Navbar';
 import LandingPage from './pages/LandingPage';
+import SignUpPage from './pages/SignUpPage';
 import UserDashboard from './pages/UserDashboard';
 import AddMealPage from './pages/AddMealPage';
 import UserSettingsPage from './pages/UserSettingsPage';
@@ -26,6 +27,7 @@ class App extends Component {
               <Switch>
                   {/* <Header /> */}
                   <Route exact path='/' component={LandingPage} />
+                  <Route exact path='/user/signup' component={SignUpPage} />
                   <Route exact path='/user/dashboard' component={UserDashboard} />
                   <Route exact path='/user/addMeal' component={AddMealPage} />
                   <Route exact path='/user/settings' component={UserSettingsPage} />
