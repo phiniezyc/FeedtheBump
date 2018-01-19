@@ -9,6 +9,7 @@ import UserSettingsPage from './pages/UserSettingsPage';
 import UserNutritionReport from './pages/UserNutritionReport';
 import UserNotesPage from './pages/UserNotesPage';
 import HealthArticle from "./pages/HealthArticle";
+import routeErrorPage from "./pages/routeErrorPage/routeErrorPage";
 
 
 
@@ -24,14 +25,16 @@ class App extends Component {
             <NavBar />
               <Switch>
                   {/* <Header /> */}
+                  <Route exact path='/' component={LandingPage} />
                   <Route exact path='/user/dashboard' component={UserDashboard} />
                   <Route exact path='/user/addMeal' component={AddMealPage} />
                   <Route exact path='/user/settings' component={UserSettingsPage} />
-                  <Route exact path='/' component={LandingPage} />
+                  
                   {/* Pages below here need to be completed */}
                   <Route exact path='/user/nutritionReport' component={UserNutritionReport} />
                   <Route exact path='/user/notes' component={UserNotesPage} />
                   <Route exact path='/article' component={HealthArticle} />
+                  <Route component={routeErrorPage}/>
 
 
 
