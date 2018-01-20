@@ -8,6 +8,8 @@ import AddMealPage from './pages/AddMealPage';
 import UserSettingsPage from './pages/UserSettingsPage';
 import UserNutritionReport from './pages/UserNutritionReport';
 import UserNotesPage from './pages/UserNotesPage';
+import HealthArticle from "./pages/HealthArticle";
+import routeErrorPage from "./pages/routeErrorPage/routeErrorPage";
 
 
 
@@ -22,19 +24,22 @@ class App extends Component {
           <div>
             <NavBar />
               <Switch>
-                <div>
                   {/* <Header /> */}
+                  <Route exact path='/' component={LandingPage} />
                   <Route exact path='/user/dashboard' component={UserDashboard} />
                   <Route exact path='/user/addMeal' component={AddMealPage} />
-                  {/* Pages below here need to be completed */}
                   <Route exact path='/user/settings' component={UserSettingsPage} />
+                  
+                  {/* Pages below here need to be completed */}
                   <Route exact path='/user/nutritionReport' component={UserNutritionReport} />
                   <Route exact path='/user/notes' component={UserNotesPage} />
-                  <Route exact path='/' component={LandingPage} />
-                  
+                  <Route exact path='/article' component={HealthArticle} />
+                  <Route component={routeErrorPage}/>
+
+
+
                   {/* <Route path='*' component={LandingPage} /> */}
                   {/* <Footer/> */}
-                </div>
               </Switch>
           </div>
         </BrowserRouter>
