@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "auth0-js": "^9.1.0",
     "axios": "^0.17.1",
     "react": "^16.0.0",
     "react-day-picker": "^7.0.7",
