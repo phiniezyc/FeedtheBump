@@ -1,24 +1,30 @@
 <!-- Below code was added by Brelon Buckner; feel free to use and/or delete -->
 
 
-<!-- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
 
 <body>
-
-  <form>
-    Caloric Intake:
-    <input id="calorieIntake" value="" placeholder="2,550" required></input>
-    <br> Stage of Pregnancy:
-    <input id="pregnancyStage" value="" placeholder="second trimester" required></input>
-    <br>
-    <!-- when we click on submit we want "calorie required" to generate -->
-<!--<button id="submit">submit</button>
-  </form>
+    <!-- Below code added by Brelon Buckner -->
+    <!-- Revamped the html for the Stage of Pregnancy to add a drop-down box -->
+    <form>
+        Caloric Intake:
+        <input id="calorieIntake" value="" placeholder="2,550" required></input>
+        <br> Stage of Pregnancy:
+        <select name="Trimester" id="pregnancyStage">
+            <option value="Trimester">Phase</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        <br>
+        <!-- when we click on submit we want "calorie required" to generate -->
+        <button id="submit">submit</button>
+    </form>
 </body>
 
 </html>
