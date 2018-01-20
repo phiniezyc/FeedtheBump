@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-// const mongoose = require ("mongoose");
+const mongoose = require ("mongoose");
 const routes = require("./routes");
 const path = require("path");
 const app = express();
@@ -12,37 +12,27 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Configure body parser for AJAX requests
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
 // Serve up static assets
-app.use(express.static("client/build"));
+// app.use(express.static("client/build"));
 // Add routes, both API and view
 app.use(routes);
 
 
 
-// mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise;
 
-// mongoose.connect(
-//   process.env.MONGODB_URI || 
-//   "mongodb://localhost/reactreadingList",
-//   {
-//     useMongoClient: true
-//   }
-// );
+mongoose.connect(
+  process.env.MONGODB_URI || 
+  "mongodb://localhost/feedtheBump",
+  {
+    useMongoClient: true
+  }
+);
 
 
-// app.get("/", function(req, res){
-//   res.json("testing app");
-//   console.log("test is working!");
- 
-// });
 
-// Send every request to the React app
-// Define any API routes before this runs
-// app.get("*", function(req, res) {
-//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
-// });
 
 
 

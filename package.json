@@ -14,11 +14,16 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^3.5.0",
-    "nodemon": "^1.11.0"
+    "concurrently": "^3.5.1",
+    "nodemon": "^1.14.11"
   },
   "dependencies": {
+    "auth0-js": "^9.1.0",
+    "axios": "^0.17.1",
     "body-parser": "^1.18.2",
-    "express": "^4.15.4"
+    "express": "^4.16.2",
+    "mongoose": "^4.13.9",
+    "react-day-picker": "^7.0.7",
+    "react-moment": "^0.7.0"
   }
 }
