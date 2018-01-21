@@ -12,3 +12,4 @@ class UserSettings extends Component {
 }
 
 export default UserSettings;
+// need the Nutrition Report, prenatal, About, and Settings to all be in the Navigation Bar.

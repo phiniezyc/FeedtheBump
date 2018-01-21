@@ -24,3 +24,6 @@ class UserDashboard extends Component {
 }
 
 export default UserDashboard;
+
+// This is where we, Brelon Buckner, will log the information that the users search for/Log!!
+// /UserDashboard.js

@@ -38,3 +38,5 @@ class AddMealPage extends Component {
 
 
 export default AddMealPage;
+
+// This will be the search page.  Get the Search result to work.
