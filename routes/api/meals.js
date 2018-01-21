@@ -1,19 +1,16 @@
-
-//Example: *("express").Router() is a minimized version of expresses router since we are only using for backend
-
 const router = require("express").Router();
-const booksController = require("../../controllers/mealsController");
+const mealsController = require("../../controllers/mealsController");
 
-// // Matches with "/api/books"
-// router.route("/") 
-//    .get(booksController.findAll)
-// //   .post(booksController.create);
+// Matches with "/api/meals"
+router
+    .route("/")
+    .get(mealsController.findAll)
+    .post(mealsController.create); 
 
-// // Matches with "/api/books/:id"
-// router
-//   .route("/:id")
-//   .get(booksController.findById)
-//   .put(booksController.update)
-//   .delete(booksController.remove);
+router
+    .route("/:id")
+    .get(mealsController.findById)
+    .put(mealsController.update)
+    .delete(mealsController.remove);
 
 module.exports = router;
