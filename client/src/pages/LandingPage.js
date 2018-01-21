@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Auth from '../Auth.js';
+// import Auth from '../Auth.js';
+import Auth from '../utils/Auth';
 
 const auth = new Auth();
 
