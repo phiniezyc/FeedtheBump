@@ -8,8 +8,9 @@ module.exports = {
         axios
             .get(search)
             .then(response => {
-                console.log(response);
-                res.send(response);
+                console.log(response.data["report"]["foods"][0]);
+            
+                // res.send(response);
             })
             .catch(err => {
                 console.log(err);
