@@ -1,29 +1,28 @@
-import React from 'react';
-import { Row, Input } from 'react-materialize';
+import React, { Component } from 'react';
+// import Auth from '../Auth.js';
+import Auth from '../utils/Auth';
 
+const auth = new Auth();
 
-const LandingPage = () => (
-    // Grid sizing needs tweeking 
-    <div className='container LoginForm' >
-        <Row >
-            <div className='col s6 offset-s3'> 
-            <form >
-            <h5>Login</h5>
-            <Input placeholder="Placeholder" s={12} label="First Name" />
-            <Input s={12} label="Last Name" />
-            <Input type="password" label="password" s={12} />
-            <Input type="email" label="Email" s={12} />
-            <div class="row">
-                <div class="col s12">
-                    <p class="center-align"><button class="btn btn-large waves-effect waves-light" type="button" name="action">Login</button></p>
-                    {/* <br/>  */}
-                    <p class="center-align"><button class="btn btn-large waves-effect waves-light" type="button" name="action">Sign Up Now</button></p>
+class LandingPage extends Component {
+    sign_user = () => {
+        auth.login();
+    };
+
+    render() {
+        return (
+            // Grid sizing needs tweeking
+
+            <div className='col s6 offset-s3'>
+                <div>
+                    <h1>Welcome to Feed the Bump</h1>
+
+                    <button onClick = {this.sign_user} className="btn btn-large waves-effect waves-light" type="button" name="action">Click to sign in</button>
                 </div>
             </div>
-            </form>
-            </div>
-        </Row>       
-    </div>
-);
+
+        );
+    }
+}
 
 export default LandingPage;
