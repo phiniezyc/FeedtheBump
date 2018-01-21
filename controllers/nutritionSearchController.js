@@ -1,6 +1,21 @@
+const axios = require("axios");
+
 module.exports = {
     search: function (req, res) {
-        res.send("test worked");
+        const search = "https://api.nal.usda.gov/ndb/nutrients/?format=json&api_key=Dmu1LQGkpd52KRfzyfeM" +
+                "ZAPW6blrxrdnmVIubwK6&nutrients=205&nutrients=204&nutrients=208&nutrients=269";
+
+        axios
+            .get(search)
+            .then(response => {
+                console.log(response);
+                res.send(response);
+            })
+            .catch(err => {
+                console.log(err);
+                res.send({err});
+            });
+
     }
 
 };
