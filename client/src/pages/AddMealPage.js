@@ -14,26 +14,24 @@ class AddMealPage extends Component {
 
         };
 
-        this.handleSubmit = this
-            .handleSubmit
+        this.handleFoodSubmit = this
+            .handleFoodSubmit
             .bind(this);
     }
 
-    handleSubmit() {
-
-        const data = this.state;
-
-        console.log(data);
-
+    handleFoodSubmit() {
+        // const data = this.state;
+        // console.log(data);
         if (this.state.food && this.state.calories && this.state.meal) {
             API.saveMeal({
-              title: this.state.food,
-              author: this.state.calories,
-              synopsis: this.state.meal
+                food: this.state.food,
+                calories: this.state.calories,
+                meal: this.state.meal
+        
             })
-            //   .then(res => this.loadBooks())
-              .catch(err => console.log(err));
-          }
+            //   .then(res => this.loadBooks()) 
+                .catch(err => console.log(err));
+            }
 
         // fetch('/api/form-submit-url', {     method: 'POST',     body: data,     });
     }
@@ -43,7 +41,7 @@ class AddMealPage extends Component {
             <div>
                 <Row >
                     <div className='col s6 '>
-                        <form onSubmit={this.handleSubmit}>
+                        <form onSubmit={this.handleFoodSubmit}>
                             <h5>Add Food</h5>
 
                             <Input
@@ -80,7 +78,7 @@ class AddMealPage extends Component {
                                 value='snack'
                                 label='Snack'/>
                             <div className="col s4">
-                                <button onClick={this.handleSubmit}
+                                <button onClick={this.handleFoodSubmit}
                                     className="btn btn-small waves-effect waves-light"
                                     type="submit"
                                     name="action">ADD</button>

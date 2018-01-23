@@ -2,11 +2,16 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const mealSchema = new Schema({
-    search: {
+    food: {
         type: String,
         required: true
     },
-    mealType: {
+    calories: {
+        type: Number,
+        max: 10000,
+        required: true
+    },
+    meal: {
         type: String,
         required: true
     },

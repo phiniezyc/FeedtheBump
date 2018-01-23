@@ -1,6 +1,3 @@
-// mongo methods that are used to grab OR send data from the database and sent to
-// api when each route is hit
-
 const db = require("../models");
 
 // Defining methods for the mealssController
