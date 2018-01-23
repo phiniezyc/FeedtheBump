@@ -6,6 +6,7 @@ import LandingPage from './pages/LandingPage';
 import UserDashboard from './pages/UserDashboard';
 import AddMealPage from './pages/AddMealPage';
 import UserSettingsPage from './pages/UserSettingsPage';
+import FoodstoAvoid from './pages/FoodstoAvoid';
 import UserNutritionReport from './pages/UserNutritionReport';
 import UserNotesPage from './pages/UserNotesPage';
 import HealthArticle from "./pages/HealthArticle";
@@ -29,7 +30,9 @@ class App extends Component {
                   <Route exact path='/user/dashboard' component={UserDashboard} />
                   <Route exact path='/user/addMeal' component={AddMealPage} />
                   <Route exact path='/user/settings' component={UserSettingsPage} />
-                  
+                  <Route exact path='/foodstoavoid' component={FoodstoAvoid} />
+
+
                   {/* Pages below here need to be completed */}
                   <Route exact path='/user/nutritionReport' component={UserNutritionReport} />
                   <Route exact path='/user/notes' component={UserNotesPage} />
