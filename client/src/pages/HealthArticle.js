@@ -12,9 +12,6 @@ class HealthArticle extends Component {
                         <Collection header='main-article'>
                             <CollectionItem s={8} href='#'>Today's Article</CollectionItem>
                         </Collection>
-                        <Collection header='other-articles'>
-                            <CollectionItem s={4} href='#'>Previous Articles</CollectionItem>
-                        </Collection>
                     </div>
                 </Row>
             </div>
