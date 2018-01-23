@@ -17,6 +17,13 @@ class AddMealPage extends Component {
         this.handleFoodSubmit = this
             .handleFoodSubmit
             .bind(this);
+
+        this.state = {
+            water: "no water submitted" 
+        };
+
+        this.handleWaterSubmit = this.handleWaterSubmit.bind(this);
+
     }
 
     handleFoodSubmit() {
@@ -34,6 +41,20 @@ class AddMealPage extends Component {
             }
 
         // fetch('/api/form-submit-url', {     method: 'POST',     body: data,     });
+    }
+
+    handleWaterSubmit() {
+        const waterData = this.state.water;
+        console.log(waterData);
+
+        if (this.state.water) {
+            API.saveWater({
+                water: this.state.water,
+        
+            })
+            //   .then(res => this.loadBooks()) 
+                .catch(err => console.log(err));
+            }
     }
 
     render() {
@@ -88,10 +109,10 @@ class AddMealPage extends Component {
                     <div className='col s4 offset-s2'>
                         <form>
                             <h5>Add Water</h5>
-                            <Input placeholder="Water" s={12} label="Add Water"/>
+                            <Input onChange={event => this.setState({water: event.target.value})} placeholder="Water" s={12} label="Add Water"/>
                             <div className="col s4">
                                 <p className="right-align">
-                                    <button
+                                    <button onClick={this.handleWaterSubmit}
                                         className="btn btn-small waves-effect waves-light"
                                         type="button"
                                         name="submit">Add</button>
