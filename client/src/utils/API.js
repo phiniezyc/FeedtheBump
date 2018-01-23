@@ -1,5 +1,4 @@
-// These are the mongoose function used w/ api: Books Class Example: import
-// axios from "axios";
+import axios from "axios";
 
 export default {
     // Gets all books
