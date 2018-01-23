@@ -33,6 +33,7 @@ class App extends Component {
                   {/* Pages below here need to be completed */}
                   <Route exact path='/user/nutritionReport' component={UserNutritionReport} />
                   <Route exact path='/user/notes' component={UserNotesPage} />
+                  <Route exact path='/user/about' component={UserNotesPage} />
                   <Route exact path='/article' component={HealthArticle} />
                   <Route component={routeErrorPage}/>
 
