@@ -1,10 +1,9 @@
 const db = require("../models");
 
-// Defining methods for the mealssController
 module.exports = {
     findAll: function (req, res) {
         db
-            .Meal
+            .Water
             .find(req.query)
             .sort({date: -1})
             .then(dbModel => res.json(dbModel))
@@ -12,21 +11,21 @@ module.exports = {
     },
     findById: function (req, res) {
         db
-            .Meal
+            .Water
             .findById(req.params.id)
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
     create: function (req, res) {
         db
-            .Meal
+            .Water
             .create(req.body)
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
     update: function (req, res) {
         db
-            .Meal
+            .Water
             .findOneAndUpdate({
                 _id: req.params.id
             }, req.body)
@@ -35,7 +34,7 @@ module.exports = {
     },
     remove: function (req, res) {
         db
-            .Meal
+            .Water
             .findById({_id: req.params.id})
             .then(dbModel => dbModel.remove())
             .then(dbModel => res.json(dbModel))
