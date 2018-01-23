@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Auth from '../utils/Auth.js';
 
+
 const auth = new Auth();
 
 class LandingPage extends Component {
