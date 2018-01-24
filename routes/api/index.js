@@ -7,7 +7,7 @@ const nutritionSearch = require('./nutritionSearch');
 router.use('/meals', mealsRoutes);
 router.use('/water', waterRoutes);
 
-router.use('/usda', nutritionSearch);
+router.use('/nutritionix', nutritionSearch);
 
 // router.use("/routeToChange", routeToChangeRoutes);
 
