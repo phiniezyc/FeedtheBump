@@ -13,7 +13,6 @@ class AddMealPage extends Component {
       calories: 'No calories entered',
       meal: 'No meal type entered',
       water: 'no water submitted',
-
     };
 
     this.handleFoodSubmit = this
@@ -25,6 +24,7 @@ class AddMealPage extends Component {
 
   componentDidMount() {
     this.loadMeals();
+    this.loadWaters();
 
   }
 
@@ -160,7 +160,7 @@ class AddMealPage extends Component {
               </div>
             </form>
           </div>
-          <div className='meals'>
+          {/* <div className='meals'>
             {this.state.totalMeals.map((meal, i) =>{
                 
                 return (
@@ -172,7 +172,7 @@ class AddMealPage extends Component {
                   </div>
                 )
               })}
-          </div>
+          </div> */}
         </Row>
       </div>
     );
