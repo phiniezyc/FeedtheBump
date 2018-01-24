@@ -8,6 +8,7 @@ class AddMealPage extends Component {
 
     this.state = {
       totalMeals: [],
+      totalWaters: [],
       food: 'No food entered',
       calories: 'No calories entered',
       meal: 'No meal type entered',
@@ -24,6 +25,7 @@ class AddMealPage extends Component {
 
   componentDidMount() {
     this.loadMeals();
+
   }
 
   loadMeals() {
@@ -33,7 +35,17 @@ class AddMealPage extends Component {
           totalMeals: res.data, food: '', calories: '', meal: '', date: '',
         }))
       .catch(err => console.log(err));
-    console.log(this.state.totalMeals);
+    // console.log(this.state.totalMeals);
+  }
+
+  loadWaters() {
+    API.getWaters()
+      .then(res =>
+        this.setState({
+          totalWaters: res.data, water: '',
+        }))
+      .catch(err => console.log(err));
+    // console.log(this.state.totalMeals);
   }
 
   handleFoodSubmit() {
@@ -51,8 +63,8 @@ class AddMealPage extends Component {
   }
 
   handleWaterSubmit() {
-    const waterData = this.state.water;
-    console.log(waterData);
+    // const waterData = this.state.water;
+    // console.log(waterData);
 
     if (this.state.water) {
       API.saveWater({
@@ -66,7 +78,7 @@ class AddMealPage extends Component {
 
   render() {
     console.log(this.state.totalMeals);
-
+    console.log(this.state.totalWaters);
     return (
       <div>
         <Row>
@@ -148,6 +160,7 @@ class AddMealPage extends Component {
               </div>
             </form>
           </div>
+          
         </Row>
       </div>
     );
