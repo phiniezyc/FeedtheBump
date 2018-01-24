@@ -160,7 +160,19 @@ class AddMealPage extends Component {
               </div>
             </form>
           </div>
-          
+          <div className='meals'>
+            {this.state.totalMeals.map((meal, i) =>{
+                
+                return (
+                  <div key={i}>
+                  <li key={meal.food}>{meal.food}</li>
+                  <li key={meal.calories}>{meal.calories}</li>
+                  <li key={meal.meal}>{meal.meal}</li>
+                  <li key={meal.date}>{meal.date}</li>
+                  </div>
+                )
+              })}
+          </div>
         </Row>
       </div>
     );
