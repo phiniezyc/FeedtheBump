@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Row, Input } from 'react-materialize';
-// import axios from "axios";
 import API from '../utils/API';
 
 class AddMealPage extends Component {
@@ -67,7 +66,7 @@ class AddMealPage extends Component {
 
   render() {
     console.log(this.state.totalMeals);
-      
+
     return (
       <div>
         <Row>
