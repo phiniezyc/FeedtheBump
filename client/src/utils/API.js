@@ -33,5 +33,9 @@ export default {
     // Saves a book to the database
     saveWater : function (waterData) {
         return axios.post("/api/water", waterData);
+    },
+
+    getArticles: function() {
+        return axios.get("/api/articles");
     }
 };
