@@ -35,7 +35,8 @@ export default {
         return axios.post("/api/water", waterData);
     },
 
-    getArticles: function() {
+    //gets articles
+    getArticles : function () {
         return axios.get("/api/articles");
-    }
+    },
 };

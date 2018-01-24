@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import API from '../utils/API';
-import { Row} from 'react-materialize';
+import { Row } from 'react-materialize';
 
 //once the API is working, and we see how the articles are delivered, we'll need to adapt layout.
 class HealthArticle extends Component {
@@ -20,7 +20,7 @@ class HealthArticle extends Component {
                 API.getArticles()
                     .then(res =>
                         this.setState({
-                            articles: res.data, Title: '', Image: '', Body: '',
+                            articles: res.data,
                         }))
                     .catch(err => console.log(err));
                 console.log(this.state.articles);
@@ -44,7 +44,6 @@ class HealthArticle extends Component {
 
 
     render() {
-        console.log(this.state.articles);
 
         return (
             <div>
