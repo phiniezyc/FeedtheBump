@@ -1,9 +1,45 @@
 import React, { Component } from 'react';
 import { Collection, CollectionItem, Row} from 'react-materialize';
+import API from '../utils/API';
+
 
 class UserDashboard extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            totalMeals: [],
+            totalWaters: [],
+          };
+    }
     
+    componentDidMount() {
+        this.loadMeals();
+        this.loadWaters();
+      }
+      loadMeals() {
+        API.getMeals()
+          .then(res =>
+            this.setState({
+              totalMeals: res.data, food: '', calories: '', meal: '', date: '',
+            }))
+          .catch(err => console.log(err));
+        // console.log(this.state.totalMeals);
+      }
+    
+      loadWaters() {
+        API.getWaters()
+          .then(res =>
+            this.setState({
+              totalWaters: res.data, water: '',
+            }))
+          .catch(err => console.log(err));
+        // console.log(this.state.totalMeals);
+      }
+
+
     render() {
+        console.log(this.state.totalMeals);
+        console.log(this.state.totalWaters);
         return (
             <div>
                 <Row>
@@ -19,6 +55,20 @@ class UserDashboard extends Component {
                     {/* We should change this button to either the "+" OR a picture button  */}
                     </div>
                 </Row>
+                <div>
+                    <div className='meals'>
+                        {this.state.totalMeals.map((meal, i) =>{
+                            return (
+                            <div key={i}>
+                            <li key={meal.food}>{meal.food}</li>
+                            <li key={meal.calories}>{meal.calories}</li>
+                            <li key={meal.meal}>{meal.meal}</li>
+                            <li key={meal.date}>{meal.date}</li>
+                            </div>
+                            )
+                        })}
+                    </div>
+                </div>
             </div>
         );
     }
