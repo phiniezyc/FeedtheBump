@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { Row, Input } from 'react-materialize';
+import moment from 'moment';
 import '../styles/userSettings.css';
 import 'react-day-picker/lib/style.css';
 
 
 import DatePicker from '../components/DatePicker/DatePicker';
+import dueDate from '../components/DatePicker/DatePicker';
+
 
 class UserSettings extends Component {
     constructor(props) {
@@ -21,9 +24,25 @@ class UserSettings extends Component {
 
     handleSubmit(event) {
         //send to db
-            //calculate days until due date
             //depending on how many days, add xxx calories to their calorie entry
         event.preventDefault();
+
+        console.log("A date was submitted");
+
+        //calculate days until due date
+        const daysRemaining = (dueDate) => {
+            const date = moment(dueDate);
+            const todaysdate = moment();
+
+            return date.diff(todaysdate, 'days');
+        };
+
+        const result = daysRemaining(dueDate);
+            console.log(result);
+        //
+        // };
+
+
     }
 
     render() {
@@ -33,14 +52,14 @@ class UserSettings extends Component {
                     <div className='col s8 offset-s2'>
                     <h4>Settings</h4>
                         <p className="question-heading">Typical Calorie Intake (before pregnancy):</p>
-                    <Input placeholder="Calories" s={6} name="calories" />
+                    <Input placeholder="Calories" s={6} name="calories" onChange={this.handleChange} />
                     </div>
                 </Row>
                 <Row>
                     <div className='col s8 offset-s2'>
                     <p className="question-heading">Due Date:</p>
                     <DatePicker/>
-                        <button className="btn btn-small waves-effect waves-light" type="submit" value="Submit">Submit</button>
+                        <button className="btn btn-small waves-effect waves-light" type="submit" value="Submit" onClick={this.handleSubmit}>Submit</button>
                     </div>
                  </Row>
             </div>

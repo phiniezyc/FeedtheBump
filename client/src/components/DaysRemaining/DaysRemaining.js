@@ -2,30 +2,27 @@ import React from 'react';
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 
-export default class DatePicker extends React.Component {
+export default class DaysRemaining extends React.Component {
     constructor(props) {
         super(props);
-        this.handleDayClick = this.handleDayClick.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
         this.state = {
             selectedDay: undefined,
         };
     }
-    handleDayClick(day) {
+    handleSubmit(day) {
         this.setState({ selectedDay: day });
-        const dueDate = day;
-        console.log(dueDate);
     }
     render() {
         return (
             <div>
-                <DayPicker
+                <DaysRemaining
                     onDayClick={this.handleDayClick}
                     selectedDays={this.state.selectedDay}
                 />
                 {this.state.selectedDay ? (
-                    <p>You selected {this.state.selectedDay.toLocaleDateString()}</p>
+                    <p>You are {this.state.selectedDay.toLocaleDateString()} days along.</p>
                 ) : (
-                    <p>Please select your due date.</p>
                 )}
             </div>
         );
