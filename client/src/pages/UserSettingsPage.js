@@ -6,7 +6,7 @@ import 'react-day-picker/lib/style.css';
 
 
 import DatePicker from '../components/DatePicker/DatePicker';
-import dueDate from '../components/DatePicker/DatePicker';
+import state from '../components/DatePicker/DatePicker';
 
 
 class UserSettings extends Component {
@@ -30,14 +30,16 @@ class UserSettings extends Component {
         console.log("A date was submitted");
 
         //calculate days until due date
-        const daysRemaining = (dueDate) => {
-            const date = moment(dueDate);
+    //======= how do I get the selected date from DatePicker into this page in order
+    //======= use it in a the below calculation?==============
+        const daysRemaining = (state) => {
+            const date = moment(state);
             const todaysdate = moment();
 
             return date.diff(todaysdate, 'days');
         };
 
-        const result = daysRemaining(dueDate);
+        const result = daysRemaining(state);
             console.log(result);
         //
         // };
