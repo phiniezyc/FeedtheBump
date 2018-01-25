@@ -17,13 +17,9 @@ class HealthArticle extends Component {
         }
 
             loadArticles() {
-                API.getArticles()
-                    .then(res =>
-                        this.setState({
-                            articles: res.data,
-                        }))
+                API.getArticles({ articles: this.state.articles })
+                    .then(res => console.log(res))
                     .catch(err => console.log(err));
-                console.log(this.state.articles);
             }
 
         // axios.get('https://healthfinder.gov/FreeContent/developer/Search.json?api_key=rlaulqdetivhvqxo&keyword=pregnancy')
@@ -48,9 +44,9 @@ class HealthArticle extends Component {
         return (
             <div>
                 <Row>
-                    <div className='col s12'>
+                    <div className='articles'>
                         <h2>Today's Article</h2>
-                        <div id="health-info"></div>
+                        <div id="health-info"> </div>
                     </div>
                 </Row>
             </div>
