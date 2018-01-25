@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import { Collection, CollectionItem, Row } from 'react-materialize';
+import { Row } from 'react-materialize';
+import '../styles/userNotesPage.css';
 
 
 class UserNotesPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: 'Log your mood, symptom, and other relevant. '
+            value: 'Log your mood, symptom, and other relevant notes. '
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -24,13 +25,21 @@ class UserNotesPage extends Component {
     render() {
         return (
         <div>
-           <form onSubmit={this.handleSubmit}>
-            <label>
-                <h2>Notes</h2>
-        <textarea placeholder={this.state.value} onChange={this.handleChange} />
-            </label>
-            <input type="submit" value="Submit" />
-            </form>
+            <Row>
+                <div className='col s8 offset-s2'>
+                    <form onSubmit={this.handleSubmit}>
+                    <label>
+                        <div className="notes-date">
+                            <h2 className="notes-date">Notes</h2>
+                            {/* goal is to have the current date shown. */}
+                            <h2 className="notes-date">Current Date</h2>
+                        </div>
+                        <textarea placeholder={this.state.value} onChange={this.handleChange} />
+                    </label>
+                    <input type="submit" value="Submit" />
+                    </form>
+                </div>
+            </Row>
         </div>
         );
     }
