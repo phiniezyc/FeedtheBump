@@ -15,7 +15,6 @@ class NutritonixResultsDisplay extends Component {
                             <Card className='cardDisplay' header={<CardTitle reveal  image='' waves='light'/>}
                                 title={result.fields.item_name}reveal={<div><p>{`Calories: ${result.fields.nf_calories}`}</p><p>{`Protein: ${result.fields.nf_protein}`}</p></div>}> <p><a href="/">This is a link</a></p>
                                 <p>{`Brand Name: ${result.fields.brand_name}`}</p>
-                                
                             </Card>
                         </div> 
                     ))}
