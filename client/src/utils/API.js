@@ -37,6 +37,10 @@ export default {
 
     //gets articles
     getArticles : function () {
+        return axios.get("https://healthfinder.gov/FreeContent/developer/Search.json?api_key=rlaulqdetivhvqxo&keyword=pregnancy");
+    },
+
+    getArticles2 : function () {
         return axios.get("/api/articles");
     },
 };
