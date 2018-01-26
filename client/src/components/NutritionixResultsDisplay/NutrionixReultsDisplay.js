@@ -4,7 +4,7 @@ import "./NutritionixResultsDisplay.css";
 
 class NutritonixResultsDisplay extends Component {
     render() {
-        console.log("Test:", this.props.nutritionixResults)
+        // console.log("Test:", this.props.nutritionixResults)
 
         const hits = this.props.nutritionixResults.hits;
         return (
