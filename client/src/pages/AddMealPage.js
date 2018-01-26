@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Row, Input} from 'react-materialize';
 import API from '../utils/API';
 import NutritionixResultsDisplay from '../components/NutritionixResultsDisplay/NutrionixReultsDisplay';
+import SearchComponent from '../components/SearchComponent/SearchComponent';
 
 class AddMealPage extends Component {
   constructor(props) {
@@ -170,8 +171,12 @@ class AddMealPage extends Component {
           
         </Row>
         <div>
+            <SearchComponent/>
+        </div>
+        <div>
             <NutritionixResultsDisplay nutritionixResults={this.state.nutritionixResults}/>
-          </div>
+        </div>
+        
       </div>
     );
   }
