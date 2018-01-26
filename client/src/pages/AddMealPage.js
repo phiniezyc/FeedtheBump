@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Row, Input} from 'react-materialize';
 import API from '../utils/API';
+import NutritionixResultsDisplay from '../components/NutritionixResultsDisplay/NutrionixReultsDisplay';
 
 class AddMealPage extends Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class AddMealPage extends Component {
     this.state = {
       totalMeals: [],
       totalWaters: [],
+      nutritionixResults: {},
       food: 'No food entered',
       calories: 'No calories entered',
       meal: 'No meal type entered',
@@ -27,7 +29,8 @@ class AddMealPage extends Component {
   componentDidMount() {
     this.loadMeals();
     this.loadWaters();
-    
+    this.loadNutritionixResults();
+
   }
 
   loadMeals() {
@@ -66,13 +69,19 @@ class AddMealPage extends Component {
     }
   }
 
-  loadNutritionixResults() {
-    
+  loadNutritionixResults = () => {
+    API
+      .getNutritionixResults()
+      .then(res => this.setState({nutritionixResults: res.data})) //this is an object so had to convert to a string instead. Is this right?
+      .catch(err => console.log(err));
   }
 
   render() {
     console.log(this.state.totalMeals);
     console.log(this.state.totalWaters);
+    // console.log(`Nutritionix Data:${this.state.nutritionixResults}`);
+
+
     return (
       <div>
         <Row>
@@ -158,6 +167,9 @@ class AddMealPage extends Component {
                 )
               })}
           </div> */}
+          <div>
+            <NutritionixResultsDisplay nutritionixResults={this.state.nutritionixResults}/>
+          </div>
         </Row>
       </div>
     );

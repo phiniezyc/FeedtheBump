@@ -19,7 +19,7 @@ export default {
     },
     getNutritionixResults: function() {
         return axios.get("/api/nutritionix");
-    }
+    },
 
     //Water
     getWaters : function () {
