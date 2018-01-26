@@ -35,35 +35,35 @@ class UserDashboard extends Component {
         console.log(this.state.totalMeals);
         console.log(this.state.totalWaters);
 
-
         return (
             <div>
-                <Row>
-                    <div className='col s8 offset-s2'>
-                        <Collection header='Daily Diary'>
-                            <CollectionItem href='#'>Breakfast</CollectionItem>
-                            <CollectionItem href='#'>Lunch</CollectionItem>
-                            <CollectionItem href='#'>Dinner</CollectionItem>
-                            <CollectionItem href='#'>Snacks</CollectionItem>
-                            <CollectionItem href='#'>Water</CollectionItem>
-                        </Collection>
-                        <p className="left-align">
-                            <button
-                                className="btn btn-small waves-effect waves-light"
-                                type="button"
-                                name="action">
-                                + Add</button>
-                        </p>
-                        {/* We should change this button to either the "+" OR a picture button  */}
-                    </div>
-                </Row>
                 <div>
+                    <Row>
+                        <div className='col s8 offset-s2'>
+                            <Collection header='Daily Diary'>
+                                <CollectionItem href='#'>Breakfast</CollectionItem>
+                                <CollectionItem href='#'>Lunch</CollectionItem>
+                                <CollectionItem href='#'>Dinner</CollectionItem>
+                                <CollectionItem href='#'>Snacks</CollectionItem>
+                                <CollectionItem href='#'>Water</CollectionItem>
+                            </Collection>
+                            <p className="left-align">
+                                <button
+                                    className="btn btn-small waves-effect waves-light"
+                                    type="button"
+                                    name="action">
+                                    + Add</button>
+                            </p>
+                            {/* We should change this button to either the "+" OR a picture button  */}
+                        </div>
+                    </Row>
+                </div>
+                <div className='mealsDiv'>
                     <div className='meals'>
-                        {this
-                            .state
-                            .totalMeals
-                            .map((meal, i) => {
+                        <ol>
+                        {this.state.totalMeals.map((meal, i) => {
                                 return (
+                                    <li>
                                     <div key={i}>
                                         <ol>
                                             <li key={meal.food}>{meal.food}</li>
@@ -72,8 +72,10 @@ class UserDashboard extends Component {
                                             <li key={meal.date}>{meal.date}</li>
                                         </ol>
                                     </div>
+                                    </li>
                                 )
                             })}
+                        </ol>
                     </div>
                 </div>
             </div>
