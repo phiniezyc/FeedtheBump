@@ -17,10 +17,13 @@ export default {
     saveMeal : function (mealData) {
         return axios.post("/api/meals", mealData);
     },
+    getNutritionixResults: function() {
+        return axios.get("/api/nutritionix");
+    },
 
     //Water
     getWaters : function () {
-        return axios.get("/api/water"); 
+        return axios.get("/api/water");
     },
     // Gets the water with the given id
     getWater : function (id) {
@@ -33,5 +36,14 @@ export default {
     // Saves a book to the database
     saveWater : function (waterData) {
         return axios.post("/api/water", waterData);
-    }
+    },
+
+    //gets articles
+    getArticles : function () {
+        return axios.get("https://healthfinder.gov/FreeContent/developer/Search.json?api_key=rlaulqdetivhvqxo&keyword=pregnancy");
+    },
+
+    getArticles2 : function () {
+        return axios.get("/api/articles");
+    },
 };
