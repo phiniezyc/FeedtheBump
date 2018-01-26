@@ -10,4 +10,4 @@ router.use( (req, res) => {
     res.sendFile(path.join(__dirname, "../client/public/index.html")); //changed from "../client/build/index.html"
 });
 
-module.exports = router;
+module.exports = router;    
