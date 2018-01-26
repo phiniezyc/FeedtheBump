@@ -1,0 +1,9 @@
+.nutritionixResultDiv{
+    margin: 20px;
+    display: inline-block;
+}
+
+.cardDisplay {
+    max-width: 300px;
+    height: 200px; 
+}
