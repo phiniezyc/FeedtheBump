@@ -61,7 +61,7 @@ class FoodstoAvoid extends Component {
                             </CollectionItem>
 
                         </Collection>
-                     
+
                     </div>
                 </Row>
             </div>
