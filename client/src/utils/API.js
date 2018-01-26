@@ -17,10 +17,13 @@ export default {
     saveMeal : function (mealData) {
         return axios.post("/api/meals", mealData);
     },
+    getNutritionixResults: function() {
+        return axios.get("/api/nutritionix");
+    },
 
     //Water
     getWaters : function () {
-        return axios.get("/api/water"); 
+        return axios.get("/api/water");
     },
     // Gets the water with the given id
     getWater : function (id) {
