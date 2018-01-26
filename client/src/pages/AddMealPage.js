@@ -167,10 +167,11 @@ class AddMealPage extends Component {
                 )
               })}
           </div> */}
-          <div>
+          
+        </Row>
+        <div>
             <NutritionixResultsDisplay nutritionixResults={this.state.nutritionixResults}/>
           </div>
-        </Row>
       </div>
     );
   }

@@ -1,7 +1,5 @@
-const apiConfig = require ( '../client/src/utils/API_Keys');
+const apiConfig = require('../client/src/utils/API_Keys');
 const axios = require('axios');
-
-
 
 module.exports = {
   search(req, res) {
