@@ -85,6 +85,9 @@ class AddMealPage extends Component {
 
     return (
       <div>
+        <div>
+          <SearchComponent.SearchBar/>
+        </div>
         <Row>
           <div className="col s6 ">
             <form onSubmit={this.handleFoodSubmit}>
@@ -170,9 +173,7 @@ class AddMealPage extends Component {
           </div> */}
           
         </Row>
-        <div>
-            <SearchComponent/>
-        </div>
+       
         <div>
             <NutritionixResultsDisplay nutritionixResults={this.state.nutritionixResults}/>
         </div>
