@@ -4,6 +4,7 @@ import './App.css';
 import NavBar from './components/Navbar/Navbar';
 import LandingPage from './pages/LandingPage';
 import UserDashboard from './pages/UserDashboard';
+import UserAboutPage from './pages/UserAboutPage';
 import AddMealPage from './pages/AddMealPage';
 import UserSettingsPage from './pages/UserSettingsPage';
 import FoodstoAvoid from './pages/FoodstoAvoid';
@@ -36,6 +37,7 @@ class App extends Component {
                   {/* Pages below here need to be completed */}
                   <Route exact path='/user/nutritionReport' component={UserNutritionReport} />
                   <Route exact path='/user/notes' component={UserNotesPage} />
+                  <Route exact path='/user/about' component={UserAboutPage} />
                   <Route exact path='/article' component={HealthArticle} />
                   <Route component={routeErrorPage}/>
 
