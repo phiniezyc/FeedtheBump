@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Collection, CollectionItem, Row, Icon} from 'react-materialize';
+import '../styles/foodsToAvoid.css';
 
 class FoodstoAvoid extends Component {
 
