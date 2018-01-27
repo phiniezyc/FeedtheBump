@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './SearchComponent.css';
+import API from '../../utils/API';
 // import axios from 'axios';
 
 class SearchBar extends Component {
@@ -16,12 +17,8 @@ class SearchBar extends Component {
       this.passSearchTerm();
   }
   passSearchTerm = () => {
-    //   let searchTerm = this.state.input;
-    //   axios.post('/api/nutritionix/searchTerm',(req, res)=>{
-    //       searchTerm;
-    //   })
-    //  .then(console.log(searchTerm));
-
+    API.sendUserSearchInput({input: this.state.input})
+    .then(console.log(this.state.input))
   }
 
   render() {
@@ -30,9 +27,9 @@ class SearchBar extends Component {
         {/* we can use this.state.input to reference but don't use to set!use setState */}
         <h5> {this.state.input} </h5>
         <div className='inputDiv'>
-        <form method="POST" action='/api/nutritionix/searchTerm'>
+        <form >
         <input onChange={event => this.setState({ input: event.target.value })} type='text' id='search' name='search'/>
-        <button onClick={event => console.log("Submit button works")} className="btn btn-small waves-effect waves-light" type="submit" name="submit"> SUBMIT </button>
+        <button onClick={this.passSearchTerm} className="btn btn-small waves-effect waves-light" type="submit" name="submit"> SUBMIT </button>
         </form>
         </div>
       </div>
