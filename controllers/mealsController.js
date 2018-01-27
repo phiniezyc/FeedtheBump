@@ -9,8 +9,11 @@ module.exports = {
   find(req, res) {
     db
       .Meal
-      .find({created_on: {$gte: startOfToday}}, function (err, docs));
-   },
+      .find({created_on: {$gte: startOfToday}})
+      .where('created_on')
+      .gt(startO‌​fToday)
+      .exec(function (err, docs);
+  },
 
   findAll(req, res) {
     db
