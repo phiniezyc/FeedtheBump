@@ -1,7 +1,17 @@
 const db = require('../models');
+const now = new Date();
+const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 
-// Defining methods for the mealssController
+// Defining methods for the mealsController
+
 module.exports = {
+
+  find(req, res) {
+    db
+      .Meal
+      .find({created_on: {$gte: startOfToday}}, function (err, docs));
+   },
+
   findAll(req, res) {
     db
       .Meal
