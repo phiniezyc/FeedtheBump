@@ -6,7 +6,7 @@ import 'react-day-picker/lib/style.css';
 
 import DatePicker from '../components/DatePicker/DatePicker';
 
-class UserSettings extends Component {
+class UserSettingsPage extends Component {
     constructor(props) {
         super(props);
         this.state = {value: ''};
@@ -48,4 +48,4 @@ class UserSettings extends Component {
     }
 }
 
-export default UserSettings;
+export default UserSettingsPage;
