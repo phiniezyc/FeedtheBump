@@ -14,6 +14,7 @@ class UserDashboard extends Component {
     componentDidMount() {
         this.loadMeals();
         this.loadWaters();
+        // this.filterTotalDailyCalories();
     }
     loadMeals() {
         API
@@ -31,12 +32,28 @@ class UserDashboard extends Component {
         // console.log(this.state.totalMeals);
     }
 
+    filterTotalDailyCalories = () => {
+        const TotalDailyCalories = (this.state.totalMeals || []).reduce((sum, meal) => {
+            return sum += meal.calories;
+        }, 0) 
+          console.log(`Total Calories: ${TotalDailyCalories}`); 
+    }
+
+
     render() {
         console.log(this.state.totalMeals);
         console.log(this.state.totalWaters);
+        // this.filterTotalDailyCalories();
 
         return (
             <div>
+                
+                <div>
+                    <h1>{`Calorie Test: ${(this.state.totalMeals || []).reduce((sum, meal) => {
+                        return sum += meal.calories;
+                    }, 0)}`}</h1>
+                    <h4>{this.filterTotalDailyCalories()}</h4>
+                </div>
                 <div>
                     <Row>
                         <div className='col s8 offset-s2'>
@@ -63,7 +80,7 @@ class UserDashboard extends Component {
                         <ol>
                         {this.state.totalMeals.map((meal, i) => {
                                 return (
-                                    <li>
+                                    <li key={i}>
                                     <div key={i}>
                                         <ol>
                                             <li key={meal.food}>{meal.food}</li>
