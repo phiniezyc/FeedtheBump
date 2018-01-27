@@ -1,33 +1,27 @@
-const axios = require("axios");
+const apiConfig = require('../client/src/utils/API_Keys');
+const axios = require('axios');
+
+
 
 module.exports = {
-    search: function (req, res) {
-        const searchTerm = "q=butter";
-        const url = "https://api.nal.usda.gov/ndb/nutrients/?format=json&";
-        const apiKey = "&api_key=Dmu1LQGkpd52KRfzyfeM";
-        const rest = "ZAPW6blrxrdnmVIubwK6&nutrients=205&nutrients=204&nutrients=208&nutrients=269";
-        // const search = `https://api.nal.usda.gov/ndb/nutrients/?format=json&
-        // q=${searchTerm}&api_key=Dmu1LQGkpd52KRfzyfeM` +
-        // "ZAPW6blrxrdnmVIubwK6&nutrients=205&nutrients=204&nutrients=208&nutrients=269"
-        // ;
-        const search = url + searchTerm + apiKey + rest;
-        
-        
-        
+  search(req, res) {
+    const id = apiConfig.nutritionixId;
+    const api_key = apiConfig.nutritionixAPIKey;
+    const searchTerm = `apple`;
+    const url = `https://api.nutritionix.com/v1_1/search/${searchTerm}?results=0%3A20&cal_min=0&cal_max=50000&fields=*`
 
-        axios
-            .get(search)
-            .then(response => {
-                console.log(response.data["report"]["foods"][0]);
+    const search = `${url}${id}${api_key}`
 
-                res.send(response.data);
+    axios
+      .get(search)
+      .then((response) => {
+        // console.log(response.data.hits[0].fields.item_name);
 
-            })
-            .catch(err => {
-                console.log(err);
-                res.send({err});
-            });
+        res.send(response.data);
+      })
+      .catch((err) => {
 
-    }
-
+        res.send({err});
+      });
+  }
 };
