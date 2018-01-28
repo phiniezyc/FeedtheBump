@@ -33,8 +33,9 @@ class UserDashboard extends Component {
     }
     //this function doesn't work, but my inline code does.  Not sure why?
     filterTotalDailyCalories = () => {
-       (this.state.totalMeals || []).reduce((sum, meal) => {
-            return sum += meal.calories;
+      return (this.state.totalMeals || []).reduce((sum, meal) => {
+       
+        return sum += meal.calories;
         }, 0)   
     }
 
@@ -48,6 +49,9 @@ class UserDashboard extends Component {
 
         return (
             <div>
+                <div>
+                    <h1>{this.filterTotalDailyCalories()}</h1>
+                </div>
                 
                 <div>
                     <h1>{`Total Calories: ${(this.state.totalMeals || []).reduce((sum, meal) => {
