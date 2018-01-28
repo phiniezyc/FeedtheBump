@@ -2,9 +2,16 @@
 .notes {
     font-size: xx-large;
     font-weight: bold;
+    color: #26a69a;
 }
 
 .date {
     font-size: x-large;
     font-weight: bold;
+    color: #26a69a;
+}
+
+::placeholder {
+    font-weight: bold;
+    color: #26a69a;
 }
