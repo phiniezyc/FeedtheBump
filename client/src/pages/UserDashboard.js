@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Collection, CollectionItem, Row} from 'react-materialize';
 import API from '../utils/API';
 
+import MealDashboard from '../components/UserDashboard/MealDashboard';
+
 class UserDashboard extends Component {
     constructor(props) {
         super(props)
@@ -71,6 +73,7 @@ class UserDashboard extends Component {
                 </div>
                 <div>
                     <Row>
+                        <MealDashboard/>
                         <div className='col s8 offset-s2'>
                             <Collection header='Daily Diary'>
                                 <CollectionItem href='#'>Breakfast</CollectionItem>
