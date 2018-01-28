@@ -39,6 +39,13 @@ class UserDashboard extends Component {
         }, 0)   
     }
 
+    filterTotalDailyProtein = () => {
+        return (this.state.totalMeals || []).reduce((sum, meal) => {
+       
+            return sum += meal.protein;
+            }, 0) 
+    }
+
 
     render() {
         console.log(this.state.totalMeals);
@@ -49,6 +56,9 @@ class UserDashboard extends Component {
 
         return (
             <div>
+                <div>
+                    <h1>{`Total Protein: ${this.filterTotalDailyProtein()}`}</h1>
+                </div>
                 <div>
                     <h1>{this.filterTotalDailyCalories()}</h1>
                 </div>
@@ -90,7 +100,10 @@ class UserDashboard extends Component {
                                         <ol>
                                             <li key={meal.food}>{meal.food}</li>
                                             <li key={meal.calories}>{meal.calories}</li>
-                                            <li key={meal.meal}>{meal.meal}</li>
+                                            <li key={meal.protein}>{meal.protein}</li>
+                                            <li key={meal.calcium}>{meal.calcium}</li>
+                                            <li key={meal.iron}>{meal.iron}</li>
+                                            <li key={meal.id}>{meal.meal}</li>
                                             <li key={meal.date}>{meal.date}</li>
                                         </ol>
                                     </div>
