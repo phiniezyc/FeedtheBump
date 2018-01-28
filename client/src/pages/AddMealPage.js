@@ -14,8 +14,11 @@ class AddMealPage extends Component {
       nutritionixResults: {},
       food: 'No food entered',
       calories: 'No calories entered',
+      protein: 'no protein submitted',
+      calcium: 'no calcium submitted',
+      iron: 'no iron submitted',
       meal: 'No meal type entered',
-      water: 'no water submitted'
+      water: 'no water submitted',
     };
 
     this.handleFoodSubmit = this
@@ -31,13 +34,13 @@ class AddMealPage extends Component {
     this.loadMeals();
     this.loadWaters();
     this.loadNutritionixResults();
-
+    
   }
 
   loadMeals() {
     API
       .getMeals()
-      .then(res => this.setState({totalMeals: res.data, food: '', calories: '', meal: '', date: ''}))
+      .then(res => this.setState({totalMeals: res.data, food: '', calories: '', protein: '', calcium: '', iron: '', meal: '', date: ''}))
       .catch(err => console.log(err));
     // console.log(this.state.totalMeals);
   }
@@ -54,7 +57,7 @@ class AddMealPage extends Component {
     // const data = this.state; console.log(data);
     if (this.state.food && this.state.calories && this.state.meal) {
       API
-        .saveMeal({food: this.state.food, calories: this.state.calories, meal: this.state.meal})
+        .saveMeal({food: this.state.food, calories: this.state.calories, protein: this.state.protein, calcium: this.state.calcium, iron: this.state.iron, meal: this.state.meal})
         .then(res => this.loadMeals())
         .catch(err => console.log(err));
     }
@@ -81,13 +84,14 @@ class AddMealPage extends Component {
     console.log(this.state.totalMeals);
     console.log(this.state.totalWaters);
     // console.log(`Nutritionix Data:${this.state.nutritionixResults}`);
-
-
     return (
       <div>
+        <div>
+          <SearchComponent.SearchBar/>
+        </div>
         <Row>
           <div className="col s6 ">
-            <form onSubmit={this.handleFoodSubmit}>
+            <form >
               <h5>Add Food</h5>
 
               <Input
@@ -100,30 +104,46 @@ class AddMealPage extends Component {
                 s={12}
                 label="Add Calories"
                 placeholder="Calories"/>
+                <Input
+                onChange={event => this.setState({protein: event.target.value})}
+                s={12}
+                label="Add Protein"
+                placeholder="Protein"/>
+                <Input
+                onChange={event => this.setState({calcium: event.target.value})}
+                s={12}
+                label="Add Calcium"
+                placeholder="Calcium"/>
+                <Input
+                onChange={event => this.setState({iron: event.target.value})}
+                s={12}
+                label="Add Iron"
+                placeholder="Iron"/>
+
 
               <Input
                 onChange={event => this.setState({meal: event.target.value})}
                 name="group1"
                 type="radio"
-                value="breakfast"
+                value="Breakfast"
                 label="Breakfast"/>
               <Input
                 onChange={event => this.setState({meal: event.target.value})}
                 name="group1"
                 type="radio"
-                value="lunch"
+                value="Lunch"
                 label="Lunch"/>
               <Input
                 onChange={event => this.setState({meal: event.target.value})}
                 name="group1"
                 type="radio"
-                value="dinner"
+                value="Dinner"
                 label="Dinner"/>
               <Input
                 onChange={event => this.setState({meal: event.target.value})}
                 name="group1"
                 type="radio"
-                value="snack"
+                value="Snack"
                 label="Snack"/>
               <div className="col s4">
                 <button
@@ -170,9 +190,7 @@ class AddMealPage extends Component {
           </div> */}
           
         </Row>
-        <div>
-            <SearchComponent/>
-        </div>
+       
         <div>
             <NutritionixResultsDisplay nutritionixResults={this.state.nutritionixResults}/>
         </div>
