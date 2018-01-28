@@ -1,6 +1,7 @@
 .nutrient-titles {
     display: flex;
     justify-content: flex-end;
+    margin-left: 5%;
 }
 
 .calories {
@@ -23,6 +24,14 @@
     display: flex;
 }
 
+.meal-container:nth-child(even) {
+    background-color: #BCDD5A;
+}
+
+.meal-container:nth-child(odd) {
+    background-color: #80C31C;
+}
+
 .breakfast, .lunch, .dinner, .snacks {
     flex: 1;
 }
@@ -30,12 +39,14 @@
 .nutrient-count {
     flex: 4;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
 
 }
 
 .value {
     flex: 1;
+    margin-left: 5%;
+    color: white;
 }
 
 .breakfast {
@@ -55,7 +66,7 @@
 }
 
 .dinner {
-    background-color: #578314;
+    background-color: #BCDD5A;
     padding: 10px 0 10px 0;
     margin-right: 5px;
     margin-bottom: 5px;
@@ -63,7 +74,7 @@
 }
 
 .snacks {
-    background-color: #FBB36B;
+    background-color: #80C31C;
     padding: 10px 0 10px 0;
     margin-right: 5px;
     margin-bottom: 5px;
