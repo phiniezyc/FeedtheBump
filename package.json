@@ -26,10 +26,12 @@
     "auth0-js": "^9.1.0",
     "axios": "^0.17.1",
     "body-parser": "^1.18.2",
+    "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.2",
     "moment-timezone": "^0.5.14",
     "mongoose": "^4.13.9",
     "react-day-picker": "^7.0.7",
-    "react-moment": "^0.7.0"
+    "react-moment": "^0.7.0",
+    "request": "^2.83.0"
   }
 }
