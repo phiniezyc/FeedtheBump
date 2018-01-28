@@ -1,4 +1,10 @@
 /* The goal is to get the Notes header on the left side and the Date on the right */
-.notes-date {
-    justify-content: space-between;
+.notes {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.date {
+    font-size: x-large;
+    font-weight: bold;
 }
