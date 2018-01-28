@@ -38,8 +38,8 @@ export default {
         return axios.post("/api/water", waterData);
     },
 
-    sendUserSearchInput: function(userSearchInput) {
-        return axios.post('/api/searchInput', userSearchInput)
+    sendUserSearchInput: function(search) {
+        return axios.post('/user/addMeal/', + search)
     },
 
     //gets articles
