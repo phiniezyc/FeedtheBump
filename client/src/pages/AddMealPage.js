@@ -31,7 +31,7 @@ class AddMealPage extends Component {
     this.loadMeals();
     this.loadWaters();
     this.loadNutritionixResults();
-
+    
   }
 
   loadMeals() {
@@ -85,9 +85,12 @@ class AddMealPage extends Component {
 
     return (
       <div>
+        <div>
+          <SearchComponent.SearchBar/>
+        </div>
         <Row>
           <div className="col s6 ">
-            <form onSubmit={this.handleFoodSubmit}>
+            <form >
               <h5>Add Food</h5>
 
               <Input
@@ -170,9 +173,7 @@ class AddMealPage extends Component {
           </div> */}
           
         </Row>
-        <div>
-            <SearchComponent/>
-        </div>
+       
         <div>
             <NutritionixResultsDisplay nutritionixResults={this.state.nutritionixResults}/>
         </div>

@@ -7,13 +7,14 @@ class UserDashboard extends Component {
         super(props)
         this.state = {
             totalMeals: [],
-            totalWaters: []
+            totalWaters: [],
         };
     }
 
     componentDidMount() {
         this.loadMeals();
         this.loadWaters();
+         this.filterTotalDailyCalories();
     }
     loadMeals() {
         API
@@ -30,13 +31,34 @@ class UserDashboard extends Component {
             .catch(err => console.log(err));
         // console.log(this.state.totalMeals);
     }
+    //this function doesn't work, but my inline code does.  Not sure why?
+    filterTotalDailyCalories = () => {
+      return (this.state.totalMeals || []).reduce((sum, meal) => {
+       
+        return sum += meal.calories;
+        }, 0)   
+    }
+
 
     render() {
         console.log(this.state.totalMeals);
         console.log(this.state.totalWaters);
+        
+        // this.filterTotalDailyCalories();
+       
 
         return (
             <div>
+                <div>
+                    <h1>{this.filterTotalDailyCalories()}</h1>
+                </div>
+                
+                <div>
+                    <h1>{`Total Calories: ${(this.state.totalMeals || []).reduce((sum, meal) => {
+                        return sum += meal.calories;
+                    }, 0)}`}</h1>
+                    
+                </div>
                 <div>
                     <Row>
                         <div className='col s8 offset-s2'>
@@ -63,7 +85,7 @@ class UserDashboard extends Component {
                         <ol>
                         {this.state.totalMeals.map((meal, i) => {
                                 return (
-                                    <li>
+                                    <li key={i}>
                                     <div key={i}>
                                         <ol>
                                             <li key={meal.food}>{meal.food}</li>
