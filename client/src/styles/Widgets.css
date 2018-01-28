@@ -1,0 +1,78 @@
+.nutrient-titles {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.calories {
+    flex-basis: 20%;
+}
+
+.calcium {
+    flex-basis: 20%;
+}
+
+.iron {
+    flex-basis: 20%;
+}
+
+.protein {
+    flex-basis: 20%;
+}
+
+.meal-container {
+    display: flex;
+}
+
+.breakfast, .lunch, .dinner, .snacks {
+    flex: 1;
+}
+
+.nutrient-count {
+    flex: 4;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.value {
+    flex: 1;
+}
+
+.breakfast {
+    background-color: #BCDD5A;
+    padding: 10px 0 10px 0;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.lunch {
+    background-color: #80C31C;
+    padding: 10px 0 10px 0;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.dinner {
+    background-color: #578314;
+    padding: 10px 0 10px 0;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.snacks {
+    background-color: #FBB36B;
+    padding: 10px 0 10px 0;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+h6 {
+    font-weight: lighter;
+    font-size: large;
+    color: white;
+    margin: 10px;
+}
