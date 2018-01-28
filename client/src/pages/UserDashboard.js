@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Collection, CollectionItem, Row} from 'react-materialize';
 import API from '../utils/API';
+import '../styles/Widgets.css';
+
 
 import MealDashboard from '../components/UserDashboard/MealDashboard';
 

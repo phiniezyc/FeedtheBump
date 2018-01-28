@@ -13,13 +13,13 @@ class MealDashboard extends Component {
             widgets: {
                 Meal: {
                     type: Meal,
-                    title: 'Breakfast',
+                    title: 'Daily Diary',
                 }
             },
             layout: {
                 rows: [{
                     columns: [{
-                        className: 'col s6 offset-s2',
+                        className: 'col s8 offset-s2',
                         widgets: [{key: 'Meal'}],
                     }],
                 }],
