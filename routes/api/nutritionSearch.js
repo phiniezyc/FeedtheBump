@@ -7,4 +7,6 @@ router
   .get(nutritionSearchController.search)
   // .post(nutritionSearchController.create);
 
+router.route("/userSearch")
+
 module.exports = router;
