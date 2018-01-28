@@ -1,0 +1,14 @@
+.menu-bar{
+    background-color: #f06660;
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 10px;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+.ftb-button {
+    background-color: darkorange;
+}
