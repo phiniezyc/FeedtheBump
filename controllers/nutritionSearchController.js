@@ -1,7 +1,59 @@
 const apiConfig = require('../client/src/utils/API_Keys');
 const axios = require('axios');
 
+// const express = require('express');
+// const app = express();
 
+
+
+// Postman returns this when performing get from this url:
+// {
+//   "message": "Cast to ObjectId failed for value \"search\" at path \"_id\" for model \"Meal\"",
+//   "name": "CastError",
+//   "stringValue": "\"search\"",
+//   "kind": "ObjectId",
+//   "value": "search",
+//   "path": "_id"
+// }
+// app.get("/api/meals/search", (req,res)=>{
+//   res.json(req.query);
+// })
+
+// app.get("/user/addMeal", (req, res) =>{
+//   res.json(req.query);
+// })
+
+
+// axios.get('/').then (function(response){
+//   console.log(response);
+// })
+
+// });app.get('/', function(req, res){
+//   res.send('search: ' + req.query);
+// });
+
+//  axios.get("/user/addMeals").then(function(response){
+//   console.log(response);
+// }).catch(function(response){
+//   console.log(response);
+// })
+
+  // let param = req.query;
+  // console.log(param);
+  //  res.end();
+
+
+
+
+
+
+  // axios.get('/user/addMeal')
+  //   .then(res =>{
+  //     console.log(res.data) //returns the value of the binary
+  //       })
+  //   .catch(error => {
+  //       console.log(error)
+  //   })
 
 
 module.exports = {

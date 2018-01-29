@@ -5,9 +5,11 @@ const apiRoutes = require("./api");
 // API Routes
 router.use("/api", apiRoutes);
 
+
+
 // If no API routes are hit, send the React app
 router.use( (req, res) => {
-    res.sendFile(path.join(__dirname, "../client/public/index.html")); //changed from "../client/build/index.html"
+    res.sendFile(path.join(__dirname, "../client/build/index.html")); //changed back to build from "../client/public/index.html" 
 });
 
 module.exports = router;    

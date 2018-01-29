@@ -29,10 +29,10 @@ class App extends Component {
                   {/* <Header /> */}
                   <Route exact path='/' component={LandingPage} />
                   <Route exact path='/user/dashboard' component={UserDashboard} />
+                  {/*<Route exact path='/user/addMeal/:search?' component={AddMealPage} />*/}
                   <Route exact path='/user/addMeal' component={AddMealPage} />
                   <Route exact path='/user/settings' component={UserSettingsPage} />
                   <Route exact path='/foodstoavoid' component={FoodstoAvoid} />
-
 
                   {/* Pages below here need to be completed */}
                   <Route exact path='/user/nutritionReport' component={UserNutritionReport} />

@@ -11,14 +11,14 @@ class UserDashboard extends Component {
         super(props)
         this.state = {
             totalMeals: [],
-            totalWaters: [],
+            totalWaters: []
         };
     }
 
     componentDidMount() {
         this.loadMeals();
         this.loadWaters();
-         this.filterTotalDailyCalories();
+        this.filterTotalDailyCalories();
     }
     loadMeals() {
         API
@@ -37,41 +37,52 @@ class UserDashboard extends Component {
     }
     //this function doesn't work, but my inline code does.  Not sure why?
     filterTotalDailyCalories = () => {
-      return (this.state.totalMeals || []).reduce((sum, meal) => {
-       
-        return sum += meal.calories;
-        }, 0)   
+        return (this.state.totalMeals || []).reduce((sum, meal) => {
+
+            return sum += meal.calories;
+        }, 0)
     }
 
     filterTotalDailyProtein = () => {
         return (this.state.totalMeals || []).reduce((sum, meal) => {
-       
+
             return sum += meal.protein;
-            }, 0) 
+        }, 0)
     }
 
+    filterTotalDailyCalcium = () => {
+        return (this.state.totalMeals || []).reduce((sum, meal) => {
 
+            return sum += meal.calcium;
+        }, 0)
+    }
+
+    filterTotalDailyIron = () => {
+        return (this.state.totalMeals || []).reduce((sum, meal) => {
+
+            return sum += meal.iron;
+        }, 0)
+    }
     render() {
         console.log(this.state.totalMeals);
         console.log(this.state.totalWaters);
-        
-        // this.filterTotalDailyCalories();
-       
 
         return (
             <div>
+
+                <div>
+                    <h1>{`Total Iron: ${this.filterTotalDailyIron()}`}</h1>
+                </div>
+                <div>
+                    <h1>{`Total Calcium: ${this.filterTotalDailyCalcium()}`}</h1>
+                </div>
                 <div>
                     <h1>{`Total Protein: ${this.filterTotalDailyProtein()}`}</h1>
                 </div>
+
                 <div>
-                    <h1>{this.filterTotalDailyCalories()}</h1>
-                </div>
-                
-                <div>
-                    <h1>{`Total Calories: ${(this.state.totalMeals || []).reduce((sum, meal) => {
-                        return sum += meal.calories;
-                    }, 0)}`}</h1>
-                    
+                    <h1>{`Total Calories: ${this.filterTotalDailyCalories()}`}</h1>
+
                 </div>
                 <div>
                     <Row>
@@ -98,23 +109,26 @@ class UserDashboard extends Component {
                 <div className='mealsDiv'>
                     <div className='meals'>
                         <ol>
-                        {this.state.totalMeals.map((meal, i) => {
-                                return (
-                                    <li key={i}>
-                                    <div key={i}>
-                                        <ol>
-                                            <li key={meal.food}>{meal.food}</li>
-                                            <li key={meal.calories}>{meal.calories}</li>
-                                            <li key={meal.protein}>{meal.protein}</li>
-                                            <li key={meal.calcium}>{meal.calcium}</li>
-                                            <li key={meal.iron}>{meal.iron}</li>
-                                            <li key={meal.id}>{meal.meal}</li>
-                                            <li key={meal.date}>{meal.date}</li>
-                                        </ol>
-                                    </div>
-                                    </li>
-                                )
-                            })}
+                            {this
+                                .state
+                                .totalMeals
+                                .map((meal, i) => {
+                                    return (
+                                        <li key={i}>
+                                            <div key={i}>
+                                                <ol>
+                                                    <li key={meal.food}>{meal.food}</li>
+                                                    <li key={meal.calories}>{meal.calories}</li>
+                                                    <li key={meal.protein}>{meal.protein}</li>
+                                                    <li key={meal.calcium}>{meal.calcium}</li>
+                                                    <li key={meal.iron}>{meal.iron}</li>
+                                                    <li key={meal.id}>{meal.meal}</li>
+                                                    <li key={meal.date}>{meal.date}</li>
+                                                </ol>
+                                            </div>
+                                        </li>
+                                    )
+                                })}
                         </ol>
                     </div>
                 </div>
