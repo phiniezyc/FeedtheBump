@@ -42,7 +42,7 @@ class AddMealPage extends Component {
       .getMeals()
       .then(res => this.setState({totalMeals: res.data, food: '', calories: '', protein: '', calcium: '', iron: '', meal: '', date: ''}))
       .catch(err => console.log(err));
-    // console.log(this.state.totalMeals);
+    
   }
 
   loadWaters() {
@@ -50,11 +50,10 @@ class AddMealPage extends Component {
       .getWaters()
       .then(res => this.setState({totalWaters: res.data, water: ''}))
       .catch(err => console.log(err));
-    // console.log(this.state.totalMeals);
+  
   }
 
   handleFoodSubmit() {
-    // const data = this.state; console.log(data);
     if (this.state.food && this.state.calories && this.state.meal) {
       API
         .saveMeal({food: this.state.food, calories: this.state.calories, protein: this.state.protein, calcium: this.state.calcium, iron: this.state.iron, meal: this.state.meal})
@@ -64,11 +63,9 @@ class AddMealPage extends Component {
   }
 
   handleWaterSubmit() {
-    // const waterData = this.state.water; console.log(waterData);
-
     if (this.state.water) {
       API.saveWater({water: this.state.water})
-      //   .then(res => this.loadBooks())
+        .then(res => this.loadWaters())
         .catch(err => console.log(err));
     }
   }
@@ -76,14 +73,14 @@ class AddMealPage extends Component {
   loadNutritionixResults = () => {
     API
       .getNutritionixResults()
-      .then(res => this.setState({nutritionixResults: res.data})) //this is an object so had to convert to a string instead. Is this right?
+      .then(res => this.setState({nutritionixResults: res.data})) 
       .catch(err => console.log(err));
   }
 
   render() {
     console.log(this.state.totalMeals);
     console.log(this.state.totalWaters);
-    // console.log(`Nutritionix Data:${this.state.nutritionixResults}`);
+    
     return (
       <div>
         <div>
@@ -175,20 +172,7 @@ class AddMealPage extends Component {
               </div>
             </form>
           </div>
-          {/* <div className='meals'>
-            {this.state.totalMeals.map((meal, i) =>{
 
-                return (
-                  <div key={i}>
-                  <li key={meal.food}>{meal.food}</li>
-                  <li key={meal.calories}>{meal.calories}</li>
-                  <li key={meal.meal}>{meal.meal}</li>
-                  <li key={meal.date}>{meal.date}</li>
-                  </div>
-                )
-              })}
-          </div> */}
-          
         </Row>
        
         <div>

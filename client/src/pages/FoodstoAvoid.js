@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Collection, CollectionItem, Row, Icon} from 'react-materialize';
+import { Collection, CollectionItem, Row, Icon } from 'react-materialize';
 
 class FoodstoAvoid extends Component {
 
