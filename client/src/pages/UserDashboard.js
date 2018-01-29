@@ -31,7 +31,7 @@ class UserDashboard extends Component {
             .catch(err => console.log(err));
         // console.log(this.state.totalMeals);
     }
-    //this function doesn't work, but my inline code does.  Not sure why?
+    
     filterTotalDailyCalories = () => {
         return (this.state.totalMeals || []).reduce((sum, meal) => {
 
