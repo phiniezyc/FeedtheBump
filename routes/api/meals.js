@@ -13,4 +13,6 @@ router
   .put(mealsController.update)
   .delete(mealsController.remove);
 
+// router.route('/search')
+
 module.exports = router;

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Row } from 'react-materialize';
 
+import ArticleDisplay from '../components/Article/ArticleDisplay';
+
 //once the API is working, and we see how the articles are delivered, we'll need to adapt layout.
 class HealthArticle extends Component {
     constructor(props) {
@@ -14,22 +16,12 @@ class HealthArticle extends Component {
         }
 
         componentDidMount() {
-        //     this.loadArticles();
-        // }
-        //
-        //     loadArticles() {
-        //         API.getArticles({ articles: this.state.articles })
-        //             .then(res => console.log(res))
-        //             .catch(err => console.log(err));
-        //     }
+
 
         axios.get('https://healthfinder.gov/FreeContent/developer/Search.json?api_key=rlaulqdetivhvqxo&keyword=pregnancy')
             .then(res => {
                 console.log(res);
                 this.setState({results: res.data});
-
-                // );
-
 
             })
             .catch(error => {
@@ -51,11 +43,10 @@ class HealthArticle extends Component {
 
                 <Row>
                     <div className='articles'>
-                        <h2>Today's Article</h2>
                         <div id="health-info">
                             {
                                 topics.map((el, index) => (
-                                    <p key = {index}> {el.Title} </p>
+                                    <h4 key = {index}> {el.Title} </h4>
                                 ))
                             }
                         </div>
@@ -63,6 +54,9 @@ class HealthArticle extends Component {
                 </Row>
                 <div>
                     <h1>{this.state.articles}</h1>
+                </div>
+                <div>
+                    <ArticleDisplay/>
                 </div>
             </div>
         );
