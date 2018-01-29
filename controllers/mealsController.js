@@ -1,11 +1,23 @@
 const db = require('../models');
+const now = new Date();
+const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 
-// Defining methods for the mealssController
+
+// Defining methods for the mealsController
+
 module.exports = {
+
+  // find(res) {
+  //   db
+  //     .Meal
+  //     .find({"date": {$gte: startOfToday}})
+  //     .then(dbModel => res.json(dbModel))
+  //     .catch(err => res.status(422).json(err));
+  // },
   findAll(req, res) {
     db
       .Meal
-      .find(req.query)
+      .find({"date": {$gte: startOfToday}})
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));

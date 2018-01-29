@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './SearchComponent.css';
 import API from '../../utils/API';
-  import axios from 'axios';
+import axios from 'axios';
 
 class SearchBar extends Component {
   constructor(props) {
