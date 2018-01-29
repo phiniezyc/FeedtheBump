@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import {Collection, CollectionItem, Row} from 'react-materialize';
 import API from '../utils/API';
-import '../styles/Widgets.css';
+import '../components/UserDashboard/UserDashboard.css';
 
 
 import MealDashboard from '../components/UserDashboard/MealDashboard';
+import TotalsDashboard from "../components/UserDashboard/TotalsDashboard";
 
 class UserDashboard extends Component {
     constructor(props) {
@@ -18,8 +19,8 @@ class UserDashboard extends Component {
     componentDidMount() {
         this.loadMeals();
         this.loadWaters();
-        this.filterTotalDailyCalories();
     }
+
     loadMeals() {
         API
             .getMeals()
@@ -35,58 +36,18 @@ class UserDashboard extends Component {
             .catch(err => console.log(err));
         // console.log(this.state.totalMeals);
     }
-    //this function doesn't work, but my inline code does.  Not sure why?
-    filterTotalDailyCalories = () => {
-        return (this.state.totalMeals || []).reduce((sum, meal) => {
 
-            return sum += meal.calories;
-        }, 0)
-    }
-
-    filterTotalDailyProtein = () => {
-        return (this.state.totalMeals || []).reduce((sum, meal) => {
-
-            return sum += meal.protein;
-        }, 0)
-    }
-
-    filterTotalDailyCalcium = () => {
-        return (this.state.totalMeals || []).reduce((sum, meal) => {
-
-            return sum += meal.calcium;
-        }, 0)
-    }
-
-    filterTotalDailyIron = () => {
-        return (this.state.totalMeals || []).reduce((sum, meal) => {
-
-            return sum += meal.iron;
-        }, 0)
-    }
     render() {
         console.log(this.state.totalMeals);
         console.log(this.state.totalWaters);
 
         return (
             <div>
-
-                <div>
-                    <h1>{`Total Iron: ${this.filterTotalDailyIron()}`}</h1>
-                </div>
-                <div>
-                    <h1>{`Total Calcium: ${this.filterTotalDailyCalcium()}`}</h1>
-                </div>
-                <div>
-                    <h1>{`Total Protein: ${this.filterTotalDailyProtein()}`}</h1>
-                </div>
-
-                <div>
-                    <h1>{`Total Calories: ${this.filterTotalDailyCalories()}`}</h1>
-
-                </div>
+                <TotalsDashboard/>
+                <MealDashboard/>
                 <div>
                     <Row>
-                        <MealDashboard/>
+                        {/*<MealDashboard/>*/}
                         <div className='col s8 offset-s2'>
                             <Collection header='Daily Diary'>
                                 <CollectionItem href='#'>Breakfast</CollectionItem>
