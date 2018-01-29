@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Meal = () => (
+const MealDashboard = () => (
     <div className="diary">
 
         <div className="nutrient-titles">
