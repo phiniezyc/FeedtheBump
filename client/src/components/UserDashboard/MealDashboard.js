@@ -33,34 +33,37 @@ class MealDashboard extends Component {
             .catch(err => console.log(err));
         // console.log(this.state.totalMeals);
     }
-    filterTotalDailyCalories = () => {
-        return (this.state.totalMeals || []).reduce((sum, meal) => {
 
-            return sum += meal.calories;
-        }, 0)
+    filterBreakfast = () => {
+        return (this.state.totalMeals || []).filter((meal) => {
+
+            return meal.meal === "Breakfast";
+        })
     }
 
-    filterTotalDailyProtein = () => {
-        return (this.state.totalMeals || []).reduce((sum, meal) => {
+    // console.log(filterBreakfast.toString());
 
-            return sum += meal.protein;
-        }, 0)
-    }
 
-    filterTotalDailyCalcium = () => {
-        return (this.state.totalMeals || []).reduce((sum, meal) => {
-
-            return sum += meal.calcium;
-        }, 0)
-    }
-
-    filterTotalDailyIron = () => {
-        return (this.state.totalMeals || []).reduce((sum, meal) => {
-
-            return sum += meal.iron;
-        }, 0)
-    }
-
+    // filterTotalDailyProtein = () => {
+    //     return (this.state.totalMeals || []).reduce((sum, meal) => {
+    //
+    //         return sum += meal.protein;
+    //     }, 0)
+    // }
+    //
+    // filterTotalDailyCalcium = () => {
+    //     return (this.state.totalMeals || []).reduce((sum, meal) => {
+    //
+    //         return sum += meal.calcium;
+    //     }, 0)
+    // }
+    //
+    // filterTotalDailyIron = () => {
+    //     return (this.state.totalMeals || []).reduce((sum, meal) => {
+    //
+    //         return sum += meal.iron;
+    //     }, 0)
+    // }
     render() {
         console.log(this.state.totalMeals);
         console.log(this.state.totalWaters);
@@ -69,52 +72,32 @@ class MealDashboard extends Component {
             <div className="container">
 
                 <div className='meal-card'>
-                    {this
-                        .state
-                        .totalMeals
-                        .map((meal, i) => {
+
+                            <div className='today-meals'>
+
+                                <Card className='cardDisplay' header={
+                                    <CardTitle reveal  image='' waves='light'/>}
+                                      title="Breakfast">
+
+                                    <div>
+                                        <p>{`Breakfast: ${this.filterBreakfast()}`}</p>
+                                    </div>
 
 
-                            return (
-                                <div className='today-meals'>
-                                    <Card className='cardDisplay' header={
-                                        <CardTitle reveal  image='' waves='light'/>}
-                                          title="Breakfast">
+                                            {/*<ul>*/}
+                                                {/*/!*<li key={meal.id}>{meal.meal}</li>*!/*/}
+                                                {/*/!*<li key={meal.food}>{meal.food}</li>*!/*/}
+                                                {/*/!*<li key={meal.calories}>{meal.calories}</li>*!/*/}
+                                                {/*/!*<li key={meal.protein}>{meal.protein}</li>*!/*/}
+                                                {/*/!*<li key={meal.calcium}>{meal.calcium}</li>*!/*/}
+                                                {/*/!*<li key={meal.iron}>{meal.iron}</li>*!/*/}
+                                                {/*/!*<li key={meal.date}>{meal.date}</li>*!/*/}
+                                            {/*</ul>*/}
+                                </Card>
 
-                                            <div key={i}>
-                                                <ul>
-                                                    {/*<li key={meal.id}>{meal.meal}</li>*/}
-                                                    <li key={meal.food}>{meal.food}</li>
-                                                    {/*<li key={meal.calories}>{meal.calories}</li>*/}
-                                                    {/*<li key={meal.protein}>{meal.protein}</li>*/}
-                                                    {/*<li key={meal.calcium}>{meal.calcium}</li>*/}
-                                                    {/*<li key={meal.iron}>{meal.iron}</li>*/}
-                                                    {/*<li key={meal.date}>{meal.date}</li>*/}
-                                                </ul>
-                                                {/*<ul>*/}
-                                                    {/*/!*<li key={meal.id}>{meal.meal}</li>*!/*/}
-                                                    {/*/!*<li key={meal.food}>{meal.food}</li>*!/*/}
-                                                    {/*/!*<li key={meal.calories}>{meal.calories}</li>*!/*/}
-                                                    {/*/!*<li key={meal.protein}>{meal.protein}</li>*!/*/}
-                                                    {/*/!*<li key={meal.calcium}>{meal.calcium}</li>*!/*/}
-                                                    {/*/!*<li key={meal.iron}>{meal.iron}</li>*!/*/}
-                                                    {/*/!*<li key={meal.date}>{meal.date}</li>*!/*/}
-                                                {/*</ul>*/}
-                                                {/*<ul>*/}
-                                                    {/*/!*<li key={meal.id}>{meal.meal}</li>*!/*/}
-                                                    {/*/!*<li key={meal.food}>{meal.food}</li>*!/*/}
-                                                    {/*/!*<li key={meal.calories}>{meal.calories}</li>*!/*/}
-                                                    {/*/!*<li key={meal.protein}>{meal.protein}</li>*!/*/}
-                                                    {/*/!*<li key={meal.calcium}>{meal.calcium}</li>*!/*/}
-                                                    {/*/!*<li key={meal.iron}>{meal.iron}</li>*!/*/}
-                                                    {/*/!*<li key={meal.date}>{meal.date}</li>*!/*/}
-                                                {/*</ul>*/}
-                                            </div>
-                                    </Card>
+                            </div>
 
-                                </div>
 
-                             )})}
                 </div>
             </div>
         )}}
