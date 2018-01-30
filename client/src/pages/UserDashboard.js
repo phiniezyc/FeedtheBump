@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import API from '../utils/API';
 import '../components/UserDashboard/UserDashboard.css';
 
-
 import TotalsDashboard from "../components/UserDashboard/TotalsDashboard";
 import MealDashboard from '../components/UserDashboard/MealDashboard';
 import WaterDashboard from '../components/UserDashboard/WaterDashboard';
@@ -38,6 +37,10 @@ class UserDashboard extends Component {
         // console.log(this.state.totalMeals);
     }
 
+    goToAddMealsPage = () => {
+        this.props.history.push("/user/addMeal");
+    }
+
     render() {
 
         return (
@@ -45,6 +48,7 @@ class UserDashboard extends Component {
                 <TotalsDashboard/>
                 <MealDashboard/>
                 <WaterDashboard/>
+
             </div>
         );
     }

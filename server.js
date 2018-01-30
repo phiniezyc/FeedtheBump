@@ -19,6 +19,7 @@ app.use(bodyParser.json());
 // both API and view
 app.use(routes);
 
+
 mongoose.Promise = global.Promise;
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/feedtheBump", {useMongoClient: true});
