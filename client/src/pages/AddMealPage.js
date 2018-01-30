@@ -18,7 +18,7 @@ class AddMealPage extends Component {
       calcium: 'no calcium submitted',
       iron: 'no iron submitted',
       meal: 'No meal type entered',
-      water: 'no water submitted',
+      water: 'no water submitted'
     };
 
     this.handleFoodSubmit = this
@@ -34,15 +34,24 @@ class AddMealPage extends Component {
     this.loadMeals();
     this.loadWaters();
     this.loadNutritionixResults();
-    
+
   }
 
   loadMeals() {
     API
       .getMeals()
-      .then(res => this.setState({totalMeals: res.data, food: '', calories: '', protein: '', calcium: '', iron: '', meal: '', date: ''}))
+      .then(res => this.setState({
+        totalMeals: res.data,
+        food: '',
+        calories: '',
+        protein: '',
+        calcium: '',
+        iron: '',
+        meal: '',
+        date: ''
+      }))
       .catch(err => console.log(err));
-    
+
   }
 
   loadWaters() {
@@ -50,13 +59,20 @@ class AddMealPage extends Component {
       .getWaters()
       .then(res => this.setState({totalWaters: res.data, water: ''}))
       .catch(err => console.log(err));
-  
+
   }
 
   handleFoodSubmit() {
     if (this.state.food && this.state.calories && this.state.meal) {
       API
-        .saveMeal({food: this.state.food, calories: this.state.calories, protein: this.state.protein, calcium: this.state.calcium, iron: this.state.iron, meal: this.state.meal})
+        .saveMeal({
+        food: this.state.food,
+        calories: this.state.calories,
+        protein: this.state.protein,
+        calcium: this.state.calcium,
+        iron: this.state.iron,
+        meal: this.state.meal
+      })
         .then(res => this.loadMeals())
         .catch(err => console.log(err));
     }
@@ -64,7 +80,8 @@ class AddMealPage extends Component {
 
   handleWaterSubmit() {
     if (this.state.water) {
-      API.saveWater({water: this.state.water})
+      API
+        .saveWater({water: this.state.water})
         .then(res => this.loadWaters())
         .catch(err => console.log(err));
     }
@@ -73,14 +90,14 @@ class AddMealPage extends Component {
   loadNutritionixResults = () => {
     API
       .getNutritionixResults()
-      .then(res => this.setState({nutritionixResults: res.data})) 
+      .then(res => this.setState({nutritionixResults: res.data}))
       .catch(err => console.log(err));
   }
 
   render() {
     console.log(this.state.totalMeals);
     console.log(this.state.totalWaters);
-    
+
     return (
       <div>
         <div>
@@ -101,22 +118,21 @@ class AddMealPage extends Component {
                 s={12}
                 label="Add Calories"
                 placeholder="Calories"/>
-                <Input
+              <Input
                 onChange={event => this.setState({protein: event.target.value})}
                 s={12}
                 label="Add Protein"
                 placeholder="Protein"/>
-                <Input
+              <Input
                 onChange={event => this.setState({calcium: event.target.value})}
                 s={12}
                 label="Add Calcium"
                 placeholder="Calcium"/>
-                <Input
+              <Input
                 onChange={event => this.setState({iron: event.target.value})}
                 s={12}
                 label="Add Iron"
                 placeholder="Iron"/>
-
 
               <Input
                 onChange={event => this.setState({meal: event.target.value})}
@@ -174,11 +190,11 @@ class AddMealPage extends Component {
           </div>
 
         </Row>
-       
+
         <div>
-            <NutritionixResultsDisplay nutritionixResults={this.state.nutritionixResults}/>
+          <NutritionixResultsDisplay nutritionixResults={this.state.nutritionixResults}/>
         </div>
-        
+
       </div>
     );
   }
