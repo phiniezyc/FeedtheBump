@@ -7,13 +7,14 @@ const nutritionSearch = require('./nutritionSearch');
 router.use('/meals', mealsRoutes);
 router.use('/water', waterRoutes);
 
-module.exports = router;
-router.use("/usda", nutritionSearch);
+
 router.use('/nutritionix', nutritionSearch);
 
-module.exports = router;
 
-
-// router.use("/routeToChange", routeToChangeRoutes);
+//route works now
+router.use('/searchInput/:id', (req, res) =>{
+    const id = "yes!"
+    res.send(id);
+})
 
 module.exports = router;

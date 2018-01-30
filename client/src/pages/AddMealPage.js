@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Row, Input} from 'react-materialize';
+import React, { Component } from 'react';
+import { Row, Input, Button } from 'react-materialize';
 import API from '../utils/API';
 import NutritionixResultsDisplay from '../components/NutritionixResultsDisplay/NutrionixReultsDisplay';
 import SearchComponent from '../components/SearchComponent/SearchComponent';
@@ -14,6 +14,9 @@ class AddMealPage extends Component {
       nutritionixResults: {},
       food: 'No food entered',
       calories: 'No calories entered',
+      protein: 'no protein submitted',
+      calcium: 'no calcium submitted',
+      iron: 'no iron submitted',
       meal: 'No meal type entered',
       water: 'no water submitted'
     };
@@ -37,9 +40,18 @@ class AddMealPage extends Component {
   loadMeals() {
     API
       .getMeals()
-      .then(res => this.setState({totalMeals: res.data, food: '', calories: '', meal: '', date: ''}))
+      .then(res => this.setState({
+        totalMeals: res.data,
+        food: '',
+        calories: '',
+        protein: '',
+        calcium: '',
+        iron: '',
+        meal: '',
+        date: ''
+      }))
       .catch(err => console.log(err));
-    // console.log(this.state.totalMeals);
+
   }
 
   loadWaters() {
@@ -47,25 +59,30 @@ class AddMealPage extends Component {
       .getWaters()
       .then(res => this.setState({totalWaters: res.data, water: ''}))
       .catch(err => console.log(err));
-    // console.log(this.state.totalMeals);
+
   }
 
   handleFoodSubmit() {
-    // const data = this.state; console.log(data);
     if (this.state.food && this.state.calories && this.state.meal) {
       API
-        .saveMeal({food: this.state.food, calories: this.state.calories, meal: this.state.meal})
+        .saveMeal({
+        food: this.state.food,
+        calories: this.state.calories,
+        protein: this.state.protein,
+        calcium: this.state.calcium,
+        iron: this.state.iron,
+        meal: this.state.meal
+      })
         .then(res => this.loadMeals())
         .catch(err => console.log(err));
     }
   }
 
   handleWaterSubmit() {
-    // const waterData = this.state.water; console.log(waterData);
-
     if (this.state.water) {
-      API.saveWater({water: this.state.water})
-      //   .then(res => this.loadBooks())
+      API
+        .saveWater({water: this.state.water})
+        .then(res => this.loadWaters())
         .catch(err => console.log(err));
     }
   }
@@ -73,21 +90,26 @@ class AddMealPage extends Component {
   loadNutritionixResults = () => {
     API
       .getNutritionixResults()
-      .then(res => this.setState({nutritionixResults: res.data})) //this is an object so had to convert to a string instead. Is this right?
+      .then(res => this.setState({nutritionixResults: res.data}))
       .catch(err => console.log(err));
   }
+
+  goToDashboardPage = () => {
+    this.props.history.push("/user/dashboard");
+}
 
   render() {
     console.log(this.state.totalMeals);
     console.log(this.state.totalWaters);
-    // console.log(`Nutritionix Data:${this.state.nutritionixResults}`);
-
 
     return (
       <div>
+        <div>
+          <SearchComponent.SearchBar/>
+        </div>
         <Row>
           <div className="col s6 ">
-            <form onSubmit={this.handleFoodSubmit}>
+            <form >
               <h5>Add Food</h5>
 
               <Input
@@ -100,30 +122,45 @@ class AddMealPage extends Component {
                 s={12}
                 label="Add Calories"
                 placeholder="Calories"/>
+              <Input
+                onChange={event => this.setState({protein: event.target.value})}
+                s={12}
+                label="Add Protein"
+                placeholder="Protein"/>
+              <Input
+                onChange={event => this.setState({calcium: event.target.value})}
+                s={12}
+                label="Add Calcium"
+                placeholder="Calcium"/>
+              <Input
+                onChange={event => this.setState({iron: event.target.value})}
+                s={12}
+                label="Add Iron"
+                placeholder="Iron"/>
 
               <Input
                 onChange={event => this.setState({meal: event.target.value})}
                 name="group1"
                 type="radio"
-                value="breakfast"
+                value="Breakfast"
                 label="Breakfast"/>
               <Input
                 onChange={event => this.setState({meal: event.target.value})}
                 name="group1"
                 type="radio"
-                value="lunch"
+                value="Lunch"
                 label="Lunch"/>
               <Input
                 onChange={event => this.setState({meal: event.target.value})}
                 name="group1"
                 type="radio"
-                value="dinner"
+                value="Dinner"
                 label="Dinner"/>
               <Input
                 onChange={event => this.setState({meal: event.target.value})}
                 name="group1"
                 type="radio"
-                value="snack"
+                value="Snack"
                 label="Snack"/>
               <div className="col s4">
                 <button
@@ -155,28 +192,16 @@ class AddMealPage extends Component {
               </div>
             </form>
           </div>
-          {/* <div className='meals'>
-            {this.state.totalMeals.map((meal, i) =>{
 
-                return (
-                  <div key={i}>
-                  <li key={meal.food}>{meal.food}</li>
-                  <li key={meal.calories}>{meal.calories}</li>
-                  <li key={meal.meal}>{meal.meal}</li>
-                  <li key={meal.date}>{meal.date}</li>
-                  </div>
-                )
-              })}
-          </div> */}
-          
         </Row>
         <div>
-            <SearchComponent/>
+        <Button onClick={this.goToDashboardPage} type="button">View Dashboard</Button> 
         </div>
+
         <div>
-            <NutritionixResultsDisplay nutritionixResults={this.state.nutritionixResults}/>
+          <NutritionixResultsDisplay nutritionixResults={this.state.nutritionixResults}/>
         </div>
-        
+
       </div>
     );
   }

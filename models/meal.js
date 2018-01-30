@@ -12,6 +12,21 @@ const mealSchema = new Schema({
         max: 10000,
         required: true
     },
+    protein: {
+        type: Number,
+        max: 100,
+        required: true
+    },
+    calcium: {
+        type: Number,
+        max: 100,
+        required: false
+    },
+    iron: {
+        type: Number,
+        max: 100,
+        required: false
+    },
     meal: {
         type: String,
         required: true

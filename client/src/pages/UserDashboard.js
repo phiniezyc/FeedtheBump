@@ -1,6 +1,12 @@
 import React, {Component} from 'react';
-import {Collection, CollectionItem, Row} from 'react-materialize';
+import {Collection, CollectionItem, Row, Button} from 'react-materialize';
 import API from '../utils/API';
+import '../components/UserDashboard/UserDashboard.css';
+
+
+
+import MealDashboard from '../components/UserDashboard/MealDashboard';
+import TotalsDashboard from "../components/UserDashboard/TotalsDashboard";
 
 class UserDashboard extends Component {
     constructor(props) {
@@ -15,6 +21,7 @@ class UserDashboard extends Component {
         this.loadMeals();
         this.loadWaters();
     }
+
     loadMeals() {
         API
             .getMeals()
@@ -31,14 +38,21 @@ class UserDashboard extends Component {
         // console.log(this.state.totalMeals);
     }
 
+    goToAddMealsPage = () => {
+        this.props.history.push("/user/addMeal");
+    }
+
     render() {
         console.log(this.state.totalMeals);
         console.log(this.state.totalWaters);
 
         return (
             <div>
+                <TotalsDashboard/>
+                <MealDashboard/>
                 <div>
                     <Row>
+                        {/*<MealDashboard/>*/}
                         <div className='col s8 offset-s2'>
                             <Collection header='Daily Diary'>
                                 <CollectionItem href='#'>Breakfast</CollectionItem>
@@ -61,22 +75,31 @@ class UserDashboard extends Component {
                 <div className='mealsDiv'>
                     <div className='meals'>
                         <ol>
-                        {this.state.totalMeals.map((meal, i) => {
-                                return (
-                                    <li>
-                                    <div key={i}>
-                                        <ol>
-                                            <li key={meal.food}>{meal.food}</li>
-                                            <li key={meal.calories}>{meal.calories}</li>
-                                            <li key={meal.meal}>{meal.meal}</li>
-                                            <li key={meal.date}>{meal.date}</li>
-                                        </ol>
-                                    </div>
-                                    </li>
-                                )
-                            })}
+                            {this
+                                .state
+                                .totalMeals
+                                .map((meal, i) => {
+                                    return (
+                                        <li key={i}>
+                                            <div key={i}>
+                                                <ol>
+                                                    <li key={meal.food}>{meal.food}</li>
+                                                    <li key={meal.calories}>{meal.calories}</li>
+                                                    <li key={meal.protein}>{meal.protein}</li>
+                                                    <li key={meal.calcium}>{meal.calcium}</li>
+                                                    <li key={meal.iron}>{meal.iron}</li>
+                                                    <li key={meal.id}>{meal.meal}</li>
+                                                    <li key={meal.date}>{meal.date}</li>
+                                                </ol>
+                                            </div>
+                                        </li>
+                                    )
+                                })}
                         </ol>
                     </div>
+                </div>
+                <div>
+                <Button onClick={this.goToAddMealsPage} type="button">Add Meals</Button> 
                 </div>
             </div>
         );
