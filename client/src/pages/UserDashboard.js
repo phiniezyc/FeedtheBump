@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Collection, CollectionItem, Row, Button} from 'react-materialize';
 import API from '../utils/API';
 import '../components/UserDashboard/UserDashboard.css';
-
+import { Button } from 'react-materialize';
 
 
 import MealDashboard from '../components/UserDashboard/MealDashboard';
