@@ -60,10 +60,6 @@ class TotalsDashboard extends Component {
         }, 0)
     }
 
-    goToAddMealsPage = () => {
-        this.props.history.push("/user/addMeal");
-    }
-
     render() {
 
         return (
@@ -87,10 +83,6 @@ class TotalsDashboard extends Component {
                                 <div className="nutrient-total">
                                     <p>{`Iron: ${this.filterTotalDailyIron()}`}</p>
                                 </div>
-
-                            </div>
-                            <div>
-                                <button onClick = {this.goToAddMealsPage} className="btn btn-large add-button" type="button" name="action">+ Add Food or Water</button>
 
                             </div>
 
