@@ -9,11 +9,13 @@ class MealDashboard extends Component {
         super(props)
         this.state = {
             totalMeals: [],
+            totalWaters: []
         };
     }
 
     componentDidMount() {
         this.loadMeals();
+        this.loadWaters();
     }
 
     loadMeals() {
@@ -24,6 +26,21 @@ class MealDashboard extends Component {
             .catch(err => console.log(err));
         // console.log(this.state.totalMeals);
     }
+
+    loadWaters() {
+        API
+            .getWaters()
+            .then(res => this.setState({totalWaters: res.data, water: ''}))
+            .catch(err => console.log(err));
+    }
+
+    TotalDailyWater = () => {
+        return (this.state.totalWaters || []).reduce((sum, water) => {
+
+            return sum += water.water;
+        }, 0)
+    }
+
 
     filterBreakfast = () => {
         (this.state.totalMeals || []).filter((meal) => {
@@ -47,6 +64,13 @@ class MealDashboard extends Component {
                         <div className='meal-card'>
 
                             <div className='meal-totals'>
+
+                                <div className="water">
+                                        <h5>Water</h5>
+                                    <div className="ounces">
+                                        <p>{`${this.TotalDailyWater()} oz.`}</p>
+                                    </div>
+                                </div>
 
                                 <div className="meal">
                                     <div>
