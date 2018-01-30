@@ -4,7 +4,7 @@ import '../components/UserDashboard/UserDashboard.css';
 
 import TotalsDashboard from "../components/UserDashboard/TotalsDashboard";
 import MealDashboard from '../components/UserDashboard/MealDashboard';
-import WaterDashboard from '../components/UserDashboard/WaterDashboard';
+// import WaterDashboard from '../components/UserDashboard/WaterDashboard';
 
 
 class UserDashboard extends Component {
@@ -47,7 +47,7 @@ class UserDashboard extends Component {
             <div>
                 <TotalsDashboard/>
                 <MealDashboard/>
-                <WaterDashboard/>
+                {/*<WaterDashboard/>*/}
 
             </div>
         );
