@@ -1,0 +1,132 @@
+.totals-container, .meal-container {
+    margin: 20px 30px;
+}
+
+.today-card {
+    max-width: 1400px;
+    background-color: #D01A55;
+    padding: 20px;
+    color: white;
+}
+
+.today-totals {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nutrient-total {
+    padding: 0 20px;
+    flex: 1;
+}
+
+h4, h5 {
+    color: white;
+}
+
+p {
+    font-size: x-large;
+    color: white;
+}
+
+.meal-totals {
+    display: flex;
+    justify-content: space-between;
+}
+
+.meal {
+    background-color: #C1D208;
+    padding: 20px;
+    color: white;
+    flex-basis: 24%;
+}
+
+
+/*.nutrient-titles {*/
+    /*display: flex;*/
+    /*justify-content: flex-end;*/
+    /*margin-left: 5%;*/
+/*}*/
+
+/*.calories {*/
+    /*flex-basis: 20%;*/
+/*}*/
+
+/*.calcium {*/
+    /*flex-basis: 20%;*/
+/*}*/
+
+/*.iron {*/
+    /*flex-basis: 20%;*/
+/*}*/
+
+/*.protein {*/
+    /*flex-basis: 20%;*/
+/*}*/
+
+/*.meal-container {*/
+    /*display: flex;*/
+/*}*/
+
+/*.meal-container:nth-child(even) {*/
+    /*background-color: #BCDD5A;*/
+/*}*/
+
+/*.meal-container:nth-child(odd) {*/
+    /*background-color: #80C31C;*/
+/*}*/
+
+/*.breakfast, .lunch, .dinner, .snacks {*/
+    /*flex: 1;*/
+/*}*/
+
+/*.nutrient-count {*/
+    /*flex: 4;*/
+    /*display: flex;*/
+    /*justify-content: flex-start;*/
+
+/*}*/
+
+/*.value {*/
+    /*flex: 1;*/
+    /*margin-left: 5%;*/
+    /*color: white;*/
+/*}*/
+
+/*.breakfast {*/
+    /*background-color: #BCDD5A;*/
+    /*padding: 10px 0 10px 0;*/
+    /*margin-right: 5px;*/
+    /*margin-bottom: 5px;*/
+    /*text-align: center;*/
+/*}*/
+
+/*.lunch {*/
+    /*background-color: #80C31C;*/
+    /*padding: 10px 0 10px 0;*/
+    /*margin-right: 5px;*/
+    /*margin-bottom: 5px;*/
+    /*text-align: center;*/
+/*}*/
+
+/*.dinner {*/
+    /*background-color: #BCDD5A;*/
+    /*padding: 10px 0 10px 0;*/
+    /*margin-right: 5px;*/
+    /*margin-bottom: 5px;*/
+    /*text-align: center;*/
+/*}*/
+
+/*.snacks {*/
+    /*background-color: #80C31C;*/
+    /*padding: 10px 0 10px 0;*/
+    /*margin-right: 5px;*/
+    /*margin-bottom: 5px;*/
+    /*text-align: center;*/
+/*}*/
+
+/*h6 {*/
+    /*font-weight: lighter;*/
+    /*font-size: large;*/
+    /*color: white;*/
+    /*margin: 10px;*/
+/*}*/
