@@ -39,8 +39,6 @@ class UserDashboard extends Component {
     }
 
     render() {
-        console.log(this.state.totalMeals);
-        console.log(this.state.totalWaters);
 
         return (
             <div>
