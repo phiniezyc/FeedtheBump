@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardTitle } from 'react-materialize';
+import { Row, Col } from 'react-materialize';
 import './UserDashboard.css';
 import API from '../../utils/API';
 
@@ -69,36 +69,48 @@ class MealDashboard extends Component {
         console.log(this.state.totalWaters);
 
         return (
-            <div className="container">
+            <div className="meal-container">
+                <Row>
+                    <Col s={12}>
 
-                <div className='meal-card'>
+                        <div className='meal-card'>
 
-                            <div className='today-meals'>
+                            <div className='meal-totals'>
 
-                                <Card className='cardDisplay' header={
-                                    <CardTitle reveal  image='' waves='light'/>}
-                                      title="Breakfast">
-
+                                <div className="meal">
                                     <div>
-                                        <p>{`Breakfast: ${this.filterBreakfast()}`}</p>
+                                        <h5>Breakfast</h5>
                                     </div>
+                                    <p>{`${this.filterBreakfast()}`}</p>
+                                </div>
 
+                                <div className="meal">
+                                    <div>
+                                        <h5>Lunch</h5>
+                                    </div>
+                                    <p>{`${this.filterBreakfast()}`}</p>
+                                </div>
 
-                                            {/*<ul>*/}
-                                                {/*/!*<li key={meal.id}>{meal.meal}</li>*!/*/}
-                                                {/*/!*<li key={meal.food}>{meal.food}</li>*!/*/}
-                                                {/*/!*<li key={meal.calories}>{meal.calories}</li>*!/*/}
-                                                {/*/!*<li key={meal.protein}>{meal.protein}</li>*!/*/}
-                                                {/*/!*<li key={meal.calcium}>{meal.calcium}</li>*!/*/}
-                                                {/*/!*<li key={meal.iron}>{meal.iron}</li>*!/*/}
-                                                {/*/!*<li key={meal.date}>{meal.date}</li>*!/*/}
-                                            {/*</ul>*/}
-                                </Card>
+                                <div className="meal">
+                                    <div>
+                                        <h5>Dinner</h5>
+                                    </div>
+                                    <p>{`${this.filterBreakfast()}`}</p>
+                                </div>
+
+                                <div className="meal">
+                                    <div>
+                                        <h5>Snacks</h5>
+                                    </div>
+                                    <p>{`${this.filterBreakfast()}`}</p>
+                                </div>
 
                             </div>
 
+                        </div>
 
-                </div>
+                    </Col>
+                </Row>
             </div>
         )}}
 
