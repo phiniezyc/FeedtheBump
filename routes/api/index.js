@@ -7,9 +7,14 @@ const nutritionSearch = require('./nutritionSearch');
 router.use('/meals', mealsRoutes);
 router.use('/water', waterRoutes);
 
-// router.use("/usda", nutritionSearch);
+
 router.use('/nutritionix', nutritionSearch);
 
 
+//route works now
+router.use('/searchInput', (req, res) =>{
+    console.log("test worked");
+    res.send("hello");
+})
 
 module.exports = router;

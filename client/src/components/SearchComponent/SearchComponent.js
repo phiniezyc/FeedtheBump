@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './SearchComponent.css';
-import API from '../../utils/API';
 import axios from 'axios';
 
 class SearchBar extends Component {
@@ -17,13 +16,21 @@ class SearchBar extends Component {
       this.passSearchTerm();
   }
   passSearchTerm = () => {
-    API.sendUserSearchInput({input: this.state.input})
-    .then(console.log(this.state.input))
+    axios.post('/api/userInput', {
+      input: this.state.input,
+      
+    })
+    .then(function (response) {
+      response.json(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
   
 
   sendSearchTerm = () => {
-    axios.get('/api/nutritionix/userSearch', {
+    axios.get('/api/userInput', {
       params: {
         input: this.state.input
       }
