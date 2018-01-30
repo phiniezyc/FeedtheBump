@@ -16,7 +16,7 @@ class SearchBar extends Component {
       this.passSearchTerm();
   }
   passSearchTerm = () => {
-    axios.post('/api/userInput', {
+    axios.get('/api/userInput', {
       input: this.state.input,
       
     })
@@ -30,9 +30,9 @@ class SearchBar extends Component {
   
 
   sendSearchTerm = () => {
-    axios.get('/api/userInput', {
+    axios.post('/api/userInput', {
       params: {
-        input: this.state.input
+        id: this.state.input
       }
     });
   }

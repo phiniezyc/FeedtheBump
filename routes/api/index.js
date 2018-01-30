@@ -12,9 +12,9 @@ router.use('/nutritionix', nutritionSearch);
 
 
 //route works now
-router.use('/searchInput', (req, res) =>{
-    console.log("test worked");
-    res.send("hello");
+router.use('/searchInput/:id', (req, res) =>{
+    const id = "yes!"
+    res.send(id);
 })
 
 module.exports = router;

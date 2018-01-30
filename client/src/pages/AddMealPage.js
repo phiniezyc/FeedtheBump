@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Row, Input} from 'react-materialize';
+import React, { Component } from 'react';
+import { Row, Input, Button } from 'react-materialize';
 import API from '../utils/API';
 import NutritionixResultsDisplay from '../components/NutritionixResultsDisplay/NutrionixReultsDisplay';
 import SearchComponent from '../components/SearchComponent/SearchComponent';
@@ -93,6 +93,10 @@ class AddMealPage extends Component {
       .then(res => this.setState({nutritionixResults: res.data}))
       .catch(err => console.log(err));
   }
+
+  goToDashboardPage = () => {
+    this.props.history.push("/user/dashboard");
+}
 
   render() {
     console.log(this.state.totalMeals);
@@ -190,6 +194,9 @@ class AddMealPage extends Component {
           </div>
 
         </Row>
+        <div>
+        <Button onClick={this.goToDashboardPage} type="button">View Dashboard</Button> 
+        </div>
 
         <div>
           <NutritionixResultsDisplay nutritionixResults={this.state.nutritionixResults}/>
