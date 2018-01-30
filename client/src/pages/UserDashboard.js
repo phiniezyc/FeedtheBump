@@ -4,7 +4,6 @@ import '../components/UserDashboard/UserDashboard.css';
 
 import TotalsDashboard from "../components/UserDashboard/TotalsDashboard";
 import MealDashboard from '../components/UserDashboard/MealDashboard';
-// import WaterDashboard from '../components/UserDashboard/WaterDashboard';
 
 
 class UserDashboard extends Component {
@@ -26,7 +25,6 @@ class UserDashboard extends Component {
             .getMeals()
             .then(res => this.setState({totalMeals: res.data, food: '', calories: '', meal: '', date: ''}))
             .catch(err => console.log(err));
-        // console.log(this.state.totalMeals);
     }
 
     loadWaters() {
@@ -34,7 +32,6 @@ class UserDashboard extends Component {
             .getWaters()
             .then(res => this.setState({totalWaters: res.data, water: ''}))
             .catch(err => console.log(err));
-        // console.log(this.state.totalMeals);
     }
 
     goToAddMealsPage = () => {
@@ -45,10 +42,13 @@ class UserDashboard extends Component {
 
         return (
             <div>
-                <TotalsDashboard/>
-                <MealDashboard/>
-                {/*<WaterDashboard/>*/}
-
+                <div>
+                    <TotalsDashboard/>
+                    <MealDashboard/>
+                </div>
+                <div>
+                    <button onClick = {this.goToAddMealsPage} className="btn btn-large add-button" type="button" name="action">+ Add Food or Water</button>
+                </div>
             </div>
         );
     }

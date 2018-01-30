@@ -24,7 +24,6 @@ class MealDashboard extends Component {
             .then(res => this.setState({totalMeals: res.data, food: '', calories: '', meal: '', date: ''}))
             // .then({breakfast: this.state.totalMeals.filter((meal) => {return meal.meal === "Breakfast"})})
             .catch(err => console.log(err));
-        // console.log(this.state.totalMeals);
     }
 
     loadWaters() {
@@ -52,8 +51,6 @@ class MealDashboard extends Component {
 
 
      render() {
-        console.log(this.state.totalMeals);
-        console.log(this.filterBreakfast[0]);
 
         return (
             <div className="meal-container">
