@@ -9,67 +9,38 @@ class MealDashboard extends Component {
         super(props)
         this.state = {
             totalMeals: [],
-            totalWaters: []
         };
     }
 
     componentDidMount() {
         this.loadMeals();
-        this.loadWaters();
     }
 
     loadMeals() {
         API
             .getMeals()
             .then(res => this.setState({totalMeals: res.data, food: '', calories: '', meal: '', date: ''}))
-            .catch(err => console.log(err));
-        // console.log(this.state.totalMeals);
-    }
-
-    loadWaters() {
-        API
-            .getWaters()
-            .then(res => this.setState({totalWaters: res.data, water: ''}))
+            // .then({breakfast: this.state.totalMeals.filter((meal) => {return meal.meal === "Breakfast"})})
             .catch(err => console.log(err));
         // console.log(this.state.totalMeals);
     }
 
     filterBreakfast = () => {
-        return (this.state.totalMeals || []).filter((meal) => {
+        (this.state.totalMeals || []).filter((meal) => {
 
-            return meal.meal === "Breakfast";
+            return (meal.meal === "Breakfast");
         })
+
     }
 
-    // console.log(filterBreakfast.toString());
 
-
-    // filterTotalDailyProtein = () => {
-    //     return (this.state.totalMeals || []).reduce((sum, meal) => {
-    //
-    //         return sum += meal.protein;
-    //     }, 0)
-    // }
-    //
-    // filterTotalDailyCalcium = () => {
-    //     return (this.state.totalMeals || []).reduce((sum, meal) => {
-    //
-    //         return sum += meal.calcium;
-    //     }, 0)
-    // }
-    //
-    // filterTotalDailyIron = () => {
-    //     return (this.state.totalMeals || []).reduce((sum, meal) => {
-    //
-    //         return sum += meal.iron;
-    //     }, 0)
-    // }
-    render() {
+     render() {
         console.log(this.state.totalMeals);
-        console.log(this.state.totalWaters);
+        console.log(this.filterBreakfast[0]);
 
         return (
             <div className="meal-container">
+
                 <Row>
                     <Col s={12}>
 
@@ -111,8 +82,36 @@ class MealDashboard extends Component {
 
                     </Col>
                 </Row>
+
+                {/*<div className="test">*/}
+                    {/*<ol>*/}
+                        {/*{this*/}
+                            {/*.filterBreakfast()*/}
+                            {/*.map((meal, i) => {*/}
+
+
+                                {/*return (*/}
+                                    {/*<li key={i}>*/}
+                                        {/*<div key={i}>*/}
+                                            {/*<ol>*/}
+                                                {/*<li key={meal.id}>{meal.meal}</li>*/}
+                                                {/*<li key={meal.food}>{meal.food}</li>*/}
+                                                {/*<li key={meal.calories}>{meal.calories}</li>*/}
+                                                {/*<li key={meal.protein}>{meal.protein}</li>*/}
+                                                {/*<li key={meal.calcium}>{meal.calcium}</li>*/}
+                                                {/*<li key={meal.iron}>{meal.iron}</li>*/}
+                                                {/*<li key={meal.date}>{meal.date}</li>*/}
+                                            {/*</ol>*/}
+                                        {/*</div>*/}
+                                    {/*</li>*/}
+                                {/*)*/}
+                            {/*})}*/}
+                    {/*</ol>*/}
+                {/*</div>*/}
             </div>
-        )}}
+        )}
+
+}
 
 
 export default MealDashboard;

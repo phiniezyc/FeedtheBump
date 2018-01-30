@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import { Row, Col } from 'react-materialize';
 import './UserDashboard.css';
 import API from '../../utils/API';
 
-class WaterDashboard extends Component {
+
+class WaterTest extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            totalWaters: []
+            totalWaters: [],
+            outline: true
         };
     }
 
@@ -34,6 +35,7 @@ class WaterDashboard extends Component {
     // and a tiny, single filled-in div is added.
 
     // AddOunces = () => {
+    //    const AddOunces = 'styled.outline'
     //
     // }
 
@@ -41,32 +43,6 @@ class WaterDashboard extends Component {
         console.log(this.state.totalWaters);
 
         return (
-            <div className="water-container">
-                <Row>
-                    <Col s={12}>
-
-                        <div className='water-card'>
-
-                            <div className='water-totals'>
-                                <div className="water-heading">
-                                    <h5>Water</h5>
-                                </div>
-
-                                <div className="water">
-
-                                    <p>{`${this.TotalDailyWater()} oz.`}</p>
-                                </div>
 
 
-
-                            </div>
-
-                        </div>
-
-                    </Col>
-                </Row>
-            </div>
-        )}}
-
-
-export default WaterDashboard;
+export default WaterTest;
