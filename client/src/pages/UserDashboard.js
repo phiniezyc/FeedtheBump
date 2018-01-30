@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import {Collection, CollectionItem, Row} from 'react-materialize';
+import {Collection, CollectionItem, Row, Button} from 'react-materialize';
 import API from '../utils/API';
 import '../components/UserDashboard/UserDashboard.css';
+
 
 
 import MealDashboard from '../components/UserDashboard/MealDashboard';
@@ -35,6 +36,10 @@ class UserDashboard extends Component {
             .then(res => this.setState({totalWaters: res.data, water: ''}))
             .catch(err => console.log(err));
         // console.log(this.state.totalMeals);
+    }
+
+    goToAddMealsPage = () => {
+        this.props.history.push("/user/addMeal");
     }
 
     render() {
@@ -92,6 +97,9 @@ class UserDashboard extends Component {
                                 })}
                         </ol>
                     </div>
+                </div>
+                <div>
+                <Button onClick={this.goToAddMealsPage} type="button">Add Meals</Button> 
                 </div>
             </div>
         );
