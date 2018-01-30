@@ -1,4 +1,4 @@
-.totals-container, .meal-container {
+.totals-container, .meal-container, .water-container {
     margin: 20px 30px;
 }
 
@@ -38,6 +38,18 @@ p {
     padding: 20px;
     color: white;
     flex-basis: 24%;
+}
+
+
+.water-card {
+    max-width: 1400px;
+    background-color: #34DDDD;
+    padding: 20px 20px 0 20px;
+    color: white;
+}
+
+.water {
+    color: white;
 }
 
 
