@@ -3,8 +3,10 @@ import API from '../utils/API';
 import '../components/UserDashboard/UserDashboard.css';
 
 
-import MealDashboard from '../components/UserDashboard/MealDashboard';
 import TotalsDashboard from "../components/UserDashboard/TotalsDashboard";
+import MealDashboard from '../components/UserDashboard/MealDashboard';
+import WaterDashboard from '../components/UserDashboard/WaterDashboard';
+
 
 class UserDashboard extends Component {
     constructor(props) {
@@ -44,6 +46,7 @@ class UserDashboard extends Component {
             <div>
                 <TotalsDashboard/>
                 <MealDashboard/>
+                <WaterDashboard/>
             </div>
         );
     }
