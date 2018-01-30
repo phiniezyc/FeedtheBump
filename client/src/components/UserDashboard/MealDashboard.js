@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardTitle } from 'react-materialize';
+import { Row, Col } from 'react-materialize';
 import './UserDashboard.css';
 import API from '../../utils/API';
 
@@ -33,89 +33,84 @@ class MealDashboard extends Component {
             .catch(err => console.log(err));
         // console.log(this.state.totalMeals);
     }
-    filterTotalDailyCalories = () => {
-        return (this.state.totalMeals || []).reduce((sum, meal) => {
 
-            return sum += meal.calories;
-        }, 0)
+    filterBreakfast = () => {
+        return (this.state.totalMeals || []).filter((meal) => {
+
+            return meal.meal === "Breakfast";
+        })
     }
 
-    filterTotalDailyProtein = () => {
-        return (this.state.totalMeals || []).reduce((sum, meal) => {
+    // console.log(filterBreakfast.toString());
 
-            return sum += meal.protein;
-        }, 0)
-    }
 
-    filterTotalDailyCalcium = () => {
-        return (this.state.totalMeals || []).reduce((sum, meal) => {
-
-            return sum += meal.calcium;
-        }, 0)
-    }
-
-    filterTotalDailyIron = () => {
-        return (this.state.totalMeals || []).reduce((sum, meal) => {
-
-            return sum += meal.iron;
-        }, 0)
-    }
-
+    // filterTotalDailyProtein = () => {
+    //     return (this.state.totalMeals || []).reduce((sum, meal) => {
+    //
+    //         return sum += meal.protein;
+    //     }, 0)
+    // }
+    //
+    // filterTotalDailyCalcium = () => {
+    //     return (this.state.totalMeals || []).reduce((sum, meal) => {
+    //
+    //         return sum += meal.calcium;
+    //     }, 0)
+    // }
+    //
+    // filterTotalDailyIron = () => {
+    //     return (this.state.totalMeals || []).reduce((sum, meal) => {
+    //
+    //         return sum += meal.iron;
+    //     }, 0)
+    // }
     render() {
         console.log(this.state.totalMeals);
         console.log(this.state.totalWaters);
 
         return (
-            <div className="container">
+            <div className="meal-container">
+                <Row>
+                    <Col s={12}>
 
-                <div className='meal-card'>
-                    {this
-                        .state
-                        .totalMeals
-                        .map((meal, i) => {
+                        <div className='meal-card'>
 
+                            <div className='meal-totals'>
 
-                            return (
-                                <div className='today-meals'>
-                                    <Card className='cardDisplay' header={
-                                        <CardTitle reveal  image='' waves='light'/>}
-                                          title="Breakfast">
-
-                                            <div key={i}>
-                                                <ul>
-                                                    {/*<li key={meal.id}>{meal.meal}</li>*/}
-                                                    <li key={meal.food}>{meal.food}</li>
-                                                    {/*<li key={meal.calories}>{meal.calories}</li>*/}
-                                                    {/*<li key={meal.protein}>{meal.protein}</li>*/}
-                                                    {/*<li key={meal.calcium}>{meal.calcium}</li>*/}
-                                                    {/*<li key={meal.iron}>{meal.iron}</li>*/}
-                                                    {/*<li key={meal.date}>{meal.date}</li>*/}
-                                                </ul>
-                                                {/*<ul>*/}
-                                                    {/*/!*<li key={meal.id}>{meal.meal}</li>*!/*/}
-                                                    {/*/!*<li key={meal.food}>{meal.food}</li>*!/*/}
-                                                    {/*/!*<li key={meal.calories}>{meal.calories}</li>*!/*/}
-                                                    {/*/!*<li key={meal.protein}>{meal.protein}</li>*!/*/}
-                                                    {/*/!*<li key={meal.calcium}>{meal.calcium}</li>*!/*/}
-                                                    {/*/!*<li key={meal.iron}>{meal.iron}</li>*!/*/}
-                                                    {/*/!*<li key={meal.date}>{meal.date}</li>*!/*/}
-                                                {/*</ul>*/}
-                                                {/*<ul>*/}
-                                                    {/*/!*<li key={meal.id}>{meal.meal}</li>*!/*/}
-                                                    {/*/!*<li key={meal.food}>{meal.food}</li>*!/*/}
-                                                    {/*/!*<li key={meal.calories}>{meal.calories}</li>*!/*/}
-                                                    {/*/!*<li key={meal.protein}>{meal.protein}</li>*!/*/}
-                                                    {/*/!*<li key={meal.calcium}>{meal.calcium}</li>*!/*/}
-                                                    {/*/!*<li key={meal.iron}>{meal.iron}</li>*!/*/}
-                                                    {/*/!*<li key={meal.date}>{meal.date}</li>*!/*/}
-                                                {/*</ul>*/}
-                                            </div>
-                                    </Card>
-
+                                <div className="meal">
+                                    <div>
+                                        <h5>Breakfast</h5>
+                                    </div>
+                                    <p>{`${this.filterBreakfast()}`}</p>
                                 </div>
 
-                             )})}
-                </div>
+                                <div className="meal">
+                                    <div>
+                                        <h5>Lunch</h5>
+                                    </div>
+                                    <p>{`${this.filterBreakfast()}`}</p>
+                                </div>
+
+                                <div className="meal">
+                                    <div>
+                                        <h5>Dinner</h5>
+                                    </div>
+                                    <p>{`${this.filterBreakfast()}`}</p>
+                                </div>
+
+                                <div className="meal">
+                                    <div>
+                                        <h5>Snacks</h5>
+                                    </div>
+                                    <p>{`${this.filterBreakfast()}`}</p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </Col>
+                </Row>
             </div>
         )}}
 
