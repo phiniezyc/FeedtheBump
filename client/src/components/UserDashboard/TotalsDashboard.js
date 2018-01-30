@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardTitle } from 'react-materialize';
+import { Row, Col } from 'react-materialize';
 import './UserDashboard.css';
 import API from '../../utils/API';
 
@@ -65,26 +65,34 @@ class TotalsDashboard extends Component {
         console.log(this.state.totalWaters);
 
         return (
-            <div className='totals-card'>
-                    <div className='today-totals'>
-                        <Card className='cardDisplay' header={
-                            <CardTitle reveal  image='' waves='light'/>}
-                              title="Today's Total">
-                            <div>
-                                <p>{`Iron: ${this.filterTotalDailyIron()}`}</p>
-                            </div>
-                            <div>
-                                <p>{`Calcium: ${this.filterTotalDailyCalcium()}`}</p>
-                            </div>
-                            <div>
-                                <p>{`Protein: ${this.filterTotalDailyProtein()}`}</p>
-                            </div>
+            <div className='totals-container'>
+                <Row>
+                    <Col s={12}>
+                        <div className='today-card'>
 
                             <div>
-                                <p>{`Calories: ${this.filterTotalDailyCalories()}`}</p>
+                                <h4>Today's Totals</h4>
                             </div>
-                        </Card>
-                    </div>
+                            <div className='today-totals'>
+
+                                <div className="nutrient-total">
+                                    <p>{`Calories: ${this.filterTotalDailyCalories()}`}</p>
+                                </div>
+                                <div className="nutrient-total">
+                                    <p>{`Calcium: ${this.filterTotalDailyCalcium()}`}</p>
+                                </div>
+                                <div className="nutrient-total">
+                                    <p>{`Protein: ${this.filterTotalDailyProtein()}`}</p>
+                                </div>
+                                <div className="nutrient-total">
+                                    <p>{`Iron: ${this.filterTotalDailyIron()}`}</p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </Col>
+                </Row>
             </div>
         );
     }
