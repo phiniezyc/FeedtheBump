@@ -14,3 +14,8 @@
     font-weight: bold;
     color: darkorange;
 }
+
+input[type=submit] {
+    background-color: darkorange;
+    color: white;
+}
