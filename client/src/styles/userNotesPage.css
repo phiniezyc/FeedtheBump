@@ -1,17 +1,16 @@
-/* The goal is to get the Notes header on the left side and the Date on the right */
 .notes {
     font-size: xx-large;
     font-weight: bold;
-    color: #26a69a;
+    color: darkorange;
 }
 
 .date {
     font-size: x-large;
     font-weight: bold;
-    color: #26a69a;
+    color: darkorange;
 }
 
 ::placeholder {
     font-weight: bold;
-    color: #26a69a;
+    color: darkorange;
 }

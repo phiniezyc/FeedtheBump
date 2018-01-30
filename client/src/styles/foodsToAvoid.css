@@ -1,3 +1,10 @@
 span {
-    color: #FF0000;
+    color: darkorange;
+}
+
+.col s8 offset-s2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex: 1;
 }

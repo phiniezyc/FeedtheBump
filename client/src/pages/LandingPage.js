@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Auth from '../utils/Auth.js';
-import '../styles/landingPage.css';
 
 
 const auth = new Auth();
