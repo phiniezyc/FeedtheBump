@@ -16,24 +16,12 @@ class SearchBar extends Component {
       this.passSearchTerm();
   }
   passSearchTerm = () => {
-    axios.get('/api/userInput', {
-      input: this.state.input,
-      
-    })
+    axios.get(`/api/nutritionix?searchTerm=${this.state.input}`)
     .then(function (response) {
-      response.json(response);
+      console.log(response.data.hits[0].fields.item_name)
     })
     .catch(function (error) {
       console.log(error);
-    });
-  }
-  
-
-  sendSearchTerm = () => {
-    axios.post('/api/userInput', {
-      params: {
-        id: this.state.input
-      }
     });
   }
 
@@ -48,7 +36,7 @@ class SearchBar extends Component {
         {/*// call api GET /api/whatever?search=${event.target.value}
             // .then// this.setState({ results: results })*/}
         <input onChange={event => this.setState({ input: event.target.value })} type='text' id='search' name='search'/>
-        <button onClick={this.sendSearchTerm()} className="btn btn-small waves-effect waves-light" type="submit" name="submit"> SUBMIT </button>
+        <button onClick={this.passSearchTerm()} className="btn btn-small waves-effect waves-light" type="submit" name="submit"> SUBMIT </button>
         </form>
         </div>
       </div>
