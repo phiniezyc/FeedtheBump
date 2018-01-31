@@ -33,7 +33,6 @@ class AddMealPage extends Component {
   componentDidMount() {
     this.loadMeals();
     this.loadWaters();
-    this.loadNutritionixResults();
 
   }
 
@@ -87,16 +86,11 @@ class AddMealPage extends Component {
     }
   }
 
-  loadNutritionixResults = () => {
-    API
-      .getNutritionixResults()
-      .then(res => this.setState({nutritionixResults: res.data}))
-      .catch(err => console.log(err));
-  }
-
   goToDashboardPage = () => {
     this.props.history.push("/user/dashboard");
 }
+
+  
 
   render() {
     console.log(this.state.totalMeals);
@@ -105,7 +99,9 @@ class AddMealPage extends Component {
     return (
       <div>
         <div>
-          <SearchComponent.SearchBar/>
+          <SearchComponent.SearchBar updateResults={(data) => {
+            this.setState({nutritionixResults: data})
+          }}/>
         </div>
         <Row>
           <div className="col s6 ">

@@ -7,6 +7,7 @@
     "auth0-js": "^9.1.0",
     "axios": "^0.17.1",
     "cheerio": "^1.0.0-rc.2",
+    "lodash": "^4.17.4",
     "react": "^16.0.0",
     "react-day-picker": "^7.0.7",
     "react-dazzle": "^1.2.7",

@@ -11,4 +11,17 @@ h1, h2, h3, h4, h5 {
 
 .ftb-button {
     background-color: darkorange;
+    transition-duration: 0.4s;
+    font-size: large;
+    margin: auto;
 }
+
+.add-button {
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: darkorange;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
