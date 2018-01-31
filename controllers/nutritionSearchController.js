@@ -1,10 +1,10 @@
 const apiConfig = require('../client/src/utils/API_Keys');
-const axios = require('axios');
+const rp = require('request-promise');
 
 
 
 module.exports = {
-  search(req, res) {
+  search(req, res, next) {
     const id = process.env.NUTRITIONIX_ID || apiConfig.nutritionixId;
     const api_key = process.env.NUTRITIONIX_API_KEY || apiConfig.nutritionixAPIKey;
      const searchTerm = req.query.searchTerm;
@@ -13,17 +13,15 @@ module.exports = {
 
     const search = `${url}${id}${api_key}`
     
-    axios
+    console.log(search)
+    rp
       .get(search)
-      .then((console.log(req.body)))
       .then((response) => {
-        //  console.log(response.data.hits[0].fields.item_name);
+           console.log(response.data.hits[0].fields.item_name);
 
-        res.send(response.data);
+        res.json(response.data);
+        return response.data
       })
-      .catch((err) => {
-
-        res.send({err});
-      });
+      .catch(next);
   }
 };
