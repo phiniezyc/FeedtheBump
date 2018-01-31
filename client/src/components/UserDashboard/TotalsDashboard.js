@@ -17,12 +17,12 @@ class TotalsDashboard extends Component {
         this.loadWaters();
         this.filterTotalDailyCalories();
     }
+
     loadMeals() {
         API
             .getMeals()
             .then(res => this.setState({totalMeals: res.data, food: '', calories: '', meal: '', date: ''}))
             .catch(err => console.log(err));
-        // console.log(this.state.totalMeals);
     }
 
     loadWaters() {
@@ -30,9 +30,8 @@ class TotalsDashboard extends Component {
             .getWaters()
             .then(res => this.setState({totalWaters: res.data, water: ''}))
             .catch(err => console.log(err));
-        // console.log(this.state.totalMeals);
     }
-    //this function doesn't work, but my inline code does.  Not sure why?
+
     filterTotalDailyCalories = () => {
         return (this.state.totalMeals || []).reduce((sum, meal) => {
 
@@ -60,19 +59,16 @@ class TotalsDashboard extends Component {
             return sum += meal.iron;
         }, 0)
     }
+
     render() {
-        console.log(this.state.totalMeals);
-        console.log(this.state.totalWaters);
 
         return (
             <div className='totals-container'>
                 <Row>
                     <Col s={12}>
                         <div className='today-card'>
+                            <h4>Today's Totals</h4>
 
-                            <div>
-                                <h4>Today's Totals</h4>
-                            </div>
                             <div className='today-totals'>
 
                                 <div className="nutrient-total">
