@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Row } from 'react-materialize';
+import Moment from 'react-moment';
+import 'moment-timezone';
+import { Row, Col, Input } from 'react-materialize';
 import '../styles/userNotesPage.css';
 
 
@@ -22,21 +24,21 @@ class UserNotesPage extends Component {
         alert('A note was posted: ' + this.state.value);
         event.preventDefault();
     }
+
     render() {
         return (
         <div>
             <Row>
-                <div className='col s8 offset-s2'>
+                <div className='col s9 offset-s2'>
                     <form onSubmit={this.handleSubmit}>
                     <label>
                         <div className="notes-date">
-                            <h2 className="notes-date">Notes</h2>
-                            {/* goal is to have the current date shown. */}
-                            <h2 className="notes-date">Current Date</h2>
+                            <Col s={8} className="notes">Notes</Col>
+                            <Col s={2} className="date"><Moment>Current Date: {} </Moment></Col>
                         </div>
-                        <textarea placeholder={this.state.value} onChange={this.handleChange} />
+                        <textarea className="textarea" placeholder={this.state.value} onChange={this.handleChange} />
                     </label>
-                    <input type="submit" value="Submit" />
+                            <input type="submit" className="btn btn-small waves-effect waves-light" value="Submit" />
                     </form>
                 </div>
             </Row>
