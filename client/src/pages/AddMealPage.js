@@ -98,6 +98,8 @@ class AddMealPage extends Component {
     this.props.history.push("/user/dashboard");
 }
 
+  
+
   render() {
     console.log(this.state.totalMeals);
     console.log(this.state.totalWaters);
