@@ -16,6 +16,11 @@
 }
 
 input[type=submit] {
-    background-color: darkorange;
     color: white;
+}
+
+textarea {
+     flex:1;
+     font-size: 1.5rem;
+     padding: 3rem;
 }
