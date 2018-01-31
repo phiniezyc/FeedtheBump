@@ -14,7 +14,7 @@ module.exports = {
         axios
             .get(search)
             .then(response => {
-                console.log(response.data["result"]["topics"][0]);
+                // console.log(response.data["result"]["topics"][0]);
 
                 res.send(response.data);
 
