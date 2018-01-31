@@ -4,11 +4,9 @@
   "description": "Mern Demo",
   "main": "server.js",
   "scripts": {
-    "server": "node server.js",
-    "client": "cd client && npm run start",
-    "start": "./node_modules/.bin/concurrently \"./node_modules/.bin/nodemon\" \"npm run client\"",
-    "build": "cd client && npm run build",
-    "deploy": "yarn build && git add . && git commit -m \"Building for production\" && git push heroku master",
+    "start": "node server.js",
+    "dev": "./node_modules/.bin/concurrently \"./node_modules/.bin/nodemon\" \"(cd client && yarn run start)\"",
+    "postinstall": "(cd client && yarn install && yarn run build)",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -33,6 +31,7 @@
     "react-day-picker": "^7.0.7",
     "react-dazzle": "^1.2.7",
     "react-moment": "^0.7.0",
-    "request": "^2.83.0"
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
   }
 }
