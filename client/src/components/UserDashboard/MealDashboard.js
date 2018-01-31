@@ -41,18 +41,29 @@ class MealDashboard extends Component {
     }
 
 
-    filterBreakfast = () => {
-        (this.state.totalMeals || []).filter((meal) => {
-
-            return (meal.meal === "Breakfast");
-        })
-
-    }
+    filterMeal = (target = '') => {
+        return (this.state.totalMeals || []).reduce((result, meal) => {
+            if (meal.meal.toLowerCase() === target.toLowerCase()) {
+                return {
+                    calcium: result.calcium + meal.calcium,
+                    iron: result.iron + meal.iron,
+                    calories: result.calories + meal.calories,
+                    protein: result.protein + meal.protein,
+                }
+            }
+            return result;
+        }, { calcium: 0, iron: 0, calories: 0, protein: 0 })
+    };
 
 
      render() {
+        const breakfast = this.filterMeal('breakfast');
+        const lunch = this.filterMeal('lunch');
+        const dinner = this.filterMeal('dinner');
+        const snack = this.filterMeal('snack');
 
-        return (
+
+         return (
             <div className="meal-container">
 
                 <Row>
@@ -64,8 +75,8 @@ class MealDashboard extends Component {
 
                                 <div className="water">
                                         <h5>Water</h5>
-                                    <div className="ounces">
-                                        <p>{`${this.TotalDailyWater()} oz.`}</p>
+                                    <div className="meal-nutrients">
+                                        <p>{`${this.TotalDailyWater()} ounces`}</p>
                                     </div>
                                 </div>
 
@@ -73,28 +84,48 @@ class MealDashboard extends Component {
                                     <div>
                                         <h5>Breakfast</h5>
                                     </div>
-                                    <p>{`${this.filterBreakfast()}`}</p>
+                                    <div className="meal-nutrients">
+                                        <p>{`Calories: ${breakfast.calories}`}</p>
+                                        <p>{`Calcium: ${breakfast.calcium}`}</p>
+                                        <p>{`Protein: ${breakfast.protein}`}</p>
+                                        <p>{`Iron: ${breakfast.iron}`}</p>
+                                    </div>
                                 </div>
 
                                 <div className="meal">
                                     <div>
                                         <h5>Lunch</h5>
                                     </div>
-                                    <p>{`${this.filterBreakfast()}`}</p>
+                                    <div className="meal-nutrients">
+                                        <p>{`Calories: ${lunch.calories}`}</p>
+                                        <p>{`Calcium: ${lunch.calcium}`}</p>
+                                        <p>{`Protein: ${lunch.protein}`}</p>
+                                        <p>{`Iron: ${lunch.iron}`}</p>
+                                    </div>
                                 </div>
 
                                 <div className="meal">
                                     <div>
                                         <h5>Dinner</h5>
                                     </div>
-                                    <p>{`${this.filterBreakfast()}`}</p>
+                                    <div className="meal-nutrients">
+                                        <p>{`Calories: ${dinner.calories}`}</p>
+                                        <p>{`Calcium: ${dinner.calcium}`}</p>
+                                        <p>{`Protein: ${dinner.protein}`}</p>
+                                        <p>{`Iron: ${dinner.iron}`}</p>
+                                    </div>
                                 </div>
 
                                 <div className="meal">
                                     <div>
                                         <h5>Snacks</h5>
                                     </div>
-                                    <p>{`${this.filterBreakfast()}`}</p>
+                                    <div className="meal-nutrients">
+                                        <p>{`Calories: ${snack.calories}`}</p>
+                                        <p>{`Calcium: ${snack.calcium}`}</p>
+                                        <p>{`Protein: ${snack.protein}`}</p>
+                                        <p>{`Iron: ${snack.iron}`}</p>
+                                    </div>
                                 </div>
 
                             </div>

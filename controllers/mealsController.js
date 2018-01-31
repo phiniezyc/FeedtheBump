@@ -7,13 +7,6 @@ const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 
 module.exports = {
 
-  // find(res) {
-  //   db
-  //     .Meal
-  //     .find({"date": {$gte: startOfToday}})
-  //     .then(dbModel => res.json(dbModel))
-  //     .catch(err => res.status(422).json(err));
-  // },
   findAll(req, res) {
     db
       .Meal
