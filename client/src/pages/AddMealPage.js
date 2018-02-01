@@ -3,7 +3,7 @@ import { Row, Input, Button } from 'react-materialize';
 import API from '../utils/API';
 import NutritionixResultsDisplay from '../components/NutritionixResultsDisplay/NutrionixReultsDisplay';
 import SearchComponent from '../components/SearchComponent/SearchComponent';
-
+import '../styles/AddMealPage.css';
 class AddMealPage extends Component {
   constructor(props) {
     super(props);
@@ -98,13 +98,15 @@ class AddMealPage extends Component {
 
     return (
       <div>
+        <div className='flex-container'>
+        <div className='box one'>
         <div>
           <SearchComponent.SearchBar updateResults={(data) => {
             this.setState({nutritionixResults: data})
           }}/>
         </div>
         <Row>
-          <div className="col s6 ">
+          <div className="col s8 ">
             <form >
               <h5>Add Food</h5>
 
@@ -167,8 +169,8 @@ class AddMealPage extends Component {
                 </button>
               </div>
             </form>
-          </div>
-          <div className="col s4 offset-s2">
+
+            <div  >
             <form>
               <h5>Add Water</h5>
               <Input
@@ -188,14 +190,22 @@ class AddMealPage extends Component {
               </div>
             </form>
           </div>
+          </div>
+
+         
 
         </Row>
+        </div>
+
+        <div className='box 2'>
         <div>
         <Button onClick={this.goToDashboardPage} type="button">View Dashboard</Button> 
         </div>
 
-        <div>
+        <div className='NutritionixCardsDisplay'>
           <NutritionixResultsDisplay nutritionixResults={this.state.nutritionixResults}/>
+        </div>
+        </div>
         </div>
 
       </div>
