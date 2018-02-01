@@ -28,18 +28,20 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div className="searchDiv col s8">
-        {/* we can use this.state.input to reference but don't use to set!use setState */}
-        <p> {this.state.input} </p>
-        <div className='inputDiv'>
-        <form >
-        {/*// call api GET /api/whatever?search=${event.target.value}
-            // .then// this.setState({ results: results })*/}
-        <input onChange={event => this.setState({ input: event.target.value })} type='text' id='search' name='search'/>
-        <button onClick={this.passSearchTerm} className="btn btn-small waves-effect waves-light" type="submit" name="submit"> SUBMIT </button>
-        </form>
+        <div s={9} className="search-container">
+            <div className="searchDiv">
+                {/* we can use this.state.input to reference but don't use to set!use setState */}
+                <p> {this.state.input} </p>
+                <div className='inputDiv'>
+                    <form >
+                        {/*// call api GET /api/whatever?search=${event.target.value}
+                           // .then// this.setState({ results: results })*/}
+                           <input onChange={event => this.setState({ input: event.target.value })} type='text' id='search' name='search'/>
+                            <button onClick={this.passSearchTerm} className="btn search-button" type="submit" name="submit"> SEARCH </button>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
     );
   }
 }
