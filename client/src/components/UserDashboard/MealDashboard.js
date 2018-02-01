@@ -74,14 +74,16 @@ class MealDashboard extends Component {
                             <div className='meal-totals'>
 
                                 <div className="water">
-                                        <h5>Water</h5>
+                                   <div className="header">
+                                     <h5>Water</h5>
+                                   </div>
                                     <div className="meal-nutrients">
                                         <p>{`${this.TotalDailyWater()} ounces`}</p>
                                     </div>
                                 </div>
 
                                 <div className="meal">
-                                    <div>
+                                    <div className="header">
                                         <h5>Breakfast</h5>
                                     </div>
                                     <div className="meal-nutrients">
@@ -93,7 +95,7 @@ class MealDashboard extends Component {
                                 </div>
 
                                 <div className="meal">
-                                    <div>
+                                    <div className="header">
                                         <h5>Lunch</h5>
                                     </div>
                                     <div className="meal-nutrients">
@@ -105,7 +107,7 @@ class MealDashboard extends Component {
                                 </div>
 
                                 <div className="meal">
-                                    <div>
+                                    <div className="header">
                                         <h5>Dinner</h5>
                                     </div>
                                     <div className="meal-nutrients">
@@ -117,7 +119,7 @@ class MealDashboard extends Component {
                                 </div>
 
                                 <div className="meal">
-                                    <div>
+                                    <div className="header">
                                         <h5>Snacks</h5>
                                     </div>
                                     <div className="meal-nutrients">

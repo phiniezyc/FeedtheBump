@@ -71,17 +71,40 @@ class TotalsDashboard extends Component {
 
                             <div className='today-totals'>
 
-                                <div className="nutrient-total">
-                                    <p>{`Calories: ${this.filterTotalDailyCalories()}`}</p>
+                                <div className="nutrient">
+                                    <div className="nutrient-title">
+                                        <p>{`Calories: `}</p>
+                                    </div>
+                                    <div className="nutrient-total">
+                                        <p>{`${this.filterTotalDailyCalories()}`}</p>
+                                    </div>
                                 </div>
-                                <div className="nutrient-total">
-                                    <p>{`Calcium: ${this.filterTotalDailyCalcium()} mg`}</p>
+
+                                <div className="nutrient">
+                                    <div className="nutrient-title">
+                                        <p>{`Calcium: `}</p>
+                                    </div>
+                                    <div className="nutrient-total">
+                                        <p>{`${this.filterTotalDailyCalcium()} mg`}</p>
+                                    </div>
                                 </div>
-                                <div className="nutrient-total">
-                                    <p>{`Protein: ${this.filterTotalDailyProtein()} g`}</p>
+
+                                <div className="nutrient">
+                                    <div className="nutrient-title">
+                                        <p>{`Protein: `}</p>
+                                    </div>
+                                    <div className="nutrient-total">
+                                        <p>{`${this.filterTotalDailyProtein()} g`}</p>
+                                    </div>
                                 </div>
-                                <div className="nutrient-total">
-                                    <p>{`Iron: ${this.filterTotalDailyIron()} mg`}</p>
+
+                                <div className="nutrient">
+                                    <div className="nutrient-title">
+                                        <p>{`Iron: `}</p>
+                                    </div>
+                                    <div className="nutrient-total">
+                                        <p>{`${this.filterTotalDailyIron()} mg`}</p>
+                                    </div>
                                 </div>
 
                             </div>
