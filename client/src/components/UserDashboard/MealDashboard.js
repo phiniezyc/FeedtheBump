@@ -86,9 +86,9 @@ class MealDashboard extends Component {
                                     </div>
                                     <div className="meal-nutrients">
                                         <p>{`Calories: ${breakfast.calories}`}</p>
-                                        <p>{`Calcium: ${breakfast.calcium}`}</p>
-                                        <p>{`Protein: ${breakfast.protein}`}</p>
-                                        <p>{`Iron: ${breakfast.iron}`}</p>
+                                        <p>{`Calcium: ${breakfast.calcium} mg`}</p>
+                                        <p>{`Protein: ${breakfast.protein} g`}</p>
+                                        <p>{`Iron: ${breakfast.iron} mg`}</p>
                                     </div>
                                 </div>
 
@@ -98,9 +98,9 @@ class MealDashboard extends Component {
                                     </div>
                                     <div className="meal-nutrients">
                                         <p>{`Calories: ${lunch.calories}`}</p>
-                                        <p>{`Calcium: ${lunch.calcium}`}</p>
-                                        <p>{`Protein: ${lunch.protein}`}</p>
-                                        <p>{`Iron: ${lunch.iron}`}</p>
+                                        <p>{`Calcium: ${lunch.calcium} mg`}</p>
+                                        <p>{`Protein: ${lunch.protein} g`}</p>
+                                        <p>{`Iron: ${lunch.iron} mg`}</p>
                                     </div>
                                 </div>
 
@@ -110,9 +110,9 @@ class MealDashboard extends Component {
                                     </div>
                                     <div className="meal-nutrients">
                                         <p>{`Calories: ${dinner.calories}`}</p>
-                                        <p>{`Calcium: ${dinner.calcium}`}</p>
-                                        <p>{`Protein: ${dinner.protein}`}</p>
-                                        <p>{`Iron: ${dinner.iron}`}</p>
+                                        <p>{`Calcium: ${dinner.calcium} mg`}</p>
+                                        <p>{`Protein: ${dinner.protein} g`}</p>
+                                        <p>{`Iron: ${dinner.iron} mg`}</p>
                                     </div>
                                 </div>
 
@@ -122,9 +122,9 @@ class MealDashboard extends Component {
                                     </div>
                                     <div className="meal-nutrients">
                                         <p>{`Calories: ${snack.calories}`}</p>
-                                        <p>{`Calcium: ${snack.calcium}`}</p>
-                                        <p>{`Protein: ${snack.protein}`}</p>
-                                        <p>{`Iron: ${snack.iron}`}</p>
+                                        <p>{`Calcium: ${snack.calcium} mg`}</p>
+                                        <p>{`Protein: ${snack.protein} g`}</p>
+                                        <p>{`Iron: ${snack.iron} mg`}</p>
                                     </div>
                                 </div>
 

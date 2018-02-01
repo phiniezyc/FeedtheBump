@@ -12,15 +12,12 @@
 .today-totals {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .nutrient-total {
     padding: 0 20px;
     flex: 1;
-}
-
-.today-top {
-    display: flex;
 }
 
 .today-heading {
@@ -31,11 +28,11 @@
     flex: 3;
 }
 
-h4, h5 {
+.water h5, .meal h5, .today-card h4 {
     color: white;
 }
 
-p {
+.water p, .meal p, .today-card p {
     font-size: x-large;
     color: white;
 }
@@ -43,6 +40,7 @@ p {
 .meal-totals {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .meal {
@@ -57,16 +55,71 @@ p {
     margin: 0;
 }
 
-/*.water-card {*/
-    /*max-width: 1400px;*/
-    /*background-color: #34DDDD;*/
-    /*padding: 20px 20px 0 20px;*/
-    /*color: white;*/
-/*}*/
-
 .water {
     background-color: #34DDDD;
     padding: 20px;
     color: white;
     flex-basis: 15%;
+}
+
+@media only screen and (max-width: 640px) {
+
+    .today-card {
+        padding: 20px;
+        color: white;
+    }
+
+    .today-totals {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .nutrient-total {
+        padding: 0 20px;
+        flex: 1;
+    }
+
+    .today-heading {
+        flex: 7
+    }
+
+    .add {
+        flex: 3;
+    }
+
+    .water h5, .meal h5, .today-card h4 {
+        color: white;
+    }
+
+    .water p, .meal p, .today-card p {
+        font-size: x-large;
+        color: white;
+    }
+
+    .meal-totals {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .meal {
+        background-color: #C1D208;
+        padding: 20px;
+        color: white;
+        flex-basis: 20%;
+    }
+
+    .meal-nutrients p {
+        font-size: large;
+        margin: 0;
+    }
+
+    .water {
+        background-color: #34DDDD;
+        padding: 20px;
+        color: white;
+        flex-basis: 15%;
+    }
+
 }
