@@ -1,4 +1,4 @@
-.totals-container, .meal-container, .water-container {
+.totals-container, .meal-container {
     margin: 20px 30px;
 }
 
@@ -11,17 +11,24 @@
 
 .today-totals {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
-.nutrient-total {
-    padding: 0 20px;
+.nutrient {
     flex: 1;
+    display: flex;
+    justify-content: flex-start;
 }
 
-.today-heading {
-    flex: 7
+.nutrient-title {
+    padding: 0 10px;
+    flex-basis: 10%;
+}
+
+.nutrient-total {
+    padding: 0 10px;
+    flex-basis: 60%;
 }
 
 .add {
@@ -62,7 +69,18 @@
     flex-basis: 15%;
 }
 
+
+
+
 @media only screen and (max-width: 640px) {
+
+    .totals-container {
+        margin: 20px 30px 0 30px;
+    }
+
+    .meal-container {
+        margin-top: -15px;
+    }
 
     .today-card {
         padding: 20px;
@@ -75,13 +93,20 @@
         flex-wrap: wrap;
     }
 
-    .nutrient-total {
-        padding: 0 20px;
+    .nutrient {
         flex: 1;
+        display: flex;
+        justify-content: space-between;
     }
 
-    .today-heading {
-        flex: 7
+    .nutrient-title {
+        padding: 0 10px;
+        flex-basis: 50%;
+    }
+
+    .nutrient-total {
+        padding: 0 20px;
+        flex-basis: 50%;
     }
 
     .add {
@@ -100,14 +125,35 @@
     .meal-totals {
         display: flex;
         justify-content: space-between;
-        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .water {
+        background-color: #34DDDD;
+        margin: 0;
+        padding: 10px 0 10px 20px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     .meal {
         background-color: #C1D208;
-        padding: 20px;
+        margin: 5px 0 0 0;
+        padding: 10px 0 10px 20px;
         color: white;
-        flex-basis: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header {
+        flex-basis: 30%;
+    }
+
+    .meal-nutrients {
+        flex-basis: 60%;
     }
 
     .meal-nutrients p {
@@ -115,11 +161,6 @@
         margin: 0;
     }
 
-    .water {
-        background-color: #34DDDD;
-        padding: 20px;
-        color: white;
-        flex-basis: 15%;
-    }
+
 
 }
