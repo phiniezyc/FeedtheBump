@@ -93,8 +93,8 @@ class AddMealPage extends Component {
   
 
   render() {
-    console.log(this.state.totalMeals);
-    console.log(this.state.totalWaters);
+    // console.log(this.state.totalMeals);
+    // console.log(this.state.totalWaters);
 
     return (
       <div>
