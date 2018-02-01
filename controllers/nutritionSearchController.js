@@ -14,6 +14,7 @@ module.exports = {
     const search = `${url}${id}${api_key}`
     
     console.log(search)
+    console.log(searchTerm);
     rp
       .get(search)
       .then((response) => {
