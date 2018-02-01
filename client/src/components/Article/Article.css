@@ -1,0 +1,42 @@
+.articles {
+    max-width: 1400px;
+    margin: 20px 30px;
+    padding: 20px;
+}
+
+.articles h4 {
+    font-size: x-large;
+    font-weight: bold;
+    color: #ff8c00;
+}
+
+.articles h6 {
+    font-size: large;
+    color: #ff8c00;
+}
+
+.articles p {
+    font-size: small;
+    color: black;
+    margin-left: 10px;
+}
+
+.article {
+    display: flex;
+}
+
+.image {
+    flex: 1;
+}
+
+.description {
+    flex: 4;
+}
+
+.related {
+    flex: 2;
+}
+
+.related p {
+    margin: 0;
+}
