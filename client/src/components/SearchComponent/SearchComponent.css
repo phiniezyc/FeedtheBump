@@ -1,8 +1,23 @@
-.inputDiv {
-    max-width: 100px;
+.search-container {
+    display: flex;
 }
 
 .searchDiv {
-    max-width: 200px;
+    flex: 1;
 }
+
+.inputDiv {
+    flex: 1;
+    display: flex;
+}
+
+form {
+    flex: 1;
+}
+
+.search-button {
+    flex: 1;
+}
+
+
 
