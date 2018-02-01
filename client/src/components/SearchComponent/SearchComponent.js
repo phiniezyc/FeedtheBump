@@ -9,7 +9,7 @@ class SearchBar extends Component {
 
     this.state = {
       // Can set specific default values also!
-      input: 'The text you type will show up here!',
+      input: 'Not sure how many calories are in that bagel? Search here for nutrient data.',
     };  
     
   }
@@ -28,9 +28,9 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div className="searchDiv">
+      <div className="searchDiv col s8">
         {/* we can use this.state.input to reference but don't use to set!use setState */}
-        <h5> {this.state.input} </h5>
+        <p> {this.state.input} </p>
         <div className='inputDiv'>
         <form >
         {/*// call api GET /api/whatever?search=${event.target.value}
