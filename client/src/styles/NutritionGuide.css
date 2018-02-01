@@ -1,0 +1,19 @@
+.static {
+    margin: 40px;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: darkorange;
+}
+
+h6 {
+    font-size: x-large;
+}
+
+p {
+    color: black;
+    font-size: medium;
+    margin: 0;
+}

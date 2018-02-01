@@ -75,13 +75,13 @@ class TotalsDashboard extends Component {
                                     <p>{`Calories: ${this.filterTotalDailyCalories()}`}</p>
                                 </div>
                                 <div className="nutrient-total">
-                                    <p>{`Calcium: ${this.filterTotalDailyCalcium()}`}</p>
+                                    <p>{`Calcium: ${this.filterTotalDailyCalcium()} mg`}</p>
                                 </div>
                                 <div className="nutrient-total">
-                                    <p>{`Protein: ${this.filterTotalDailyProtein()}`}</p>
+                                    <p>{`Protein: ${this.filterTotalDailyProtein()} g`}</p>
                                 </div>
                                 <div className="nutrient-total">
-                                    <p>{`Iron: ${this.filterTotalDailyIron()}`}</p>
+                                    <p>{`Iron: ${this.filterTotalDailyIron()} mg`}</p>
                                 </div>
 
                             </div>
