@@ -28,8 +28,6 @@ class SearchBar extends Component {
   render() {
     return (
       <div className="searchDiv col s8">
-        {/* we can use this.state.input to reference but don't use to set!use setState */}
-        <p> {this.state.input} </p>
         <div className='inputDiv'>
         <form >
         {/*// call api GET /api/whatever?search=${event.target.value}

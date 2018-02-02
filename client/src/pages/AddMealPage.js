@@ -107,17 +107,17 @@ class AddMealPage extends Component {
                           <Input
                           onChange={event => this.setState({food: event.target.value})}
                           s={12}
-                          placeholder="Food"/>
+                          placeholder="Food" label="Food Label"/>
 
                           <Input
                           onChange={event => this.setState({calories: event.target.value})}
                           s={12}
-                          placeholder="Calories"/>
+                          placeholder="Calories" label="Calories"/>
 
                           <Input
                           onChange={event => this.setState({protein: event.target.value})}
                           s={12}
-                          placeholder="Protein"/>
+                          placeholder="Protein" label="Protein (g)"/>
 
                           <Input
                           onChange={event => this.setState({calcium: event.target.value})}
@@ -181,9 +181,9 @@ class AddMealPage extends Component {
 
                           <Input
                           onChange={event => this.setState({water: event.target.value})}
-                          placeholder="Water"
+                          placeholder="Water(oz)"
                           s={12}
-                          label="Add Water"/>
+                          label="Add Water by Ounce"/>
 
                           <div className="col s4">
                               <button
