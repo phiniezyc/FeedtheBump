@@ -28,7 +28,6 @@ class App extends Component {
               <Route exact path='/user/addMeal' component={AddMealPage}/>
               <Route exact path='/guide' component={NutritionGuide}/>
               <Route exact path='/foodstoavoid' component={FoodstoAvoid}/> {/* Pages below here need to be completed */}
-              <Route exact path='/user/notes' component={UserNotesPage}/>
               <Route component={routeErrorPage}/> {/* <Route path='*' component={LandingPage} /> */}
               {/* <Footer/> */}
             </Switch>
