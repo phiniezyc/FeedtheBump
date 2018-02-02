@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "./node_modules/.bin/concurrently \"./node_modules/.bin/nodemon\" \"(cd client && yarn run start)\"",
-    "postinstall": "(cd client && yarn install && yarn run build)",
+    "dev": "./node_modules/.bin/concurrently \"./node_modules/.bin/nodemon\" \"(cd client && npm run start)\"",
+    "postinstall": "(cd client && npm install && npm run build)",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

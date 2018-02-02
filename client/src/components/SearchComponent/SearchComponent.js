@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './SearchComponent.css';
 import axios from 'axios';
-import _ from 'lodash';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -14,20 +13,21 @@ class SearchBar extends Component {
     
   }
 
-  passSearchTerm = _.throttle(() => {
+  passSearchTerm = () => {
     axios.get(`/api/nutritionix?searchTerm=${this.state.input}`)
-    .then(function (response) {
-      this.props.updateResults(response.data);
-      console.log(response.data.hits[0].fields.item_name);
+    .then((response) => {
+      this.props.updateResults(JSON.parse(response.data));
+      console.log(response.data);
     })
-    .catch(function (error) {
+    .catch((error) => {
       console.log(error);
     });
-  }, 800);
+  };
 
 
   render() {
     return (
+<<<<<<< HEAD
         <div s={9} className="search-container">
             <div className="searchDiv">
                 {/* we can use this.state.input to reference but don't use to set!use setState */}
@@ -41,6 +41,19 @@ class SearchBar extends Component {
                     </form>
                 </div>
             </div>
+=======
+      <div className="searchDiv col s8">
+        <div className='inputDiv'>
+        <form >
+        {/*// call api GET /api/whatever?search=${event.target.value}
+            // .then// this.setState({ results: results })*/}
+        <input onChange={event => this.setState({ input: event.target.value })} type='text' id='search' name='search'/>
+        <button onClick={(event) => {
+          event.preventDefault();
+          this.passSearchTerm();
+        }} className="btn btn-small waves-effect waves-light"> SUBMIT </button>
+        </form>
+>>>>>>> 589bab759ecb97944ee06d7881e06899df3d617d
         </div>
     );
   }

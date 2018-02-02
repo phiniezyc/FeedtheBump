@@ -47,7 +47,7 @@ class UserDashboard extends Component {
                     <MealDashboard/>
                 </div>
                 <div className="add-button">
-                    <button onClick = {this.goToAddMealsPage} className="btn btn-large ftb-button" type="button" name="action">+ Add Food or Water</button>
+                    <button onClick = {this.goToAddMealsPage} className="btn btn-large ftb-button" type="button" name="action">Add Food or Water</button>
                 </div>
             </div>
         );
