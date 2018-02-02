@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'react-materialize';
 import './SearchComponent.css';
 import axios from 'axios';
 
@@ -27,20 +28,26 @@ class SearchBar extends Component {
 
     render() {
         return (
-            <div className="searchDiv col s8">
-                <div className='inputDiv'>
-                    <form >
-                        {/*// call api GET /api/whatever?search=${event.target.value}
-            // .then// this.setState({ results: results })*/}
-                        <h5>Search for Nutrition Info</h5>
+            <div className="searchDiv">
+                <form>
+                    <h5>Search for Nutrition Info</h5>
+                    <p>Not sure how many calories are in that bagel? Search here to find out.</p>
 
-                        <input onChange={event => this.setState({ input: event.target.value })} type='text' id='search' name='search'/>
-                        <button onClick={(event) => {
-                            event.preventDefault();
-                            this.passSearchTerm();
-                        }} className="btn btn-small waves-effect waves-light"> SUBMIT </button>
-                    </form>
-                </div>
+                    <div className="search-functions">
+                        <div className="search-input">
+                            <input onChange={event => this.setState({ input: event.target.value })}
+                                type='text' id='search' name='search' placeholder="Enter food to find nutrition information"/>
+                        </div>
+                        <div className="search-button">
+                            <Button onClick={(event) => {
+                                event.preventDefault();
+                                this.passSearchTerm();
+                                }} className="btn btn-small search"
+                                icon="search">
+                            </Button>
+                        </div>
+                    </div>
+                </form>
             </div>
         );
     }

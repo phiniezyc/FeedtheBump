@@ -1,23 +1,17 @@
-.search-container {
+.search-functions {
     display: flex;
+    justify-content: space-between;
 }
 
-.searchDiv {
-    flex: 1;
-}
-
-.inputDiv {
-    flex: 1;
-    display: flex;
-}
-
-form {
-    flex: 1;
+.search-input {
+    flex-basis: 70%;
 }
 
 .search-button {
-    flex: 1;
+    flex-basis: 20%;
 }
 
-
+.search {
+    width: 100px;
+}
 
