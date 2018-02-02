@@ -18,10 +18,8 @@ module.exports = {
     rp
       .get(search)
       .then((response) => {
-           console.log(response.data.hits[0].fields.item_name);
-
-        res.json(response.data);
-        return response.data
+        res.json(response);
+        return response
       })
       .catch(next);
   }

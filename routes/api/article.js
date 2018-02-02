@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const healthArticleController = require ("./healthArticleController");
+const healthArticleController = require ("../../controllers/healthArticleController");
 
 router
     .route("/")
