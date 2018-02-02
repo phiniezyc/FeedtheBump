@@ -4,6 +4,9 @@
 }
 
 .cardDisplay {
-    max-width: 300px;
-    height: 200px; 
+    
+    width: 100%;
+    min-width: 200px;
+    min-height: 200px;
+    
 }
