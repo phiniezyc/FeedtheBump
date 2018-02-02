@@ -1,7 +1,7 @@
 .flex-container {
     margin: 20px 30px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .food-water {
@@ -57,12 +57,11 @@
     flex: 1;
 }
 
-.NutritionixCardsDisplay {
-    background-color: aqua;
-    height: 200px;
-    width: 200px;
-    float: right;
-}
+/*.NutritionixCardsDisplay {*/
+    /*background-color: aqua;*/
+    /*height: 200px;*/
+    /*width: 200px;*/
+/*}*/
 
 .btn {
     background-color: darkorange;
