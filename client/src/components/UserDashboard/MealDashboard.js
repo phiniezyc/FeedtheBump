@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Row, Col } from 'react-materialize';
+import React, {Component} from 'react';
+import {Row, Col} from 'react-materialize';
 import './UserDashboard.css';
 import API from '../../utils/API';
 
@@ -22,7 +22,6 @@ class MealDashboard extends Component {
         API
             .getMeals()
             .then(res => this.setState({totalMeals: res.data, food: '', calories: '', meal: '', date: ''}))
-            // .then({breakfast: this.state.totalMeals.filter((meal) => {return meal.meal === "Breakfast"})})
             .catch(err => console.log(err));
     }
 
@@ -40,7 +39,6 @@ class MealDashboard extends Component {
         }, 0)
     }
 
-
     filterMeal = (target = '') => {
         return (this.state.totalMeals || []).reduce((result, meal) => {
             if (meal.meal.toLowerCase() === target.toLowerCase()) {
@@ -48,22 +46,25 @@ class MealDashboard extends Component {
                     calcium: result.calcium + meal.calcium,
                     iron: result.iron + meal.iron,
                     calories: result.calories + meal.calories,
-                    protein: result.protein + meal.protein,
+                    protein: result.protein + meal.protein
                 }
             }
             return result;
-        }, { calcium: 0, iron: 0, calories: 0, protein: 0 })
+        }, {
+            calcium: 0,
+            iron: 0,
+            calories: 0,
+            protein: 0
+        })
     };
 
-
-     render() {
+    render() {
         const breakfast = this.filterMeal('breakfast');
         const lunch = this.filterMeal('lunch');
         const dinner = this.filterMeal('dinner');
         const snack = this.filterMeal('snack');
 
-
-         return (
+        return (
             <div className="meal-container">
 
                 <Row>
@@ -74,9 +75,9 @@ class MealDashboard extends Component {
                             <div className='meal-totals'>
 
                                 <div className="water">
-                                   <div className="header">
-                                     <h5>Water</h5>
-                                   </div>
+                                    <div className="header">
+                                        <h5>Water</h5>
+                                    </div>
                                     <div className="meal-nutrients">
                                         <p>{`${this.TotalDailyWater()} ounces`}</p>
                                     </div>
@@ -136,36 +137,10 @@ class MealDashboard extends Component {
 
                     </Col>
                 </Row>
-
-                {/*<div className="test">*/}
-                    {/*<ol>*/}
-                        {/*{this*/}
-                            {/*.filterBreakfast()*/}
-                            {/*.map((meal, i) => {*/}
-
-
-                                {/*return (*/}
-                                    {/*<li key={i}>*/}
-                                        {/*<div key={i}>*/}
-                                            {/*<ol>*/}
-                                                {/*<li key={meal.id}>{meal.meal}</li>*/}
-                                                {/*<li key={meal.food}>{meal.food}</li>*/}
-                                                {/*<li key={meal.calories}>{meal.calories}</li>*/}
-                                                {/*<li key={meal.protein}>{meal.protein}</li>*/}
-                                                {/*<li key={meal.calcium}>{meal.calcium}</li>*/}
-                                                {/*<li key={meal.iron}>{meal.iron}</li>*/}
-                                                {/*<li key={meal.date}>{meal.date}</li>*/}
-                                            {/*</ol>*/}
-                                        {/*</div>*/}
-                                    {/*</li>*/}
-                                {/*)*/}
-                            {/*})}*/}
-                    {/*</ol>*/}
-                {/*</div>*/}
             </div>
-        )}
+        )
+    }
 
 }
-
 
 export default MealDashboard;

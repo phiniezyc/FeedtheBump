@@ -20,9 +20,6 @@ class UserSettingsPage extends Component {
     }
 
     handleSubmit(event) {
-        //send to db
-            //calculate days until due date
-            //depending on how many days, add xxx calories to their calorie entry
         event.preventDefault();
     }
 

@@ -1,95 +1,145 @@
-
-
-
-
-
-
 /*.nutrient-titles {*/
-    /*display: flex;*/
-    /*justify-content: flex-end;*/
-    /*margin-left: 5%;*/
+
+/*display: flex;*/
+
+/*justify-content: flex-end;*/
+
+/*margin-left: 5%;*/
+
 /*}*/
 
 /*.calories {*/
-    /*flex-basis: 20%;*/
+
+/*flex-basis: 20%;*/
+
 /*}*/
 
 /*.calcium {*/
-    /*flex-basis: 20%;*/
+
+/*flex-basis: 20%;*/
+
 /*}*/
 
 /*.iron {*/
-    /*flex-basis: 20%;*/
+
+/*flex-basis: 20%;*/
+
 /*}*/
 
 /*.protein {*/
-    /*flex-basis: 20%;*/
+
+/*flex-basis: 20%;*/
+
 /*}*/
 
 /*.meal-container {*/
-    /*display: flex;*/
+
+/*display: flex;*/
+
 /*}*/
 
 /*.meal-container:nth-child(even) {*/
-    /*background-color: #BCDD5A;*/
+
+/*background-color: #BCDD5A;*/
+
 /*}*/
 
 /*.meal-container:nth-child(odd) {*/
-    /*background-color: #80C31C;*/
+
+/*background-color: #80C31C;*/
+
 /*}*/
 
 /*.breakfast, .lunch, .dinner, .snacks {*/
-    /*flex: 1;*/
+
+/*flex: 1;*/
+
 /*}*/
 
 /*.nutrient-count {*/
-    /*flex: 4;*/
-    /*display: flex;*/
-    /*justify-content: flex-start;*/
+
+/*flex: 4;*/
+
+/*display: flex;*/
+
+/*justify-content: flex-start;*/
 
 /*}*/
 
 /*.value {*/
-    /*flex: 1;*/
-    /*margin-left: 5%;*/
-    /*color: white;*/
+
+/*flex: 1;*/
+
+/*margin-left: 5%;*/
+
+/*color: white;*/
+
 /*}*/
 
 /*.breakfast {*/
-    /*background-color: #BCDD5A;*/
-    /*padding: 10px 0 10px 0;*/
-    /*margin-right: 5px;*/
-    /*margin-bottom: 5px;*/
-    /*text-align: center;*/
+
+/*background-color: #BCDD5A;*/
+
+/*padding: 10px 0 10px 0;*/
+
+/*margin-right: 5px;*/
+
+/*margin-bottom: 5px;*/
+
+/*text-align: center;*/
+
 /*}*/
 
 /*.lunch {*/
-    /*background-color: #80C31C;*/
-    /*padding: 10px 0 10px 0;*/
-    /*margin-right: 5px;*/
-    /*margin-bottom: 5px;*/
-    /*text-align: center;*/
+
+/*background-color: #80C31C;*/
+
+/*padding: 10px 0 10px 0;*/
+
+/*margin-right: 5px;*/
+
+/*margin-bottom: 5px;*/
+
+/*text-align: center;*/
+
 /*}*/
 
 /*.dinner {*/
-    /*background-color: #BCDD5A;*/
-    /*padding: 10px 0 10px 0;*/
-    /*margin-right: 5px;*/
-    /*margin-bottom: 5px;*/
-    /*text-align: center;*/
+
+/*background-color: #BCDD5A;*/
+
+/*padding: 10px 0 10px 0;*/
+
+/*margin-right: 5px;*/
+
+/*margin-bottom: 5px;*/
+
+/*text-align: center;*/
+
 /*}*/
 
 /*.snacks {*/
-    /*background-color: #80C31C;*/
-    /*padding: 10px 0 10px 0;*/
-    /*margin-right: 5px;*/
-    /*margin-bottom: 5px;*/
-    /*text-align: center;*/
+
+/*background-color: #80C31C;*/
+
+/*padding: 10px 0 10px 0;*/
+
+/*margin-right: 5px;*/
+
+/*margin-bottom: 5px;*/
+
+/*text-align: center;*/
+
 /*}*/
 
 /*h6 {*/
-    /*font-weight: lighter;*/
-    /*font-size: large;*/
-    /*color: white;*/
-    /*margin: 10px;*/
+
+/*font-weight: lighter;*/
+
+/*font-size: large;*/
+
+/*color: white;*/
+
+/*margin: 10px;*/
+
 /*}*/
