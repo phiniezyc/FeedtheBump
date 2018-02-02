@@ -97,6 +97,7 @@ class AddMealPage extends Component {
     return (
       <div className='flex-container'>
           <Row>
+<<<<<<< HEAD
               <Col s={9}>
                   <div className="addfood-div">
                       <form className="addfood-form">
@@ -129,6 +130,58 @@ class AddMealPage extends Component {
                               s={12}
                               placeholder="Iron"/>
                           </div>
+=======
+              <Col s={12}>
+                  <div className="add-food">
+                      <form >
+                          <h4>Add Food</h4>
+
+                          <Input
+                          onChange={event => this.setState({food: event.target.value})}
+                          s={12}
+                          placeholder="Food" label="Food Label"/>
+
+                          <Input
+                          onChange={event => this.setState({calories: event.target.value})}
+                          s={12}
+                          placeholder="Calories" label="Calories"/>
+
+                          <Input
+                          onChange={event => this.setState({protein: event.target.value})}
+                          s={12}
+                          placeholder="Protein" label="Protein (g)"/>
+
+                          <Input
+                          onChange={event => this.setState({calcium: event.target.value})}
+                          s={12}
+                          placeholder="Calcium"/>
+
+                          <Input
+                          onChange={event => this.setState({iron: event.target.value})}
+                          s={12}
+                          placeholder="Iron"/>
+
+                          <Input
+                          onChange={event => this.setState({meal: event.target.value})}
+                          name="group1"
+                          type="radio"
+                          value="Breakfast"
+                          label="Breakfast"/>
+
+                          <Input
+                          onChange={event => this.setState({meal: event.target.value})}
+                          name="group1"
+                          type="radio"
+                          value="Lunch"
+                          label="Lunch"/>
+
+                          <Input
+                          onChange={event => this.setState({meal: event.target.value})}
+                          name="group1"
+                          type="radio"
+                          value="Dinner"
+                          label="Dinner"/>
+>>>>>>> 589bab759ecb97944ee06d7881e06899df3d617d
 
                           <div className="add-extras">
                               <div className="add-meal">
@@ -186,9 +239,9 @@ class AddMealPage extends Component {
 
                           <Input
                           onChange={event => this.setState({water: event.target.value})}
-                          placeholder="Water"
+                          placeholder="Water(oz)"
                           s={12}
-                          label="Add Water"/>
+                          label="Add Water by Ounce"/>
 
                           <div className="col s4">
                               <button
