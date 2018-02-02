@@ -12,6 +12,3 @@ class UserAboutPage extends Component {
 }
 
 export default UserAboutPage;
-
-// Above Code: Created the About Page.
-// Just need the specific data for it.
