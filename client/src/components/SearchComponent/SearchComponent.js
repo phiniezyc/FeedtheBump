@@ -8,47 +8,37 @@ class SearchBar extends Component {
 
     this.state = {
       // Can set specific default values also!
-      input: 'The text you type will show up here!',
+      input: 'Not sure how many calories are in that bagel? Search here for nutrient data.',
     };  
     
   }
-  componentDidUpdate() {
-      this.passSearchTerm();
-  }
+
   passSearchTerm = () => {
-    axios.get('/api/userInput', {
-      input: this.state.input,
-      
+    axios.get(`/api/nutritionix?searchTerm=${this.state.input}`)
+    .then((response) => {
+      this.props.updateResults(JSON.parse(response.data));
+      console.log(response.data);
     })
-    .then(function (response) {
-      response.json(response);
-    })
-    .catch(function (error) {
+    .catch((error) => {
       console.log(error);
     });
-  }
-  
-
-  sendSearchTerm = () => {
-    axios.post('/api/userInput', {
-      params: {
-        id: this.state.input
-      }
-    });
-  }
+  };
 
 
   render() {
     return (
-      <div className="searchDiv">
+      <div className="searchDiv col s8">
         {/* we can use this.state.input to reference but don't use to set!use setState */}
-        <h5> {this.state.input} </h5>
+        <p> {this.state.input} </p>
         <div className='inputDiv'>
         <form >
         {/*// call api GET /api/whatever?search=${event.target.value}
             // .then// this.setState({ results: results })*/}
         <input onChange={event => this.setState({ input: event.target.value })} type='text' id='search' name='search'/>
-        <button onClick={this.sendSearchTerm()} className="btn btn-small waves-effect waves-light" type="submit" name="submit"> SUBMIT </button>
+        <button onClick={(event) => {
+          event.preventDefault();
+          this.passSearchTerm();
+        }} className="btn btn-small waves-effect waves-light"> SUBMIT </button>
         </form>
         </div>
       </div>

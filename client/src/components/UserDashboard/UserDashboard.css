@@ -11,19 +11,35 @@
 
 .today-totals {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.nutrient {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.nutrient-title {
+    padding: 0 10px;
+    flex-basis: 10%;
 }
 
 .nutrient-total {
-    padding: 0 20px;
-    flex: 1;
+    padding: 0 10px;
+    flex-basis: 60%;
 }
 
-h4, h5 {
+.add {
+    flex: 3;
+}
+
+.water h5, .meal h5, .today-card h4 {
     color: white;
 }
 
-p {
+.water p, .meal p, .today-card p {
     font-size: x-large;
     color: white;
 }
@@ -31,102 +47,120 @@ p {
 .meal-totals {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .meal {
     background-color: #C1D208;
     padding: 20px;
     color: white;
-    flex-basis: 24%;
+    flex-basis: 20%;
+}
+
+.meal-nutrients p {
+    font-size: large;
+    margin: 0;
+}
+
+.water {
+    background-color: #34DDDD;
+    padding: 20px;
+    color: white;
+    flex-basis: 15%;
 }
 
 
-/*.nutrient-titles {*/
-    /*display: flex;*/
-    /*justify-content: flex-end;*/
-    /*margin-left: 5%;*/
-/*}*/
 
-/*.calories {*/
-    /*flex-basis: 20%;*/
-/*}*/
 
-/*.calcium {*/
-    /*flex-basis: 20%;*/
-/*}*/
+@media only screen and (max-width: 640px) {
 
-/*.iron {*/
-    /*flex-basis: 20%;*/
-/*}*/
+    .totals-container {
+        margin: 20px 30px 0 30px;
+    }
 
-/*.protein {*/
-    /*flex-basis: 20%;*/
-/*}*/
+    .meal-container {
+        margin-top: -15px;
+    }
 
-/*.meal-container {*/
-    /*display: flex;*/
-/*}*/
+    .today-card {
+        padding: 20px;
+        color: white;
+    }
 
-/*.meal-container:nth-child(even) {*/
-    /*background-color: #BCDD5A;*/
-/*}*/
+    .today-totals {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
 
-/*.meal-container:nth-child(odd) {*/
-    /*background-color: #80C31C;*/
-/*}*/
+    .nutrient {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+    }
 
-/*.breakfast, .lunch, .dinner, .snacks {*/
-    /*flex: 1;*/
-/*}*/
+    .nutrient-title {
+        padding: 0 10px;
+        flex-basis: 50%;
+    }
 
-/*.nutrient-count {*/
-    /*flex: 4;*/
-    /*display: flex;*/
-    /*justify-content: flex-start;*/
+    .nutrient-total {
+        padding: 0 20px;
+        flex-basis: 50%;
+    }
 
-/*}*/
+    .add {
+        flex: 3;
+    }
 
-/*.value {*/
-    /*flex: 1;*/
-    /*margin-left: 5%;*/
-    /*color: white;*/
-/*}*/
+    .water h5, .meal h5, .today-card h4 {
+        color: white;
+    }
 
-/*.breakfast {*/
-    /*background-color: #BCDD5A;*/
-    /*padding: 10px 0 10px 0;*/
-    /*margin-right: 5px;*/
-    /*margin-bottom: 5px;*/
-    /*text-align: center;*/
-/*}*/
+    .water p, .meal p, .today-card p {
+        font-size: x-large;
+        color: white;
+    }
 
-/*.lunch {*/
-    /*background-color: #80C31C;*/
-    /*padding: 10px 0 10px 0;*/
-    /*margin-right: 5px;*/
-    /*margin-bottom: 5px;*/
-    /*text-align: center;*/
-/*}*/
+    .meal-totals {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
 
-/*.dinner {*/
-    /*background-color: #BCDD5A;*/
-    /*padding: 10px 0 10px 0;*/
-    /*margin-right: 5px;*/
-    /*margin-bottom: 5px;*/
-    /*text-align: center;*/
-/*}*/
+    .water {
+        background-color: #34DDDD;
+        margin: 0;
+        padding: 10px 0 10px 20px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-/*.snacks {*/
-    /*background-color: #80C31C;*/
-    /*padding: 10px 0 10px 0;*/
-    /*margin-right: 5px;*/
-    /*margin-bottom: 5px;*/
-    /*text-align: center;*/
-/*}*/
+    .meal {
+        background-color: #C1D208;
+        margin: 5px 0 0 0;
+        padding: 10px 0 10px 20px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-/*h6 {*/
-    /*font-weight: lighter;*/
-    /*font-size: large;*/
-    /*color: white;*/
-    /*margin: 10px;*/
-/*}*/
+    .header {
+        flex-basis: 30%;
+    }
+
+    .meal-nutrients {
+        flex-basis: 60%;
+    }
+
+    .meal-nutrients p {
+        font-size: large;
+        margin: 0;
+    }
+
+
+
+}

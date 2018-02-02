@@ -1,0 +1,15 @@
+.flex-container {
+    display: flex;
+
+}
+
+.NutritionixCardsDisplay {
+    background-color: aqua;
+    height: 200px;
+    width: 200px;
+    float: right;
+}
+
+form {
+
+}
