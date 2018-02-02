@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Row, Col } from 'react-materialize';
+import React, {Component} from 'react';
+import {Row, Col} from 'react-materialize';
 import './UserDashboard.css';
 import API from '../../utils/API';
 

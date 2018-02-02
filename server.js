@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3001;
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+    app.use(express.static("client/build"));
 }
 
 //auth2 code
@@ -23,26 +23,18 @@ app.get("/signin", (req, res) => {
     res.redirect(google_url);
 });
 
-
 app.get("/oauth/callback", (req, res) => {
 
     const code = req.param("code");
-    axios({
-        url: `https://www.googleapis.com/oauth2/v4/token?code=${code}&client_id=${process.env.CLIENT_ID}&client_secret=${process.env.CLIENT_SECRET}&redirect_uri=http://localhost:${PORT}/oauth/callback&grant_type=authorization_code`,
-        method: "POST"
-    })
-        .then((response) => {
-            console.log("Response: ", response.data);
-            res.json({ msg: "Ok" });
+    axios({url: `https://www.googleapis.com/oauth2/v4/token?code=${code}&client_id=${process.env.CLIENT_ID}&client_secret=${process.env.CLIENT_SECRET}&redirect_uri=http://localhost:${PORT}/oauth/callback&grant_type=authorization_code`, method: "POST"}).then((response) => {
+        console.log("Response: ", response.data);
+        res.json({msg: "Ok"});
 
-        })
-        .catch((err) => {
-            console.log("Error: ", err.response.data);
-            res.json({ error: "Error" });
+    }).catch((err) => {
+        console.log("Error: ", err.response.data);
+        res.json({error: "Error"});
 
-        });
-
-
+    });
 });
 
 // Configure body parser for AJAX requests
@@ -52,11 +44,10 @@ app.use(bodyParser.json());
 // both API and view
 app.use(routes);
 
-
 mongoose.Promise = global.Promise;
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/feedtheBump", {useMongoClient: true});
 
 app.listen(PORT, function () {
-  console.log(`🌎 ==> Server now on port ${PORT}!`);
+    console.log(`🌎 ==> Server now on port ${PORT}!`);
 });
