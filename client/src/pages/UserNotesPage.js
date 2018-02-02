@@ -38,7 +38,12 @@ class UserNotesPage extends Component {
                         </div>
                         <textarea className="textarea" placeholder={this.state.value} onChange={this.handleChange} />
                     </label>
-                            <input type="submit" className="btn btn-small waves-effect waves-light" value="Submit" />
+                        <button 
+                            type="submit" 
+                            className="btn btn-small waves-effect waves-light" 
+                            value="Submit">
+                            Submit
+                        </button>
                     </form>
                 </div>
             </Row>
