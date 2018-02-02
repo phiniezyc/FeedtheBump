@@ -1,12 +1,7 @@
-/*.nutritionixResultDiv{*/
-    /*margin: 20px;*/
-    /*display: inline-block;*/
-/*}*/
+.card {
+    width: 250px;
+    min-height: 250px;
+    height: auto;
+}
 
-/*.cardDisplay {*/
-    /**/
-    /*width: 100%;*/
-    /*min-width: 200px;*/
-    /*min-height: 200px;*/
-    /**/
-/*}*/
+
