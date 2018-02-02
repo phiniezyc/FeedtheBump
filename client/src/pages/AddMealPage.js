@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Row, Col, Input } from 'react-materialize';
+import React, {Component} from 'react';
+import {Row, Col, Input} from 'react-materialize';
 import API from '../utils/API';
 import NutritionixResultsDisplay from '../components/NutritionixResultsDisplay/NutrionixReultsDisplay';
 import SearchComponent from '../components/SearchComponent/SearchComponent';
@@ -87,126 +87,131 @@ class AddMealPage extends Component {
   }
 
   goToDashboardPage = () => {
-    this.props.history.push("/user/dashboard");
-}
-
-  
+    this
+      .props
+      .history
+      .push("/user/dashboard");
+  }
 
   render() {
-    // console.log(this.state.totalMeals);
-    // console.log(this.state.totalWaters);
+    // console.log(this.state.totalMeals); console.log(this.state.totalWaters);
 
     return (
       <div className='flex-container'>
-          <Row>
-              <Col s={12}>
-                  <div className="add-food">
-                      <form >
-                          <h4>Add Food</h4>
+        <Row>
+          <Col s={12}>
+            <div className="add-food">
+              <form >
+                <h4>Add Food</h4>
 
-                          <Input
-                          onChange={event => this.setState({food: event.target.value})}
-                          s={12}
-                          placeholder="Food" label="Food Label"/>
+                <Input
+                  onChange={event => this.setState({food: event.target.value})}
+                  s={12}
+                  placeholder="Food"
+                  label="Food Label"
+                  icon='restaurant'/>
 
-                          <Input
-                          onChange={event => this.setState({calories: event.target.value})}
-                          s={12}
-                          placeholder="Calories" label="Calories"/>
+                <Input
+                  onChange={event => this.setState({calories: event.target.value})}
+                  s={12}
+                  placeholder="Calories"
+                  label="Calories"/>
 
-                          <Input
-                          onChange={event => this.setState({protein: event.target.value})}
-                          s={12}
-                          placeholder="Protein" label="Protein (g)"/>
+                <Input
+                  onChange={event => this.setState({protein: event.target.value})}
+                  s={12}
+                  placeholder="Protein"
+                  label="Protein (g)"/>
 
-                          <Input
-                          onChange={event => this.setState({calcium: event.target.value})}
-                          s={12}
-                          placeholder="Calcium"/>
+                <Input
+                  onChange={event => this.setState({calcium: event.target.value})}
+                  s={12}
+                  placeholder="Calcium"/>
 
-                          <Input
-                          onChange={event => this.setState({iron: event.target.value})}
-                          s={12}
-                          placeholder="Iron"/>
+                <Input
+                  onChange={event => this.setState({iron: event.target.value})}
+                  s={12}
+                  placeholder="Iron"/>
 
-                          <Input
-                          onChange={event => this.setState({meal: event.target.value})}
-                          name="group1"
-                          type="radio"
-                          value="Breakfast"
-                          label="Breakfast"/>
+                <Input
+                  onChange={event => this.setState({meal: event.target.value})}
+                  name="group1"
+                  type="radio"
+                  value="Breakfast"
+                  label="Breakfast"/>
 
-                          <Input
-                          onChange={event => this.setState({meal: event.target.value})}
-                          name="group1"
-                          type="radio"
-                          value="Lunch"
-                          label="Lunch"/>
+                <Input
+                  onChange={event => this.setState({meal: event.target.value})}
+                  name="group1"
+                  type="radio"
+                  value="Lunch"
+                  label="Lunch"/>
 
-                          <Input
-                          onChange={event => this.setState({meal: event.target.value})}
-                          name="group1"
-                          type="radio"
-                          value="Dinner"
-                          label="Dinner"/>
+                <Input
+                  onChange={event => this.setState({meal: event.target.value})}
+                  name="group1"
+                  type="radio"
+                  value="Dinner"
+                  label="Dinner"/>
 
-                          <Input
-                          onChange={event => this.setState({meal: event.target.value})}
-                          name="group1"
-                          type="radio"
-                          value="Snack"
-                          label="Snack"/>
+                <Input
+                  onChange={event => this.setState({meal: event.target.value})}
+                  name="group1"
+                  type="radio"
+                  value="Snack"
+                  label="Snack"/>
 
-                          <div className="col s4">
-                              <button
-                              onClick={this.handleFoodSubmit}
-                              className="btn btn-small waves-effect waves-light"
-                              type="submit"
-                              name="action">ADD
-                              </button>
-                          </div>
+                <div className="col s4">
+                  <button
+                    onClick={this.handleFoodSubmit}
+                    className="btn btn-small waves-effect waves-light"
+                    type="submit"
+                    name="action">ADD
+                  </button>
+                </div>
 
-                      </form>
-                  </div>
+              </form>
+            </div>
 
-                  <div className="search-food">
-                        <SearchComponent.SearchBar updateResults={(data) => {
-                            this.setState({nutritionixResults: data})
-                        }}/>
-                  </div>
+            <div className="search-food">
+              <SearchComponent.SearchBar
+                updateResults={(data) => {
+                this.setState({nutritionixResults: data})
+              }}/>
+            </div>
 
-                  <div className="add-water">
-                      <form>
-                          <h5>Add Water</h5>
+            <div className="add-water">
+              <form>
+                <h5>Add Water</h5>
 
-                          <Input
-                          onChange={event => this.setState({water: event.target.value})}
-                          placeholder="Water(oz)"
-                          s={12}
-                          label="Add Water by Ounce"/>
+                <Input
+                  onChange={event => this.setState({water: event.target.value})}
+                  placeholder="Water(oz)"
+                  s={12}
+                  label="Add Water by Ounce"/>
 
-                          <div className="col s4">
-                              <button
-                              onClick={this.handleWaterSubmit}
-                              className="btn btn-small waves-effect waves-light"
-                              type="button"
-                              name="submit">Add
-                              </button>
-                          </div>
-                      </form>
-                  </div>
+                <div className="col s4">
+                  <button
+                    onClick={this.handleWaterSubmit}
+                    className="btn btn-small waves-effect waves-light"
+                    type="button"
+                    name="submit">Add
+                  </button>
+                </div>
+              </form>
+            </div>
 
-             </Col>
+          </Col>
 
-             <Col s={6}>
-                 <div className="cards">
-                     <div className='NutritionixCardsDisplay'>
-                         <NutritionixResultsDisplay nutritionixResults={this.state.nutritionixResults}/>
-                     </div>
-                 </div>
-             </Col>
+          <Col s={6}>
+            <div className="cards">
+              <div className='NutritionixCardsDisplay'>
+                <NutritionixResultsDisplay nutritionixResults={this.state.nutritionixResults}/>
+              </div>
+            </div>
+          </Col>
 
-          </Row>
+        </Row>
       </div>
 
     );
