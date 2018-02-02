@@ -7,10 +7,10 @@ router
     .get(waterController.findAll)
     .post(waterController.create); 
 
-router
-    .route("/:id")
-    .get(waterController.findById)
-    .put(waterController.update)
-    .delete(waterController.remove);
+// router
+//     .route("/:id")
+//     .get(waterController.findById)
+//     .put(waterController.update)
+//     .delete(waterController.remove);
 
 module.exports = router;
