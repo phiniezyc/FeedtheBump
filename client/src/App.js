@@ -4,14 +4,9 @@ import './App.css';
 import NavBar from './components/Navbar/Navbar';
 import LandingPage from './pages/LandingPage';
 import UserDashboard from './pages/UserDashboard';
-import UserAboutPage from './pages/UserAboutPage';
 import AddMealPage from './pages/AddMealPage';
-import UserSettingsPage from './pages/UserSettingsPage';
 import NutritionGuide from './pages/NutritionGuide';
 import FoodstoAvoid from './pages/FoodstoAvoid';
-import UserNutritionReport from './pages/UserNutritionReport';
-import UserNotesPage from './pages/UserNotesPage';
-import HealthArticle from "./pages/HealthArticle";
 import routeErrorPage from "./pages/routeErrorPage/routeErrorPage";
 
 class App extends Component {
