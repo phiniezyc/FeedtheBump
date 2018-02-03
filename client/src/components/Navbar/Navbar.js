@@ -7,7 +7,7 @@ const NavBar = () => (
             <NavItem href="/user/dashboard">Dashboard</NavItem>
             <NavItem href="/user/addMeal">Add Meals</NavItem>
             <NavItem href="/guide">Nutrition Guide</NavItem>
-            <NavItem href="/foodstoavoid">Nutrition Guide</NavItem>
+            <NavItem href="/foodstoavoid">Foods to Avoid</NavItem>
             <NavItem href="/">Log Out</NavItem>
 
         </Navbar>
