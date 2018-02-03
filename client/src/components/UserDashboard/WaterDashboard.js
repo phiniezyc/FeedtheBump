@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Row, Col } from 'react-materialize';
+import React, {Component} from 'react';
+import {Row, Col} from 'react-materialize';
 import './UserDashboard.css';
 import API from '../../utils/API';
 
@@ -30,10 +30,8 @@ class WaterDashboard extends Component {
         }, 0)
     }
 
-    //For each ounce added (as the number goes up by 1), the long outline div shortens
-    // and a tiny, single filled-in div is added.
-
-    // AddOunces = () => {
+    // For each ounce added (as the number goes up by 1), the long outline div
+    // shortens and a tiny, single filled-in div is added. AddOunces = () => {
     //
     // }
 
@@ -57,8 +55,6 @@ class WaterDashboard extends Component {
                                     <p>{`${this.TotalDailyWater()} oz.`}</p>
                                 </div>
 
-
-
                             </div>
 
                         </div>
@@ -66,7 +62,8 @@ class WaterDashboard extends Component {
                     </Col>
                 </Row>
             </div>
-        )}}
-
+        )
+    }
+}
 
 export default WaterDashboard;

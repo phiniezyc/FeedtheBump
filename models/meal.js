@@ -37,6 +37,6 @@ const mealSchema = new Schema({
     }
 });
 
-const Meal = mongoose.model("Meal", mealSchema); //Mongo pluralizes and makes lowercase "Meal" as a collection for us 
+const Meal = mongoose.model("Meal", mealSchema); //Mongo pluralizes and lowercases "Meal" as a collection for us
 
 module.exports = Meal;

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Row, Col } from 'react-materialize';
+import React, {Component} from 'react';
+import {Row, Col} from 'react-materialize';
 import './UserDashboard.css';
 import API from '../../utils/API';
 
@@ -22,7 +22,6 @@ class MealDashboard extends Component {
         API
             .getMeals()
             .then(res => this.setState({totalMeals: res.data, food: '', calories: '', meal: '', date: ''}))
-            // .then({breakfast: this.state.totalMeals.filter((meal) => {return meal.meal === 'Breakfast'})})
             .catch(err => console.log(err));
     }
 
@@ -40,7 +39,6 @@ class MealDashboard extends Component {
         }, 0)
     }
 
-
     filterMeal = (target = '') => {
         return (this.state.totalMeals || []).reduce((result, meal) => {
             if (meal.meal.toLowerCase() === target.toLowerCase()) {
@@ -48,24 +46,26 @@ class MealDashboard extends Component {
                     calcium: result.calcium + meal.calcium,
                     iron: result.iron + meal.iron,
                     calories: result.calories + meal.calories,
-                    protein: result.protein + meal.protein,
+                    protein: result.protein + meal.protein
                 }
             }
             return result;
-        }, { calcium: 0, iron: 0, calories: 0, protein: 0 })
+        }, {
+            calcium: 0,
+            iron: 0,
+            calories: 0,
+            protein: 0
+        })
     };
 
-
-     render() {
+    render() {
         const breakfast = this.filterMeal('breakfast');
         const lunch = this.filterMeal('lunch');
         const dinner = this.filterMeal('dinner');
         const snack = this.filterMeal('snack');
 
-
          return (
             <div className='meal-container'>
-
                 <Row>
                     <Col s={12}>
 
@@ -78,6 +78,7 @@ class MealDashboard extends Component {
                                      <h5>Water</h5>
                                    </div>
                                     <div className='meal-nutrients'>
+
                                         <p>{`${this.TotalDailyWater()} ounces`}</p>
                                     </div>
                                 </div>
@@ -138,9 +139,9 @@ class MealDashboard extends Component {
                 </Row>
 
             </div>
-        )}
+        )
+    }
 
 }
-
 
 export default MealDashboard;

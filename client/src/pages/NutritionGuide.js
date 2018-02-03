@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
-import { Row, Col } from 'react-materialize';
+import React, {Component} from 'react';
+import {Row, Col} from 'react-materialize';
 import '../styles/NutritionGuide.css';
-
 
 class NutritionGuide extends Component {
 
@@ -26,6 +25,7 @@ class NutritionGuide extends Component {
 
                             <br />
                             <p>Learn about <a href='/foodstoavoid'>foods to avoid</a> during pregnancy.</p>
+
 
                         </div>
                     </Col>

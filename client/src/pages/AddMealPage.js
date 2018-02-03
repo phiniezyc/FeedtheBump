@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Input, Button } from 'react-materialize';
+
 import API from '../utils/API';
 import NutritionixResultsDisplay from '../components/NutritionixResultsDisplay/NutrionixReultsDisplay';
 import SearchComponent from '../components/SearchComponent/SearchComponent';
