@@ -1,10 +1,26 @@
-.nutritionixResultDiv {
-    margin: 20px;
-    display: inline-block;
+.card {
+    background-color: #C1D208;
+    margin: 10px auto;
+    width: 400px;
+    min-height: 250px;
+    height: auto;
 }
 
-.cardDisplay {
-    width: 100%;
-    min-width: 200px;
-    min-height: 200px;
+
+
+
+
+
+@media only screen and (max-width: 640px) {
+    /*.cards {*/
+        /*align-self: center;*/
+    /*}*/
+    .card {
+        width: 325px;
+        min-height: 200px;
+    }
 }
+
+
+
+
