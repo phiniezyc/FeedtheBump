@@ -60,30 +60,7 @@ const MealDashboard = () => (
 
     </div>
 
-// {/*<div className="meal-container">*/}     {/*<div className="meal-title">*/}
-//         {/*<h6>Breakfast</h6>*/}     {/*</div>*/}
-//
-//     {/*<div className="nutrition-container">*/}
-//
-//         {/*<div className="nutrient-container">*/}              {/*<div
-// className="nutrient-title">Calories: </div>*/}              {/*<div
-// className="nurtrient-count">100</div>*/}          {/*</div>*/}
-//
-//          {/*<div className="nutrient-container">*/}              {/*<div
-// className="nutrient-title">Iron: </div>*/}              {/*<div
-// className="nurtrient-count">100</div>*/}          {/*</div>*/}
-//
-//          {/*<div className="nutrient-container">*/}              {/*<div
-// className="nutrient-title">Protein: </div>*/}              {/*<div
-// className="nurtrient-count">100</div>*/}          {/*</div>*/}
-//
-//          {/*<div className="nutrient-container">*/}              {/*<div
-// className="nutrient-title">Calcium: </div>*/}              {/*<div
-// className="nurtrient-count">100</div>*/}          {/*</div>*/}
-//
-//      {/*</div>*/}
-//
-// {/*</div>*/} </div>
+
 );
 
 export default Meal;
