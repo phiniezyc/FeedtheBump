@@ -61,7 +61,10 @@ heroku create
 * [React](https://reactjs.org/) - The front-end framework used
 * [Express](http://expressjs.com/) - The back-end framework used
 * [AuthO](https://auth0.com/) - Used to authenticate users
-* [React-Materialize](https://react-materialize.github.io/#/) - React specific components
+* [React-Materialize](https://react-materialize.github.io) - React specific components
+* [Nutritionix API](https://www.nutritionix.com/business/api) - React specific components
+
+
 
 
 ## Contributing
