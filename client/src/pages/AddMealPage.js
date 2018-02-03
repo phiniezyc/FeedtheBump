@@ -73,6 +73,7 @@ class AddMealPage extends Component {
                     meal: this.state.meal
                 })
                 .then(res => this.loadMeals())
+                .then(this.goToDashboardPage())
                 .catch(err => console.log(err));
         }
     }
@@ -82,6 +83,7 @@ class AddMealPage extends Component {
             API
                 .saveWater({water: this.state.water})
                 .then(res => this.loadWaters())
+                .then(this.goToDashboardPage())
                 .catch(err => console.log(err));
         }
     }
@@ -93,8 +95,6 @@ class AddMealPage extends Component {
 
 
     render() {
-        // console.log(this.state.totalMeals);
-        // console.log(this.state.totalWaters);
 
         return (
             <div className='flex-container'>
@@ -124,43 +124,45 @@ class AddMealPage extends Component {
                                     placeholder='Iron (% daily value)'/>
                             </div>
                             <div className='add-meal'>
-                                <div className='meal-input'>
-                                <Input
-                                    onChange={event => this.setState({meal: event.target.value})}
-                                    name='group1'
-                                    type='radio'
-                                    value='Breakfast'
-                                    label='Breakfast'/>
+                                <div className="meal-inputs">
+                                    <div className='meal-input'>
+                                    <Input
+                                        onChange={event => this.setState({meal: event.target.value})}
+                                        name='group1'
+                                        type='radio'
+                                        value='Breakfast'
+                                        label='Breakfast'/>
+                                    </div>
+
+                                    <div className='meal-input'>
+                                    <Input
+                                        onChange={event => this.setState({meal: event.target.value})}
+                                        name='group1'
+                                        type='radio'
+                                        value='Lunch'
+                                        label='Lunch'/>
+                                    </div>
+
+                                    <div className='meal-input'>
+                                    <Input
+                                        onChange={event => this.setState({meal: event.target.value})}
+                                        name='group1'
+                                        type='radio'
+                                        value='Dinner'
+                                        label='Dinner'/>
+                                    </div>
+
+                                    <div className='meal-input'>
+                                    <Input
+                                        onChange={event => this.setState({meal: event.target.value})}
+                                        name='group1'
+                                        type='radio'
+                                        value='Snack'
+                                        label='Snack'/>
+                                    </div>
                                 </div>
 
-                                <div className='meal-input'>
-                                <Input
-                                    onChange={event => this.setState({meal: event.target.value})}
-                                    name='group1'
-                                    type='radio'
-                                    value='Lunch'
-                                    label='Lunch'/>
-                                </div>
-
-                                <div className='meal-input'>
-                                <Input
-                                    onChange={event => this.setState({meal: event.target.value})}
-                                    name='group1'
-                                    type='radio'
-                                    value='Dinner'
-                                    label='Dinner'/>
-                                </div>
-
-                                <div className='meal-input'>
-                                <Input
-                                    onChange={event => this.setState({meal: event.target.value})}
-                                    name='group1'
-                                    type='radio'
-                                    value='Snack'
-                                    label='Snack'/>
-                                </div>
-
-                                <div className='meal-input'>
+                                <div className='meal-button'>
                                     <Button
                                         onClick={this.handleFoodSubmit}
                                         className='btn btn-small add'
@@ -184,10 +186,11 @@ class AddMealPage extends Component {
                             <h5>Add Water</h5>
 
                             <div className='water-functions'>
-                                <div className='water-input>'>
+                                <div className='water-input'>
                                     <Input onChange={event => this.setState({water: event.target.value})}
                                         type='text' id='search' name='search' placeholder='Water (in ounces)'/>
                                 </div>
+
 
                                 <div className='water-button'>
                                     <Button
@@ -214,24 +217,6 @@ class AddMealPage extends Component {
 
                 </div>
 
-                {/*<div className='card'>*/}
-                    {/*{(hits || []).map((result, i) => (*/}
-                        {/*<div>*/}
-                            {/*<div key={i} className='card-content'>*/}
-                                {/*<span className='card-title'>${result.fields.item_name}</span>*/}
-                                {/*<p>{`Brand Name: ${result.fields.brand_name}`}</p>*/}
-                            {/*</div>*/}
-                            {/*<div className="card-reveal">*/}
-                                {/*<span className='card-title'>${result.fields.item_name}</span>*/}
-                                {/*<p>{`Calories: ${result.fields.nf_calories}`}</p>*/}
-                                {/*<p>{`Protein: ${result.fields.nf_protein}`}</p>*/}
-                                {/*<p>{`Calcium: ${result.fields.nf_calcium_dv}`}</p>*/}
-                                {/*<p>{`Iron: ${result.fields.nf_iron_dv}`}</p>*/}
-                            {/*</div>*/}
-                        {/*</div>*/}
-
-                    {/*))}*/}
-                {/*</div>*/}
 
 
             </div>
