@@ -25,7 +25,7 @@ class NutritionGuide extends Component {
                                     <p>Protein: 75-100 g</p>
 
                             <br />
-                            <p>Learn about <a href="/foodstoavoid">foods to avoid</a> during pregnancy.</p>
+                            <p>Learn about <a href='/foodstoavoid'>foods to avoid</a> during pregnancy.</p>
 
                         </div>
                     </Col>

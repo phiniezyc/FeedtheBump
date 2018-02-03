@@ -19,15 +19,15 @@ class LandingPage extends Component {
             // Grid sizing needs tweeking
 
             <div className='col s6 offset-s3'>
-                <div className="banner">
-                    <Slider className="fullscreen" indicators="false">
-                        <Slide className="caption center-align" src="https://static.pexels.com/photos/616412/pexels-photo-616412.jpeg">
-                            <div className="center-align">
+                <div className='banner'>
+                    <Slider className='fullscreen' indicators='false'>
+                        <Slide className='caption center-align' src='https://static.pexels.com/photos/616412/pexels-photo-616412.jpeg'>
+                            <div className='center-align'>
                                 <h1>Feed the Bump</h1>
-                                <div className="landing-text">
+                                <div className='landing-text'>
                                 Your healthy guide to eating for two.
                                 </div>
-                                <button onClick = {this.sign_user} className="btn btn-large ftb-button" type="button" name="action">Sign In</button>
+                                <button onClick = {this.sign_user} className='btn btn-large ftb-button' type='button' name='action'>Sign In</button>
                             </div>
                         </Slide>
                     </Slider>
