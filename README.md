@@ -21,7 +21,6 @@ The API is free for a limited number of searches.
 
 Fork or clone this project to your local machine. To clone, in your terminal run:
 ```
-
 git clone <downloadLink>
 ```
 
