@@ -28,22 +28,22 @@ class SearchBar extends Component {
 
     render() {
         return (
-            <div className="searchDiv">
+            <div className='searchDiv'>
                 <form>
                     <h5>Search for Nutrition Info</h5>
                     <p>Not sure how many calories are in that bagel? Search here to find out.</p>
 
-                    <div className="search-functions">
-                        <div className="search-input">
+                    <div className='search-functions'>
+                        <div className='search-input'>
                             <input onChange={event => this.setState({ input: event.target.value })}
-                                type='text' id='search' name='search' placeholder="Enter food to find nutrition information"/>
+                                type='text' id='search' name='search' placeholder='Enter food to find nutrition information'/>
                         </div>
-                        <div className="search-button">
+                        <div className='search-button'>
                             <Button onClick={(event) => {
                                 event.preventDefault();
                                 this.passSearchTerm();
-                                }} className="btn btn-small search"
-                                icon="search">
+                                }} className='btn btn-small search'
+                                icon='search'>
                             </Button>
                         </div>
                     </div>

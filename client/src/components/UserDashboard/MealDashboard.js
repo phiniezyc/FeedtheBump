@@ -22,7 +22,7 @@ class MealDashboard extends Component {
         API
             .getMeals()
             .then(res => this.setState({totalMeals: res.data, food: '', calories: '', meal: '', date: ''}))
-            // .then({breakfast: this.state.totalMeals.filter((meal) => {return meal.meal === "Breakfast"})})
+            // .then({breakfast: this.state.totalMeals.filter((meal) => {return meal.meal === 'Breakfast'})})
             .catch(err => console.log(err));
     }
 
@@ -64,7 +64,7 @@ class MealDashboard extends Component {
 
 
          return (
-            <div className="meal-container">
+            <div className='meal-container'>
 
                 <Row>
                     <Col s={12}>
@@ -73,20 +73,20 @@ class MealDashboard extends Component {
 
                             <div className='meal-totals'>
 
-                                <div className="water">
-                                   <div className="header">
+                                <div className='water'>
+                                   <div className='header'>
                                      <h5>Water</h5>
                                    </div>
-                                    <div className="meal-nutrients">
+                                    <div className='meal-nutrients'>
                                         <p>{`${this.TotalDailyWater()} ounces`}</p>
                                     </div>
                                 </div>
 
-                                <div className="meal">
-                                    <div className="header">
+                                <div className='meal'>
+                                    <div className='header'>
                                         <h5>Breakfast</h5>
                                     </div>
-                                    <div className="meal-nutrients">
+                                    <div className='meal-nutrients'>
                                         <p>{`Calories: ${breakfast.calories}`}</p>
                                         <p>{`Calcium: ${breakfast.calcium} mg`}</p>
                                         <p>{`Protein: ${breakfast.protein} g`}</p>
@@ -94,11 +94,11 @@ class MealDashboard extends Component {
                                     </div>
                                 </div>
 
-                                <div className="meal">
-                                    <div className="header">
+                                <div className='meal'>
+                                    <div className='header'>
                                         <h5>Lunch</h5>
                                     </div>
-                                    <div className="meal-nutrients">
+                                    <div className='meal-nutrients'>
                                         <p>{`Calories: ${lunch.calories}`}</p>
                                         <p>{`Calcium: ${lunch.calcium} mg`}</p>
                                         <p>{`Protein: ${lunch.protein} g`}</p>
@@ -106,11 +106,11 @@ class MealDashboard extends Component {
                                     </div>
                                 </div>
 
-                                <div className="meal">
-                                    <div className="header">
+                                <div className='meal'>
+                                    <div className='header'>
                                         <h5>Dinner</h5>
                                     </div>
-                                    <div className="meal-nutrients">
+                                    <div className='meal-nutrients'>
                                         <p>{`Calories: ${dinner.calories}`}</p>
                                         <p>{`Calcium: ${dinner.calcium} mg`}</p>
                                         <p>{`Protein: ${dinner.protein} g`}</p>
@@ -118,11 +118,11 @@ class MealDashboard extends Component {
                                     </div>
                                 </div>
 
-                                <div className="meal">
-                                    <div className="header">
+                                <div className='meal'>
+                                    <div className='header'>
                                         <h5>Snacks</h5>
                                     </div>
-                                    <div className="meal-nutrients">
+                                    <div className='meal-nutrients'>
                                         <p>{`Calories: ${snack.calories}`}</p>
                                         <p>{`Calcium: ${snack.calcium} mg`}</p>
                                         <p>{`Protein: ${snack.protein} g`}</p>
@@ -137,31 +137,6 @@ class MealDashboard extends Component {
                     </Col>
                 </Row>
 
-                {/*<div className="test">*/}
-                    {/*<ol>*/}
-                        {/*{this*/}
-                            {/*.filterBreakfast()*/}
-                            {/*.map((meal, i) => {*/}
-
-
-                                {/*return (*/}
-                                    {/*<li key={i}>*/}
-                                        {/*<div key={i}>*/}
-                                            {/*<ol>*/}
-                                                {/*<li key={meal.id}>{meal.meal}</li>*/}
-                                                {/*<li key={meal.food}>{meal.food}</li>*/}
-                                                {/*<li key={meal.calories}>{meal.calories}</li>*/}
-                                                {/*<li key={meal.protein}>{meal.protein}</li>*/}
-                                                {/*<li key={meal.calcium}>{meal.calcium}</li>*/}
-                                                {/*<li key={meal.iron}>{meal.iron}</li>*/}
-                                                {/*<li key={meal.date}>{meal.date}</li>*/}
-                                            {/*</ol>*/}
-                                        {/*</div>*/}
-                                    {/*</li>*/}
-                                {/*)*/}
-                            {/*})}*/}
-                    {/*</ol>*/}
-                {/*</div>*/}
             </div>
         )}
 

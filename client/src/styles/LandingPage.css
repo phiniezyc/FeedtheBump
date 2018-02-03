@@ -1,5 +1,11 @@
-.center-align p {
-    color: darkorange;
-    font-size: large;
-    font-weight: bold;
+h1{
+    margin: 100px 0 50px 0;
+    text-shadow: 2px 2px black;
+}
+
+.landing-text {
+    margin-bottom: 50px;
+    color: black;
+    font-size: x-large;
+    font-weight: 200;
 }
