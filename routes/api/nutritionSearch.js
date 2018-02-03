@@ -5,8 +5,7 @@ const nutritionSearchController = require('../../controllers/nutritionSearchCont
 router
   .route('/')
   .get(nutritionSearchController.search)
-  // .post(nutritionSearchController.create);
-
+  
 router.route("/userSearch")
 
 module.exports = router;

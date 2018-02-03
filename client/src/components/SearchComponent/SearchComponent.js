@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button } from 'react-materialize';
+
 import './SearchComponent.css';
 import axios from 'axios';
 
@@ -55,3 +56,4 @@ class SearchBar extends Component {
 
 
 export default { SearchBar,  };
+

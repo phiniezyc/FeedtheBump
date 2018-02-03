@@ -9,6 +9,7 @@ import NutritionGuide from './pages/NutritionGuide';
 import FoodstoAvoid from './pages/FoodstoAvoid';
 import routeErrorPage from "./pages/routeErrorPage/routeErrorPage";
 
+
 class App extends Component {
   render() {
     return (
@@ -17,14 +18,14 @@ class App extends Component {
           <div>
             <NavBar/>
             <Switch>
-              {/* <Header /> */}
               <Route exact path='/' component={LandingPage}/>
               <Route exact path='/user/dashboard' component={UserDashboard}/> {/*<Route exact path='/user/addMeal/:search?' component={AddMealPage} />*/}
               <Route exact path='/user/addMeal' component={AddMealPage}/>
               <Route exact path='/guide' component={NutritionGuide}/>
               <Route exact path='/foodstoavoid' component={FoodstoAvoid}/> {/* Pages below here need to be completed */}
+
               <Route component={routeErrorPage}/> {/* <Route path='*' component={LandingPage} /> */}
-              {/* <Footer/> */}
+
             </Switch>
           </div>
         </BrowserRouter>
