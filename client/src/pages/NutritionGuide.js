@@ -18,7 +18,7 @@ class NutritionGuide extends Component {
                                     <p>2nd and 3rd Trimester: Add 300 calories per day</p>
 
                                 <br />
-                                <h6>Daily Nutrient Goals::</h6>
+                                <h6>Daily Nutrient Goals:</h6>
                                     <p>Calcium: 1200 mg</p>
                                     <p>Folate: 600-800 mcg</p>
                                     <p>Iron: 27 mg</p>
