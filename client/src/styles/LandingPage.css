@@ -1,4 +1,4 @@
-h1{
+h1 {
     margin: 100px 0 50px 0;
     text-shadow: 2px 2px black;
 }
@@ -8,4 +8,13 @@ h1{
     color: black;
     font-size: x-large;
     font-weight: 200;
+}
+
+
+
+@media only screen and (max-width: 640px) {
+    h1 {
+        margin: 50px 0 50px 0;
+        text-shadow: 2px 2px black;
+    }
 }
