@@ -64,9 +64,8 @@ class MealDashboard extends Component {
         const dinner = this.filterMeal('dinner');
         const snack = this.filterMeal('snack');
 
-        return (
-            <div className="meal-container">
-
+         return (
+            <div className='meal-container'>
                 <Row>
                     <Col s={12}>
 
@@ -74,20 +73,21 @@ class MealDashboard extends Component {
 
                             <div className='meal-totals'>
 
-                                <div className="water">
-                                    <div className="header">
-                                        <h5>Water</h5>
-                                    </div>
-                                    <div className="meal-nutrients">
+                                <div className='water'>
+                                   <div className='header'>
+                                     <h5>Water</h5>
+                                   </div>
+                                    <div className='meal-nutrients'>
+
                                         <p>{`${this.TotalDailyWater()} ounces`}</p>
                                     </div>
                                 </div>
 
-                                <div className="meal">
-                                    <div className="header">
+                                <div className='meal'>
+                                    <div className='header'>
                                         <h5>Breakfast</h5>
                                     </div>
-                                    <div className="meal-nutrients">
+                                    <div className='meal-nutrients'>
                                         <p>{`Calories: ${breakfast.calories}`}</p>
                                         <p>{`Calcium: ${breakfast.calcium} mg`}</p>
                                         <p>{`Protein: ${breakfast.protein} g`}</p>
@@ -95,11 +95,11 @@ class MealDashboard extends Component {
                                     </div>
                                 </div>
 
-                                <div className="meal">
-                                    <div className="header">
+                                <div className='meal'>
+                                    <div className='header'>
                                         <h5>Lunch</h5>
                                     </div>
-                                    <div className="meal-nutrients">
+                                    <div className='meal-nutrients'>
                                         <p>{`Calories: ${lunch.calories}`}</p>
                                         <p>{`Calcium: ${lunch.calcium} mg`}</p>
                                         <p>{`Protein: ${lunch.protein} g`}</p>
@@ -107,11 +107,11 @@ class MealDashboard extends Component {
                                     </div>
                                 </div>
 
-                                <div className="meal">
-                                    <div className="header">
+                                <div className='meal'>
+                                    <div className='header'>
                                         <h5>Dinner</h5>
                                     </div>
-                                    <div className="meal-nutrients">
+                                    <div className='meal-nutrients'>
                                         <p>{`Calories: ${dinner.calories}`}</p>
                                         <p>{`Calcium: ${dinner.calcium} mg`}</p>
                                         <p>{`Protein: ${dinner.protein} g`}</p>
@@ -119,11 +119,11 @@ class MealDashboard extends Component {
                                     </div>
                                 </div>
 
-                                <div className="meal">
-                                    <div className="header">
+                                <div className='meal'>
+                                    <div className='header'>
                                         <h5>Snacks</h5>
                                     </div>
-                                    <div className="meal-nutrients">
+                                    <div className='meal-nutrients'>
                                         <p>{`Calories: ${snack.calories}`}</p>
                                         <p>{`Calcium: ${snack.calcium} mg`}</p>
                                         <p>{`Protein: ${snack.protein} g`}</p>
@@ -137,6 +137,7 @@ class MealDashboard extends Component {
 
                     </Col>
                 </Row>
+
             </div>
         )
     }

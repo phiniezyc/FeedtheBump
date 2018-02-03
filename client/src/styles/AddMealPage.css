@@ -1,11 +1,130 @@
 .flex-container {
+    margin: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.food-water {
+    flex-basis: 50%;
+}
+
+.addfood-form {
+    margin: 30px;
+    flex: 1;
+}
+
+
+.add-nutrients {
+}
+
+.add-meal {
     display: flex;
 }
 
-.NutritionixCardsDisplay {
-    background-color: aqua;
-    height: 200px;
-    width: 200px;
-    float: right;
+.meal-inputs {
+    flex: 4;
+    display: flex;
 }
 
+.meal-input {
+    flex: 1;
+}
+
+.meal-button {
+    flex: 1;
+
+}
+
+.search-food {
+    margin: 30px;
+}
+
+.add-water {
+    margin: 30px;
+}
+
+.water-functions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.water-input {
+    flex-basis: 70%;
+}
+
+.water-button {
+    flex-basis: 20%;
+}
+
+.card-div {
+    margin: 30px;
+    flex-basis: 40%;
+}
+
+
+
+.add-buttondiv {
+    flex: 1;
+}
+
+.btn {
+    background-color: darkorange;
+    transition-duration: 0.4s;
+    font-size: large;
+    margin: auto;
+}
+
+.btn:hover {
+    background-color: darkorange;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn:focus {
+    background-color: darkorange;
+    /*box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);*/
+}
+
+.add {
+    width: 100px;
+}
+
+
+
+
+@media only screen and (max-width: 640px) {
+    .flex-container {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    .add-meal {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .meal-inputs {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .meal-input {
+        flex-basis: 20%;
+    }
+
+    .meal-button {
+        margin: 15px;
+        align-self: center;
+    }
+
+    .water-functions {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .water-button {
+        align-self: center;
+    }
+
+
+}
