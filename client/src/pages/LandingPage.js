@@ -5,15 +5,13 @@ import '../styles/Main.css';
 import '../styles/LandingPage.css';
 
 
-
-
 const auth = new Auth();
 
 class LandingPage extends Component {
     sign_user = () => {
         auth.login();
     };
-
+    
     render() {
         return (
             // Grid sizing needs tweeking
@@ -31,11 +29,8 @@ class LandingPage extends Component {
                             </div>
                         </Slide>
                     </Slider>
-
-
                     </div>
             </div>
-
         );
     }
 }

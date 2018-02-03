@@ -6,7 +6,6 @@ import '../components/UserDashboard/UserDashboard.css';
 import TotalsDashboard from '../components/UserDashboard/TotalsDashboard';
 import MealDashboard from '../components/UserDashboard/MealDashboard';
 
-
 class UserDashboard extends Component {
     constructor(props) {
         super(props)
@@ -37,6 +36,7 @@ class UserDashboard extends Component {
 
     goToAddMealsPage = () => {
         this.props.history.push('/user/addMeal');
+
     }
 
     render() {
@@ -55,6 +55,7 @@ class UserDashboard extends Component {
                         type='button'
                         name='action'>
                     </Button>
+
                 </div>
             </div>
         );
