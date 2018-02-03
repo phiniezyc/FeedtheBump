@@ -124,7 +124,7 @@ class AddMealPage extends Component {
                                     placeholder='Iron (% daily value)'/>
                             </div>
                             <div className='add-meal'>
-                                <div className="meal-inputs">
+                                <div className='meal-inputs'>
                                     <div className='meal-input'>
                                     <Input
                                         onChange={event => this.setState({meal: event.target.value})}
@@ -210,9 +210,6 @@ class AddMealPage extends Component {
                 <div className='card-div'>
                         <div>
                             <NutritionixResultsDisplay nutritionixResults={this.state.nutritionixResults}/>
-                            <div>
-                                <button onClick={this.goToDashboardPage} type='button'>View Dashboard</button>
-                            </div>
                         </div>
 
                 </div>

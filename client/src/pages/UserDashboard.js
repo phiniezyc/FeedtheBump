@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
+import { Button } from 'react-materialize';
 import API from '../utils/API';
 import '../components/UserDashboard/UserDashboard.css';
 
-import TotalsDashboard from "../components/UserDashboard/TotalsDashboard";
+import TotalsDashboard from '../components/UserDashboard/TotalsDashboard';
 import MealDashboard from '../components/UserDashboard/MealDashboard';
 
 
@@ -35,7 +36,7 @@ class UserDashboard extends Component {
     }
 
     goToAddMealsPage = () => {
-        this.props.history.push("/user/addMeal");
+        this.props.history.push('/user/addMeal');
     }
 
     render() {
@@ -46,8 +47,14 @@ class UserDashboard extends Component {
                     <TotalsDashboard/>
                     <MealDashboard/>
                 </div>
-                <div className="add-button">
-                    <button onClick = {this.goToAddMealsPage} className="btn btn-large ftb-button" type="button" name="action">Add Food or Water</button>
+                <div className='add-button'>
+                    <Button
+                        onClick = {this.goToAddMealsPage}
+                        className='btn add btn-large'
+                        icon='add'
+                        type='button'
+                        name='action'>
+                    </Button>
                 </div>
             </div>
         );
