@@ -6,21 +6,17 @@
     height: auto;
 }
 
-
-
-
-
+.card-div {
+    max-height: 770px;
+    overflow-y: scroll;
+}
 
 @media only screen and (max-width: 640px) {
     /*.cards {*/
-        /*align-self: center;*/
+    /*align-self: center;*/
     /*}*/
     .card {
         width: 325px;
         min-height: 200px;
     }
 }
-
-
-
-
