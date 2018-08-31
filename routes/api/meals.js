@@ -7,10 +7,11 @@ router
   .get(mealsController.findAll)
   .post(mealsController.create);
 
-router
-  .route('/:id')
-  .get(mealsController.findById)
-  .put(mealsController.update)
-  .delete(mealsController.remove);
+// router
+//   .route('/:id')
+//   .get(mealsController.findById)
+//   .put(mealsController.update)
+//   .delete(mealsController.remove);
+
 
 module.exports = router;

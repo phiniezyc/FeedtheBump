@@ -1,0 +1,153 @@
+.totals-container,
+.meal-container {
+    margin: 20px 30px;
+}
+
+.today-card {
+    max-width: 1400px;
+    background-color: #D01A55;
+    padding: 20px;
+    color: white;
+}
+
+.today-totals {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.nutrient {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.nutrient-title {
+    padding: 0 10px;
+    flex-basis: 10%;
+}
+
+.nutrient-total {
+    padding: 0 10px;
+    flex-basis: 60%;
+}
+
+.add {
+    flex: 3;
+}
+
+.water h5,
+.meal h5,
+.today-card h4 {
+    color: white;
+}
+
+.water p,
+.meal p,
+.today-card p {
+    font-size: x-large;
+    color: white;
+}
+
+.meal-totals {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.meal {
+    background-color: #C1D208;
+    padding: 20px;
+    color: white;
+    flex-basis: 20%;
+}
+
+.meal-nutrients p {
+    font-size: large;
+    margin: 0;
+}
+
+.water {
+    background-color: #34DDDD;
+    padding: 20px;
+    color: white;
+    flex-basis: 15%;
+}
+
+@media only screen and (max-width: 640px) {
+    .totals-container {
+        margin: 20px 30px 0 30px;
+    }
+    .meal-container {
+        margin-top: -15px;
+    }
+    .today-card {
+        padding: 20px;
+        color: white;
+    }
+    .today-totals {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .nutrient {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+    }
+    .nutrient-title {
+        padding: 0 10px;
+        flex-basis: 50%;
+    }
+    .nutrient-total {
+        padding: 0 20px;
+        flex-basis: 50%;
+    }
+    .add {
+        flex: 3;
+    }
+    .water h5,
+    .meal h5,
+    .today-card h4 {
+        color: white;
+    }
+    .water p,
+    .meal p,
+    .today-card p {
+        font-size: x-large;
+        color: white;
+    }
+    .meal-totals {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .water {
+        background-color: #34DDDD;
+        margin: 0;
+        padding: 10px 0 10px 20px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .meal {
+        background-color: #C1D208;
+        margin: 5px 0 0 0;
+        padding: 10px 0 10px 20px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .header {
+        flex-basis: 30%;
+    }
+    .meal-nutrients {
+        flex-basis: 60%;
+    }
+    .meal-nutrients p {
+        font-size: large;
+        margin: 0;
+    }
+}

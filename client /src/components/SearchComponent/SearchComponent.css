@@ -1,0 +1,40 @@
+.search-functions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-input {
+    flex-basis: 70%;
+}
+
+.search-button {
+    flex-basis: 20%;
+}
+
+.search {
+    width: 100px;
+}
+
+p {
+    font-weight: lighter;
+}
+
+
+
+
+@media only screen and (max-width: 640px) {
+
+    .search-functions {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /*.search-input {*/
+        /*flex-basis: 65%;*/
+    /*}*/
+
+    .search-button {
+        align-self: center;
+    }
+
+}
