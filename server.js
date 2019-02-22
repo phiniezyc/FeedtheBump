@@ -13,11 +13,12 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
 
-//auth2 code
+
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "/"));
 });
 
+//auth2 code
 app.get("/signin", (req, res) => {
     const google_url = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${process.env.CLIENT_ID}&redirect_uri=http://localhost:${PORT}/oauth/callback&scope=https://www.googleapis.com/auth/calendar&access_type=offline&response_type=code`;
     res.redirect(google_url);
